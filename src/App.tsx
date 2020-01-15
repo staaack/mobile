@@ -1,6 +1,7 @@
 import React, { useEffect, Fragment } from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import { View, Text, Platform, StatusBar } from 'react-native';
+import NavigationContainer from './navigation/stackNavigator/NavigationContainer';
 
 const App: React.SFC<{}> = (): JSX.Element => {
   useEffect(() => {
@@ -9,9 +10,7 @@ const App: React.SFC<{}> = (): JSX.Element => {
   return (
     <Fragment>
       {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
-      <View>
-        <Text>THis is the Staack App</Text>
-      </View>
+      <NavigationContainer />
     </Fragment>
   );
 };
