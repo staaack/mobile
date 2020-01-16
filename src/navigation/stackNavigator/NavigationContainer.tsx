@@ -1,19 +1,24 @@
-import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationNativeContainer } from '@react-navigation/native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-import RootNavigator from './RootNavigator';
+import { LoginScreen } from '../../screens/auth/loginScreen';
+import { HomeRevenuesScreen } from '../../screens/homeRevenuesScreen';
 
-interface TProps {}
+export const appStackNav = createStackNavigator(
+  {
+    Login: {
+      screen: LoginScreen,
+    },
+    HomeRevenues: {
+      screen: HomeRevenuesScreen,
+    },
+  },
+  {
+    initialRouteName: 'Login',
+    defaultNavigationOptions: {
+      headerShown: false,
+    },
+  },
+);
 
-const NavigationContainer: React.SFC<TProps> = (): JSX.Element => {
-  return (
-    <SafeAreaProvider>
-      <NavigationNativeContainer>
-        <RootNavigator />
-      </NavigationNativeContainer>
-    </SafeAreaProvider>
-  );
-};
-
-export default NavigationContainer;
+export default createAppContainer(appStackNav);

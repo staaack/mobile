@@ -1,15 +1,20 @@
 import React from 'react';
 import { SafeAreaView, Image, View } from 'react-native';
+import { NavigationStackOptions } from 'react-navigation-stack';
 
 import { LoginCarousel } from './loginCarousel';
 import { LoginButton } from './loginButton';
 import styles from './styles';
 
-interface Props {}
+interface TProps {}
 
-const Login: React.FC<Props> = (): JSX.Element => {
+interface NavStateless extends React.StatelessComponent<TProps> {
+  navigationOptions?: NavigationStackOptions;
+}
+
+const Login: NavStateless = (): JSX.Element => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Image
           source={require('../../../assets/logo_splash.png')}

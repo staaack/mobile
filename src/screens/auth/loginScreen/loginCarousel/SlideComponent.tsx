@@ -2,21 +2,20 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 interface Props {
-  data?: any;
+  children: React.ReactNode;
 }
 
-const SlideComponent: React.FC<Props> = ({ data }): JSX.Element => {
-  console.log(data);
+const SlideComponent: React.FC<Props> = ({ children }): JSX.Element => {
   return (
     <View
       style={{
         width: '80%',
         marginLeft: 30,
-        height: 150,
-        borderWidth: 2,
-        borderColor: 'black',
+        height: 140,
+        padding: 10,
+        alignSelf: 'center',
       }}>
-      <Text>Hello Slide</Text>
+      {children}
     </View>
   );
 };

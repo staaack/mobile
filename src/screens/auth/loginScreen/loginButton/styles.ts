@@ -6,7 +6,7 @@ export default StyleSheet.create({
     width: '90%',
     height: 50,
     borderRadius: 50,
-    backgroundColor: Colors.APP_COLOR,
+    backgroundColor: Colors.MAIN_COLOR,
     alignItems: 'center',
     justifyContent: 'center',
   },
