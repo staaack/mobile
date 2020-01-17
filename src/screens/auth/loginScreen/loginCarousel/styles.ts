@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import Colors from '../../../../styles/theme/colors';
+import { Metrics } from '../../../../styles';
 
 export default StyleSheet.create({
   container: {
@@ -7,8 +8,8 @@ export default StyleSheet.create({
     padding: 10,
   },
   commonDotStyle: {
-    width: 8,
-    height: 8,
+    width: 10,
+    height: 10,
     borderRadius: 5,
   },
   dotStyle: {
@@ -16,5 +17,11 @@ export default StyleSheet.create({
   },
   inactiveDotsStyle: {
     backgroundColor: Colors.GREY,
+  },
+  sliderItem: {
+    width: Metrics.screenWidth,
+    marginLeft: 10,
+    height: 120,
+    padding: 10,
   },
 });

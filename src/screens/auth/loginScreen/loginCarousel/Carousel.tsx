@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { View } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import SlideComponent from './SlideComponent';
 
@@ -12,15 +12,15 @@ const LoginCarousel: React.SFC<{}> = () => {
   const [entries] = useState<Array<string>>(['SHARE', 'TRACK', 'HELP']);
   const [activeSlide, setActiveSlide] = useState<number>(0);
 
-  const _renderItem = ({ item, index }) => {
+  const _renderItem = useCallback(({ item, index }): JSX.Element => {
     return (
       <SlideComponent>
-        {item === 'SHARE' && <ShareData  />}
+        {item === 'SHARE' && <ShareData />}
         {item === 'TRACK' && <TrackConribution />}
         {item === 'HELP' && <HelpBuildEnv />}
       </SlideComponent>
     );
-  };
+  }, []);
 
   const pagination: React.ReactElement = (
     <Pagination

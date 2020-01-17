@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import styles from './styles';
 
 interface Props {
   children: React.ReactNode;
@@ -8,13 +9,7 @@ interface Props {
 const SlideComponent: React.FC<Props> = ({ children }): JSX.Element => {
   return (
     <View
-      style={{
-        width: '80%',
-        marginLeft: 30,
-        height: 140,
-        padding: 10,
-        alignSelf: 'center',
-      }}>
+      style={styles.sliderItem}>
       {children}
     </View>
   );

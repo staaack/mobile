@@ -5,14 +5,21 @@ import { NavigationStackOptions } from 'react-navigation-stack';
 import { LoginCarousel } from './loginCarousel';
 import { LoginButton } from './loginButton';
 import styles from './styles';
+import { StackNavigationProp } from 'react-navigation-stack/lib/typescript/src/vendor/types';
 
-interface TProps {}
+export interface TLoginProps {
+  navigation: StackNavigationProp;
+}
 
-interface NavStateless extends React.StatelessComponent<TProps> {
+interface NavStateless extends React.StatelessComponent<TLoginProps> {
   navigationOptions?: NavigationStackOptions;
 }
 
-const Login: NavStateless = (): JSX.Element => {
+const Login: NavStateless = ({ navigation }): JSX.Element => {
+  const onButtonPress: () => void = () => {
+    return navigation.navigate({ routeName: 'HomeRevenues' });
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
@@ -22,7 +29,7 @@ const Login: NavStateless = (): JSX.Element => {
         />
         <View style={styles.bottomLoginSide}>
           <LoginCarousel />
-          <LoginButton />
+          <LoginButton onButtonPress={onButtonPress} />
         </View>
       </View>
     </SafeAreaView>

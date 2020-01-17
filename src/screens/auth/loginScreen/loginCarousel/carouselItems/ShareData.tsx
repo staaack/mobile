@@ -11,9 +11,9 @@ interface TProps {
 const ShareData: React.FC<TProps> = () => {
   return (
     <ItemContainer>
-      <Text>Share your company's</Text>
-      <Text style={styles.greenText}>financial data</Text>
-      <Text>with your team</Text>
+      <Text style={[styles.text]}>Share your company's</Text>
+      <Text style={[styles.text, styles.greenText]}>financial data</Text>
+      <Text style={styles.text}>with your team</Text>
     </ItemContainer>
   );
 };
