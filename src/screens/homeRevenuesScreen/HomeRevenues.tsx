@@ -6,10 +6,10 @@ import { NavigationStackOptions } from 'react-navigation-stack';
 import { TLoginProps } from '../auth/loginScreen/Login';
 import styles from './styles';
 import database from '../../database/db';
-import Colors from '../../styles/theme/colors';
 import { ScrollView } from 'react-native-gesture-handler';
 import CompanyDetails from './CompanyDetails';
 import { Revenues } from './revenues';
+import { TabView } from '../../components/tabView';
 
 const company = database[0];
 
@@ -29,7 +29,7 @@ const HomeRevenues: NavStatelessComponent = (): JSX.Element => {
         />
         <ScrollView style={styles.scrollView}>
           <Revenues />
-          <View style={{ height: 2565 }}></View>
+          <TabView />
         </ScrollView>
       </View>
     </SafeAreaView>

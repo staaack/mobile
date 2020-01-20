@@ -4,7 +4,8 @@ import { Metrics } from '../../../styles';
 
 export default StyleSheet.create({
   container: {
-    ...commonStyles.flexSpaceBetweenRow,
-    padding: Metrics.averagePadding,
+    paddingHorizontal: Metrics.averagePadding,
+    paddingVertical: Metrics.averagePadding,
+    justifyContent: 'space-between',
   },
 });

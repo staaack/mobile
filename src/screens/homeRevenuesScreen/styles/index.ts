@@ -6,7 +6,6 @@ import Colors from '../../../styles/theme/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-
     backgroundColor: Colors.WHITE,
   },
   companyDetails: {
@@ -33,7 +32,15 @@ export default StyleSheet.create({
   scrollView: {
     flex: 1,
     marginTop: Metrics.screenHeight / 4.5,
-    backgroundColor: Colors.LIGHT_GREY,
     zIndex: 99,
+  },
+  revenuesTitleContainer: {
+    ...commonStyles.flexSpaceBetweenRow,
+    padding: Metrics.smallPadding,
+    width: '100%',
+  },
+  revenuesTitle: {
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
   },
 });
