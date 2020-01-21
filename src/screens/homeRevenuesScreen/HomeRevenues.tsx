@@ -1,15 +1,15 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, Text, Image } from 'react-native';
+import { View } from 'react-native';
 import { NavigationStackOptions } from 'react-navigation-stack';
 
 import { TLoginProps } from '../auth/loginScreen/Login';
 import styles from './styles';
 import database from '../../database/db';
 import { ScrollView } from 'react-native-gesture-handler';
-import CompanyDetails from './CompanyDetails';
-import { Revenues } from './revenues';
-import { TabView } from '../../components/tabView';
+import CompanyDetails from './components/CompanyDetails';
+import { Revenues } from './components/revenues';
+import { RevenuesTabView } from './components/revenuesTabView';
 
 const company = database[0];
 
@@ -29,7 +29,7 @@ const HomeRevenues: NavStatelessComponent = (): JSX.Element => {
         />
         <ScrollView style={styles.scrollView}>
           <Revenues />
-          <TabView />
+          <RevenuesTabView />
         </ScrollView>
       </View>
     </SafeAreaView>

@@ -11,7 +11,7 @@ interface Props {}
 const SearchBar: React.FC<Props> = (): JSX.Element => {
   const [value, onChangeText] = useState<string>('');
 
-  const onTextInputChange = useCallback(val => onChangeText(val), []);
+  const onTextInputChange = useCallback(val => onChangeText(val), [value]);
 
   return (
     <View style={styles.container}>

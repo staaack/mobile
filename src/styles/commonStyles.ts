@@ -10,6 +10,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  flexStart: {
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
   smallRoundedImage: {
     width: 60,
     height: 60,

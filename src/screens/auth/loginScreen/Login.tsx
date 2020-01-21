@@ -2,8 +2,8 @@ import React from 'react';
 import { SafeAreaView, Image, View } from 'react-native';
 import { NavigationStackOptions } from 'react-navigation-stack';
 
-import { LoginCarousel } from './loginCarousel';
-import { LoginButton } from './loginButton';
+import { LoginCarousel } from './components/loginCarousel';
+import { LoginButton } from './components/loginButton';
 import styles from './styles';
 import { StackNavigationProp } from 'react-navigation-stack/lib/typescript/src/vendor/types';
 
