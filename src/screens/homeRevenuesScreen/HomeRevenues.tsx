@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View } from 'react-native';
+import { View, KeyboardAvoidingView } from 'react-native';
 import { NavigationStackOptions } from 'react-navigation-stack';
 
 import { TLoginProps } from '../auth/loginScreen/Login';
@@ -27,7 +27,12 @@ const HomeRevenues: NavStatelessComponent = (): JSX.Element => {
           companyName={company.name}
           imageURI={company.profilePic}
         />
-        <ScrollView style={styles.scrollView}>
+        <ScrollView
+          nestedScrollEnabled
+          style={styles.scrollView}
+          keyboardShouldPersistTaps="always"
+          enabled
+        >
           <Revenues />
           <RevenuesTabView />
         </ScrollView>

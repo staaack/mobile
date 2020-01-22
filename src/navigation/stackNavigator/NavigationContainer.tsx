@@ -6,7 +6,9 @@ import {
 
 import { LoginScreen } from '../../screens/auth/loginScreen';
 import { HomeRevenuesScreen } from '../../screens/homeRevenuesScreen';
-import transitionConfig from '../transitionConfig';
+import Help from '../../screens/help/Help';
+import Settings from '../../screens/settings/Settings';
+import { UserProfile } from '../../screens/userProfile';
 
 export const appStackNav = createStackNavigator(
   {
@@ -15,6 +17,15 @@ export const appStackNav = createStackNavigator(
     },
     HomeRevenues: {
       screen: HomeRevenuesScreen,
+    },
+    Help: {
+      screen: Help,
+    },
+    Settings: {
+      screen: Settings,
+    },
+    UserProfile: {
+      screen: UserProfile,
     },
   },
   {

@@ -7,6 +7,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.WHITE,
+    ...commonStyles.shadow,
   },
   companyDetails: {
     ...commonStyles.flexSpaceBetweenRow,
@@ -33,6 +34,8 @@ export default StyleSheet.create({
     flex: 1,
     marginTop: Metrics.screenHeight / 4.5,
     zIndex: 99,
+    flexGrow: 1,
+    minHeight: Metrics.screenHeight,
   },
   revenuesTitleContainer: {
     ...commonStyles.flexSpaceBetweenRow,

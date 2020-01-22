@@ -11,7 +11,7 @@ export interface TLoginProps {
   navigation: StackNavigationProp;
 }
 
-interface NavStateless extends React.StatelessComponent<TLoginProps> {
+export interface NavStateless extends React.StatelessComponent<TLoginProps> {
   navigationOptions?: NavigationStackOptions;
 }
 
