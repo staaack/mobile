@@ -11,7 +11,8 @@ const EducationCard: React.FC<Props> = () => {
     <Card
       topic="Education"
       amount="$3,000.00"
-      LeftIcon={<Image source={icons.graduation} />}
+      leftIconSource={icons.graduation}
+      isTrendingUp={false}
     />
   );
 };

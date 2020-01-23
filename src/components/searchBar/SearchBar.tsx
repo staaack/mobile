@@ -17,10 +17,13 @@ const SearchBar: React.FC<Props> = ({
 }): JSX.Element => {
   const [value, onChangeTextInput] = useState<string>('');
 
-  const onTextInputChange = (val: string) => {
-    onChangeTextInput(val);
-    onChangeText(val);
-  };
+  const onTextInputChange = useCallback(
+    (val: string) => {
+      onChangeTextInput(val);
+      onChangeText(val);
+    },
+    [value],
+  );
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>

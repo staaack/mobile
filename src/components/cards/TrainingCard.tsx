@@ -11,7 +11,7 @@ const TrainingCard: React.FC<Props> = () => {
     <Card
       topic="Trainings"
       amount="$13,000.00"
-      LeftIcon={<Image source={icons.bookBookmark} />}
+      leftIconSource={icons.bookBookmark}
     />
   );
 };

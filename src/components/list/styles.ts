@@ -4,16 +4,12 @@ import { commonStyles, Colors, Metrics } from '../../styles';
 
 export default StyleSheet.create({
   container: {
-    flex: 0.5,
-    width: Metrics.screenWidth,
     ...commonStyles.flexSpaceBetweenRow,
-    margin: Metrics.smallMargin,
+    marginVertical: Metrics.averageMargin,
   },
   leftSide: {
-    flex: 2,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
+    width: '70%',
   },
   title: {
     fontWeight: 'bold',
@@ -29,6 +25,12 @@ export default StyleSheet.create({
     borderWidth: 0.5,
     borderColor: Colors.LIGHT_GREY,
     marginRight: Metrics.averageMargin,
+  },
+  rightSide: {
+    // alignSelf: 'center',
+    // justifyContent: 'flex-end',
+    // minWidth: '15%',
+    // marginRight: '10%',
   },
   rightText: {
     fontSize: Metrics.tinyTextSize,

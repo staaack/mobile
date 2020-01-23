@@ -8,11 +8,7 @@ interface Props {}
 
 const DailyRateCard: React.FC<Props> = () => {
   return (
-    <Card
-      topic="Daily rate"
-      amount="$560.00"
-      LeftIcon={<Image source={icons.group} />}
-    />
+    <Card topic="Daily rate" amount="$560.00" leftIconSource={icons.group} />
   );
 };
 

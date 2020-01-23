@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { FlatList, TouchableOpacity } from 'react-native';
 import {
   View,
@@ -20,7 +20,7 @@ interface Props {
   data: Array<ListItemProps>;
   rightText: string;
   rightTextStyles?: StyleProp<TextStyle>;
-  onRightTextPress?: () => void;
+  onRightTextPress?: (name: string) => void;
 }
 
 const List: React.FC<Props> = ({
@@ -29,29 +29,38 @@ const List: React.FC<Props> = ({
   rightText,
   onRightTextPress,
 }): JSX.Element => {
-  const renderListItem: ListRenderItem<ListItemProps> = ({ item }) => (
-    <View style={styles.container}>
-      <View style={styles.leftSide}>
-        <Image
-          source={{ uri: item.imageURL }}
-          style={styles.profileImage}
-          resizeMode="cover"
-        />
-        <View>
-          <Text style={styles.title}>{item.title}</Text>
-          <Text style={styles.subTitle}>{item.surTitle}</Text>
+  const renderListItem: ListRenderItem<ListItemProps> = useCallback(
+    ({ item }) => (
+      <View style={styles.container}>
+        <View style={styles.leftSide}>
+          <Image
+            source={{ uri: item.imageURL }}
+            style={styles.profileImage}
+            resizeMode="cover"
+          />
+          <View>
+            <Text style={styles.title}>{item.title}</Text>
+            <Text style={styles.subTitle}>{item.surTitle}</Text>
+          </View>
+        </View>
+        <View style={styles.rightSide}>
+          {onRightTextPress ? (
+            <TouchableOpacity onPress={() => onRightTextPress(item.title)}>
+              <Text style={[styles.rightText, rightTextStyles]}>
+                {rightText}
+              </Text>
+            </TouchableOpacity>
+          ) : (
+            <Text>
+              <Text style={[styles.rightText, rightTextStyles]}>
+                {rightText}
+              </Text>
+            </Text>
+          )}
         </View>
       </View>
-      {onRightTextPress ? (
-        <TouchableOpacity activeOpacity={0.5}>
-          <Text style={rightTextStyles}>{rightText}</Text>
-        </TouchableOpacity>
-      ) : (
-        <Text style={{ flex: 1 }}>
-          <Text style={[styles.rightText, rightTextStyles]}>{rightText}</Text>
-        </Text>
-      )}
-    </View>
+    ),
+    [data],
   );
 
   return (

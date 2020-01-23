@@ -5,14 +5,14 @@ import commonStyles from '../../../../../styles/commonStyles';
 
 export default StyleSheet.create({
   container: {
+    flex: 1,
+    width: '100%',
     ...commonStyles.flexWrapList,
     padding: Metrics.averageMargin,
-    height: Metrics.screenHeight,
-    width: Metrics.screenWidth,
+    minHeight: Metrics.screenHeight,
     backgroundColor: Colors.LIGHT_GREY,
   },
   tabViewContent: {
     flex: 1,
-    alignItems: 'center',
   },
 });

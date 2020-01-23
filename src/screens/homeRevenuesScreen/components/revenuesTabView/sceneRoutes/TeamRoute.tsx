@@ -1,5 +1,7 @@
 import React, { ReactElement, useCallback } from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
+import { withNavigation } from 'react-navigation';
+import { NavigationStackProp } from 'react-navigation-stack';
 
 import RouteWrapper from './RouteWrapper';
 import SearchBar from '../../../../../components/searchBar/SearchBar';
@@ -16,18 +18,32 @@ const teamMembers: Array<ListItemProps> = db[0].team.map(item => {
   };
 });
 
-const TeamRoute: React.FC<{}> = (): ReactElement => {
+interface TProps {
+  navigation?: NavigationStackProp;
+}
+
+const TeamRoute: React.FC<TProps> = ({
+  navigation: { navigate },
+}): ReactElement => {
   const onChangeText = useCallback((text: string) => {
     console.log(text);
   }, []);
+
+  const onViewProfilePress: (name: string) => void = name => {
+    navigate('UserProfile');
+  };
 
   return (
     <RouteWrapper>
       <View style={styles.tabViewContent}>
         <SearchBar placeholder="Search Team" onChangeText={onChangeText} />
-        <List data={teamMembers} rightText="View profile" />
+        <List
+          data={teamMembers}
+          rightText="View profile"
+          onRightTextPress={onViewProfilePress}
+        />
       </View>
     </RouteWrapper>
   );
 };
-export default TeamRoute;
+export default withNavigation(TeamRoute);

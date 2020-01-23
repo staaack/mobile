@@ -7,13 +7,7 @@ import icons from '../../assets/icons';
 interface Props {}
 
 const RDCard: React.FC<Props> = () => {
-  return (
-    <Card
-      topic="R&D"
-      amount="$2,000.00"
-      LeftIcon={<Image source={icons.flask} />}
-    />
-  );
+  return <Card topic="R&D" amount="$2,000.00" leftIconSource={icons.flask} />;
 };
 
 export default RDCard;

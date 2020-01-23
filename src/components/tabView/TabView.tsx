@@ -41,7 +41,10 @@ const TabsView: React.SFC<TProps> = ({ routes, sceneMap }): JSX.Element => {
             >
               <Animated.Text
                 style={[
-                  { color: tabTitlecolor },
+                  {
+                    color: tabTitlecolor,
+                    textAlign: 'center',
+                  },
                   index === i && { fontWeight: '700' },
                 ]}
               >

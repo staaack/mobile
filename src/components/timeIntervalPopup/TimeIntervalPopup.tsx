@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import Colors from '../../styles/theme/colors';
 import { MenuPopup } from '../popupMenu';
-import MenuItem from './MenuItem';
 
 const TimeIntervalPopup: React.FC<{}> = (): JSX.Element => {
   const [isDialogVisible, updateDialogVisibility] = useState<boolean>(false);
@@ -41,11 +40,13 @@ const TimeIntervalPopup: React.FC<{}> = (): JSX.Element => {
       <TouchableOpacity onPress={onArrowDownPress}>
         <Icon name="ios-arrow-down" size={21} color={Colors.MAIN_COLOR} />
       </TouchableOpacity>
-      <MenuPopup isVisible={isDialogVisible} onClose={onDialogClose}>
-        <MenuItem itemText="Today" onItemPress={onTodayPress} />
-        <MenuItem itemText="This month" onItemPress={onMonthPress} />
-        <MenuItem itemText="This year" onItemPress={onYearPress} />
-      </MenuPopup>
+      <MenuPopup
+        onThisMonthPress={onMonthPress}
+        onThisYearPress={onYearPress}
+        onTodayPress={onTodayPress}
+        isVisible={isDialogVisible}
+        onClose={onDialogClose}
+      />
     </View>
   );
 };

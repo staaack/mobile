@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import Colors from '../../styles/theme/colors';
 import Metrics from '../../styles/Metrics';
+import { commonStyles } from '../../styles';
 
 export default StyleSheet.create({
   container: {
@@ -10,14 +11,13 @@ export default StyleSheet.create({
   },
   tabBar: {
     flexDirection: 'row',
-    paddingTop: 10,
     marginTop: Metrics.averageMargin * 2,
   },
   tabItem: {
     flex: 1,
-    alignItems: 'center',
-    padding: Metrics.smallPadding,
+    paddingBottom: Metrics.smallPadding,
     borderBottomWidth: 1,
     borderBottomColor: Colors.GREY,
+    minWidth: 120,
   },
 });

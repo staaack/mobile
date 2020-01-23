@@ -13,6 +13,7 @@ export default StyleSheet.create({
     ...commonStyles.commonBorderStyle,
     paddingHorizontal: 15,
     marginBottom: 20,
+    alignSelf: 'center',
   },
   textInput: {
     width: '80%',

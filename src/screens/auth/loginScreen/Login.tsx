@@ -1,23 +1,21 @@
 import React from 'react';
 import { SafeAreaView, Image, View } from 'react-native';
-import { NavigationStackOptions } from 'react-navigation-stack';
+import { NavigationStackScreenProps } from 'react-navigation-stack';
 
 import { LoginCarousel } from './components/loginCarousel';
 import { LoginButton } from './components/loginButton';
 import styles from './styles';
-import { StackNavigationProp } from 'react-navigation-stack/lib/typescript/src/vendor/types';
 
-export interface TLoginProps {
-  navigation: StackNavigationProp;
-}
+interface TLoginParams {}
 
-export interface NavStateless extends React.StatelessComponent<TLoginProps> {
-  navigationOptions?: NavigationStackOptions;
-}
+interface TLoginProps {}
 
-const Login: NavStateless = ({ navigation }): JSX.Element => {
+const Login: React.SFC<NavigationStackScreenProps<
+  TLoginParams,
+  TLoginProps
+>> = ({ navigation }): JSX.Element => {
   const onButtonPress: () => void = () => {
-    return navigation.navigate({ routeName: 'HomeRevenues' });
+    return navigation.navigate('HomeRevenues');
   };
 
   return (

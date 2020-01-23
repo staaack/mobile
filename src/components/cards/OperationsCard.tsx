@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'react-native';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
@@ -11,7 +10,7 @@ const OperationsCard: React.FC<Props> = () => {
     <Card
       topic="Operations"
       amount="$1,000.00"
-      LeftIcon={<Image source={icons.task} />}
+      leftIconSource={icons.task}
     />
   );
 };

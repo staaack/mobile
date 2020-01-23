@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import Colors from './theme/colors';
 
 export default StyleSheet.create({
@@ -17,7 +17,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   flexStart: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
   smallRoundedImage: {
@@ -25,16 +25,18 @@ export default StyleSheet.create({
     height: 60,
     borderRadius: 30,
   },
-  shadow: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
-    elevation: 4,
-  },
+  shadow:
+    Platform.OS === 'ios'
+      ? {
+          shadowColor: Colors.BLACK,
+          shadowOffset: {
+            width: 0,
+            height: 2,
+          },
+          shadowOpacity: 0.23,
+          shadowRadius: 2.62,
+        }
+      : { elevation: 2 },
   flexWrapList: {
     flexDirection: 'row',
     flexWrap: 'wrap',

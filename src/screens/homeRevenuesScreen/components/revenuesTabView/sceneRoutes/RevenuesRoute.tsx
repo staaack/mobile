@@ -1,11 +1,10 @@
 import React, { ReactElement } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import RouteWrapper from './RouteWrapper';
-import { Card } from '../../../../../components/customCard';
 import styles from './styles';
-import ConsultingCard from '../../../../../components/cards/ConsultingCard';
-import TrainingCard from '../../../../../components/cards/TrainingCard';
+import { ConsultingCard } from '../../../../../components/cards';
+import { TrainingCard } from '../../../../../components/cards';
 
 const RevenuesRoute: React.SFC<{}> = (): ReactElement => (
   <RouteWrapper>

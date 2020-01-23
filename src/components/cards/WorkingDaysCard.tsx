@@ -8,11 +8,7 @@ interface Props {}
 
 const WorkingDaysCard: React.FC<Props> = () => {
   return (
-    <Card
-      topic="Working days"
-      amount="256"
-      LeftIcon={<Image source={icons.calendar}  />}
-    />
+    <Card topic="Working days" amount="256" leftIconSource={icons.calendar} />
   );
 };
 

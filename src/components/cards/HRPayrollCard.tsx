@@ -8,11 +8,7 @@ interface Props {}
 
 const HRPayrollCard: React.FC<Props> = () => {
   return (
-    <Card
-      topic="HR & Payroll"
-      amount="$500.00"
-      LeftIcon={<Image source={icons.group} />}
-    />
+    <Card topic="HR & Payroll" amount="$500.00" leftIconSource={icons.group} />
   );
 };
 

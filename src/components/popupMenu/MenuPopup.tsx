@@ -6,16 +6,22 @@ import Dialog, {
 } from 'react-native-popup-dialog';
 
 import styles from './styles';
+import MenuItem from './MenuItem';
 
 interface Props {
   isVisible: boolean;
   onClose: () => boolean;
+  onTodayPress: () => void;
+  onThisMonthPress: () => void;
+  onThisYearPress: () => void;
 }
 
 const MenuPopup: React.FC<Props> = ({
   isVisible,
   onClose,
-  children,
+  onThisMonthPress,
+  onThisYearPress,
+  onTodayPress,
 }): JSX.Element => {
   const dialogRef = useRef<any>(null);
 
@@ -31,7 +37,11 @@ const MenuPopup: React.FC<Props> = ({
         onHardwareBackPress={onClose}
         overlayBackgroundColor="rgba(0, 0, 0, 0.56)"
       >
-        <DialogContent style={styles.dialogContent}>{children}</DialogContent>
+        <DialogContent style={styles.dialogContent}>
+          <MenuItem itemText="Today" onItemPress={onTodayPress} />
+          <MenuItem itemText="This month" onItemPress={onThisMonthPress} />
+          <MenuItem itemText="This year" onItemPress={onThisYearPress} />
+        </DialogContent>
       </Dialog>
     </View>
   );

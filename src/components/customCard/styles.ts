@@ -6,12 +6,14 @@ import Colors from '../../styles/theme/colors';
 
 export default StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    minHeight: 100,
-    width: Metrics.screenWidth / 2.3,
+    maxWidth: '48%',
+    minWidth: '35%',
+    flexGrow: 1,
     ...commonStyles.shadow,
-    paddingVertical: Metrics.averagePadding,
+    paddingVertical: 18,
     paddingHorizontal: Metrics.averagePadding + 3,
     backgroundColor: Colors.WHITE,
     margin: Metrics.smallMargin,
@@ -25,6 +27,7 @@ export default StyleSheet.create({
   },
   topicContainer: {
     ...commonStyles.flexStart,
+    marginTop: Metrics.averageMargin,
   },
   iconWrapper: {
     padding: Metrics.smallPadding,
@@ -37,4 +40,5 @@ export default StyleSheet.create({
     fontSize: Metrics.mediumTextSize,
     fontFamily: 'sans-serif',
   },
+  icon: { width: 20, height: 20 },
 });

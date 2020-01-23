@@ -29,7 +29,7 @@ export const appStackNav = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'HomeRevenues',
     defaultNavigationOptions: {
       headerShown: false,
       ...TransitionPresets.SlideFromRightIOS,

@@ -1,0 +1,9 @@
+export { default as ConsultingCard } from './ConsultingCard';
+export { default as HRPayrollCard } from './HRPayrollCard';
+export { default as MarketingCard } from './MarketingCard';
+export { default as EducationCard } from './EducationCard';
+export { default as OperationsCard } from './OperationsCard';
+export { default as RDCard } from './RDCard';
+export { default as TrainingCard } from './TrainingCard';
+export { default as DailyRateCard } from './DailyRateCard';
+export { default as WorkingDaysCard } from './WorkingDaysCard';

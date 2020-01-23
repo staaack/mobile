@@ -3,10 +3,10 @@ import { View, Text } from 'react-native';
 
 import RouteWrapper from './RouteWrapper';
 import EducationCard from '../../../../../components/cards/EducationCard';
-import RDCard from '../../../../../components/cards/RD';
-import HRPayrollCard from '../../../../../components/cards/HRPayroll';
-import OperationsCard from '../../../../../components/cards/Operations';
-import MarketingCard from '../../../../../components/cards/MarketingCard';
+import { RDCard } from '../../../../../components/cards';
+import { HRPayrollCard } from '../../../../../components/cards';
+import { OperationsCard } from '../../../../../components/cards';
+import { MarketingCard } from '../../../../../components/cards';
 
 const InvestmentsRoute: React.SFC<{}> = (): ReactElement => (
   <RouteWrapper>
