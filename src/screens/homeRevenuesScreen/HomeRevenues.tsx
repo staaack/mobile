@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, KeyboardAvoidingView, StatusBar } from 'react-native';
 import { NavigationStackOptions } from 'react-navigation-stack';
 
-import { TLoginProps } from '../auth/loginScreen/Login';
 import styles from './styles';
 import database from '../../database/db';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -13,9 +12,7 @@ import { RevenuesTabView } from './components/revenuesTabView';
 
 const company = database[0];
 
-interface TProps extends TLoginProps {}
-
-interface NavStatelessComponent extends React.StatelessComponent<TProps> {
+interface NavStatelessComponent extends React.StatelessComponent<{}> {
   navigationOptions?: NavigationStackOptions;
 }
 

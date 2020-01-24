@@ -58,9 +58,9 @@ const TimeIntervalPopup: React.FC<TProps> = ({
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{selectedTime}</Text>
-      <TouchableOpacity onPress={onArrowDownPress}>
+    <>
+      <TouchableOpacity onPress={onArrowDownPress} style={styles.container}>
+        <Text style={styles.text}>{selectedTime}</Text>
         <Icon name="ios-arrow-down" size={21} color={Colors.MAIN_COLOR} />
       </TouchableOpacity>
       <MenuPopup
@@ -72,7 +72,7 @@ const TimeIntervalPopup: React.FC<TProps> = ({
         <MenuItem itemText="This month" onItemPress={onMonthItemPress} />
         <MenuItem itemText="This year" onItemPress={onYearItemPress} />
       </MenuPopup>
-    </View>
+    </>
   );
 };
 
