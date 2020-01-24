@@ -1,4 +1,4 @@
-export default [
+const db: Array<{ [key: string]: any }> = [
   {
     name: 'Hackages',
     profilePic:
@@ -46,3 +46,5 @@ export default [
     ],
   },
 ];
+
+export default db;

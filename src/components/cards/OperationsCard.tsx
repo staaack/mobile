@@ -7,11 +7,7 @@ interface Props {}
 
 const OperationsCard: React.FC<Props> = () => {
   return (
-    <Card
-      topic="Operations"
-      amount="$1,000.00"
-      leftIconSource={icons.task}
-    />
+    <Card topic="Operations" amount="$1,000.00" leftIconSource={icons.task} />
   );
 };
 

@@ -12,9 +12,9 @@ export default StyleSheet.create({
   companyDetails: {
     ...commonStyles.flexSpaceBetweenRow,
     position: 'absolute',
-    top: 0,
+    top: -10,
     zIndex: 9999,
-    height: Metrics.screenHeight / 4,
+    height: Metrics.screenHeight / 4.5,
     padding: Metrics.averagePadding,
   },
   companyName: {

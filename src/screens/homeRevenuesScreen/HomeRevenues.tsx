@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, KeyboardAvoidingView } from 'react-native';
+import { View, KeyboardAvoidingView, StatusBar } from 'react-native';
 import { NavigationStackOptions } from 'react-navigation-stack';
 
 import { TLoginProps } from '../auth/loginScreen/Login';
@@ -22,6 +22,12 @@ interface NavStatelessComponent extends React.StatelessComponent<TProps> {
 const HomeRevenues: NavStatelessComponent = (): JSX.Element => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar
+        barStyle="dark-content"
+        hidden={false}
+        backgroundColor="#FFF"
+        translucent={true}
+      />
       <View style={styles.container}>
         <CompanyDetails
           companyName={company.name}

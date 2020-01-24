@@ -10,13 +10,17 @@ export default StyleSheet.create({
   },
   dialogStyles: {
     right: -Metrics.screenWidth / 4,
-    top: -Metrics.screenHeight / 7.3,
+    top: -Metrics.screenHeight / 9,
   },
   dialogContent: {
     alignItems: 'flex-start',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     width: Metrics.screenWidth / 2.5,
-    height: Metrics.screenHeight / 6,
     backgroundColor: '#F7F7F8',
+    paddingTop: Metrics.smallPadding,
+  },
+  item: {
+    marginVertical: Metrics.smallMargin,
+    width: '100%',
   },
 });

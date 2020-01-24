@@ -7,3 +7,4 @@ export { default as RDCard } from './RDCard';
 export { default as TrainingCard } from './TrainingCard';
 export { default as DailyRateCard } from './DailyRateCard';
 export { default as WorkingDaysCard } from './WorkingDaysCard';
+export { default as CurrentProjectCard } from './CurrentProjectCard';

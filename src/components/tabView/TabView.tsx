@@ -5,6 +5,7 @@ import Animated from 'react-native-reanimated';
 
 import Colors from '../../styles/theme/colors';
 import styles from './styles';
+import { Metrics } from '../../styles';
 
 interface TProps {
   routes: Array<{ key: string; title: string }>;
@@ -24,8 +25,7 @@ const TabsView: React.SFC<TProps> = ({ routes, sceneMap }): JSX.Element => {
     return (
       <View style={styles.tabBar}>
         {routes.map((route, i) => {
-          const tabTitlecolor =
-            i === index ? 'rgb(0, 0, 0)' : 'rgb(180, 180, 170)';
+          const tabTitlecolor = i === index ? Colors.BLACK : Colors.TEXT_GREY;
 
           return (
             <TouchableOpacity
@@ -43,9 +43,14 @@ const TabsView: React.SFC<TProps> = ({ routes, sceneMap }): JSX.Element => {
                 style={[
                   {
                     color: tabTitlecolor,
+                    flexWrap: 'nowrap',
+                    marginBottom: Metrics.smallMargin,
+                    fontSize: Metrics.tinyTextSize,
                     textAlign: 'center',
                   },
-                  index === i && { fontWeight: '700' },
+                  index === i && {
+                    fontWeight: '700',
+                  },
                 ]}
               >
                 {route.title}

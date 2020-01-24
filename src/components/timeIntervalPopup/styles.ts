@@ -6,6 +6,7 @@ import Metrics from '../../styles/Metrics';
 
 export default StyleSheet.create({
   container: {
+    position: 'relative',
     ...commonStyles.flexSpaceBetweenRow,
   },
   text: {

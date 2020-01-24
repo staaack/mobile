@@ -3,13 +3,21 @@ import { View, Text } from 'react-native';
 import styles from '../styles';
 import { TimeIntervalPopup } from '../../../components/timeIntervalPopup';
 
-interface Props {}
+const RevenuesTitle: React.FC<{}> = (): JSX.Element => {
+  const onTodayItemPress: () => void = () => {};
 
-const RevenuesTitle: React.FC<Props> = (): JSX.Element => {
+  const onMonthItemPress: () => void = () => {};
+
+  const onYearItemPress: () => void = () => {};
+
   return (
     <View style={styles.revenuesTitleContainer}>
       <Text style={styles.revenuesTitle}>Revenues</Text>
-      <TimeIntervalPopup />
+      <TimeIntervalPopup
+        onThisMonthPress={onMonthItemPress}
+        onThisYearPress={onYearItemPress}
+        onTodayPress={onTodayItemPress}
+      />
     </View>
   );
 };

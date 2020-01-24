@@ -20,9 +20,21 @@ export default StyleSheet.create({
     ...commonStyles.flexSpaceBetweenRow,
   },
   iconRight: {
-      marginRight: Metrics.bigMargin
+    marginRight: Metrics.bigMargin,
   },
   iconLeft: {
-    marginLeft: Metrics.bigMargin
-  }
+    marginLeft: Metrics.bigMargin,
+  },
+  menuPopup: {
+    top: -Metrics.screenHeight / 2.8,
+  },
+  header: {
+    ...commonStyles.commonBorderStyle,
+    borderWidth: 0.2,
+    ...commonStyles.removeShadow,
+  },
+  headerTitle: {
+    fontWeight: 'bold',
+    fontSize: Metrics.smallTextSize + 1,
+  },
 });

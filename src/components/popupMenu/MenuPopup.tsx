@@ -1,27 +1,23 @@
 import React, { useRef } from 'react';
-import { View } from 'react-native';
+import { View, StyleProp, ViewStyle } from 'react-native';
 import Dialog, {
   DialogContent,
   FadeAnimation,
 } from 'react-native-popup-dialog';
 
 import styles from './styles';
-import MenuItem from './MenuItem';
 
-interface Props {
+interface TProps {
   isVisible: boolean;
   onClose: () => boolean;
-  onTodayPress: () => void;
-  onThisMonthPress: () => void;
-  onThisYearPress: () => void;
+  customDialogStyles?: StyleProp<ViewStyle>;
 }
 
-const MenuPopup: React.FC<Props> = ({
+const MenuPopup: React.FC<TProps> = ({
   isVisible,
   onClose,
-  onThisMonthPress,
-  onThisYearPress,
-  onTodayPress,
+  children,
+  customDialogStyles,
 }): JSX.Element => {
   const dialogRef = useRef<any>(null);
 
@@ -32,16 +28,12 @@ const MenuPopup: React.FC<Props> = ({
         rounded={false}
         visible={isVisible}
         onTouchOutside={onClose}
-        dialogStyle={styles.dialogStyles}
+        dialogStyle={[styles.dialogStyles, customDialogStyles]}
         dialogAnimation={new FadeAnimation({ animationDuration: 250 })}
         onHardwareBackPress={onClose}
         overlayBackgroundColor="rgba(0, 0, 0, 0.56)"
       >
-        <DialogContent style={styles.dialogContent}>
-          <MenuItem itemText="Today" onItemPress={onTodayPress} />
-          <MenuItem itemText="This month" onItemPress={onThisMonthPress} />
-          <MenuItem itemText="This year" onItemPress={onThisYearPress} />
-        </DialogContent>
+        <DialogContent style={styles.dialogContent}>{children}</DialogContent>
       </Dialog>
     </View>
   );

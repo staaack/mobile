@@ -18,11 +18,11 @@ const teamMembers: Array<ListItemProps> = db[0].team.map(item => {
   };
 });
 
-interface TProps {
+export interface TNavigationProps {
   navigation?: NavigationStackProp;
 }
 
-const TeamRoute: React.FC<TProps> = ({
+const TeamRoute: React.FC<TNavigationProps> = ({
   navigation: { navigate },
 }): ReactElement => {
   const onChangeText = useCallback((text: string) => {

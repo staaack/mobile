@@ -47,4 +47,16 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.GREY,
   },
+  removeShadow:
+    Platform.OS === 'ios'
+      ? {
+          shadowColor: 'transparent',
+          shadowOffset: {
+            width: 0,
+            height: 0,
+          },
+          shadowOpacity: 0,
+          shadowRadius: 0,
+        }
+      : { elevation: 0 },
 });

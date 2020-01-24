@@ -10,6 +10,9 @@ import styles from './styles';
 import RightHeaderIcon from '../../components/header/RightHeaderIcon';
 import LeftHeaderIcon from '../../components/header/LeftHeaderIcon';
 import ProfileTabView from './components/profileTabView/ProfileTabView';
+import db from '../../database/db';
+
+const company = db[0];
 
 interface TProfileParams {}
 
@@ -20,7 +23,9 @@ export interface NavigationSFC
   extends React.StatelessComponent<
     NavigationStackScreenProps<TProfileParams, TProfileProps>
   > {
-  navigationOptions?: NavigationStackOptions;
+  navigationOptions?: (
+    props: NavigationStackScreenProps,
+  ) => NavigationStackOptions;
 }
 const UserProfile: NavigationSFC = (): JSX.Element => {
   return (
@@ -32,18 +37,22 @@ const UserProfile: NavigationSFC = (): JSX.Element => {
         translucent={true}
       />
       <ScrollView style={styles.scrollView}>
-        <UserDescription />
+        <UserDescription person={company.team[2]} />
         <ProfileTabView />
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-UserProfile.navigationOptions = {
-  headerShown: true,
-  headerLeft: () => <LeftHeaderIcon onIconPress={() => console.log('hello')} />,
-  headerRight: () => <RightHeaderIcon />,
-  headerTitle: '',
+UserProfile.navigationOptions = ({ navigation }) => {
+  return {
+    headerShown: true,
+    headerLeft: () => (
+      <LeftHeaderIcon onIconPress={() => navigation.goBack()} />
+    ),
+    headerRight: () => <RightHeaderIcon />,
+    headerTitle: '',
+  };
 };
 
 export default UserProfile;

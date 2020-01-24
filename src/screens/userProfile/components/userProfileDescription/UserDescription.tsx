@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ImageURISource } from 'react-native';
 
 import styles from './styles';
-import MenuPopup from '../../../../components/popupMenu/MenuPopup';
 import { ProfileImage } from '../profileImage';
+import UserName from './UserName';
+import UserRole from './UserRole';
+import Salary from './Salary';
+import TimeIntervalPopup from '../../../../components/timeIntervalPopup/TimeIntervalPopup';
 
-import database from '../../../../database/db';
+interface TProps {
+  person: {
+    imageURL: string;
+    name: string;
+    role: string;
+  };
+}
 
-interface Props {}
-
-const UserDescription: React.FC<Props> = (): JSX.Element => {
+const UserDescription: React.FC<TProps> = ({
+  person: { imageURL, role, name },
+}): JSX.Element => {
   const [visible, setDialogVisibility] = useState<boolean>(false);
 
   const onPopupClose: () => boolean = () => {
@@ -17,9 +26,24 @@ const UserDescription: React.FC<Props> = (): JSX.Element => {
     return true;
   };
 
+  const onYearPress = () => {};
+  const onTodayPress = () => {};
+  const onMonthPress = () => {};
+
   return (
     <View style={styles.container}>
-      <ProfileImage imageURL={{ uri: database[0].team[2].imageURL }} />
+      <View style={styles.popup}>
+        <TimeIntervalPopup
+          onThisMonthPress={onMonthPress}
+          onThisYearPress={onYearPress}
+          onTodayPress={onTodayPress}
+          dialogStyles={styles.dialog}
+        />
+      </View>
+      <ProfileImage imageURL={imageURL} />
+      <UserName userName={name} />
+      <UserRole role={role} />
+      <Salary />
     </View>
   );
 };

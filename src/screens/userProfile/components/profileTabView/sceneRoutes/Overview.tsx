@@ -3,6 +3,7 @@ import {
   WorkingDaysCard,
   TrainingCard,
   DailyRateCard,
+  CurrentProjectCard,
 } from '../../../../../components/cards';
 import RouteWrapper from '../../../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes/RouteWrapper';
 
@@ -14,6 +15,7 @@ const Overview: React.FC<Props> = () => {
       <WorkingDaysCard />
       <TrainingCard />
       <DailyRateCard />
+      <CurrentProjectCard />
     </RouteWrapper>
   );
 };

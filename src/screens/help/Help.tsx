@@ -1,14 +1,20 @@
 import React from 'react';
 import { View } from 'react-native';
-import { NavStateless } from '../auth/loginScreen/Login';
 
-const Help: NavStateless = (): JSX.Element => {
+import { NavigationSFC } from '../userProfile/UserProfile';
+import LeftHeaderIcon from '../../components/header/LeftHeaderIcon';
+import headerStyles from '../../components/header/styles';
+
+const Help: NavigationSFC = (): JSX.Element => {
   return <View></View>;
 };
 
-Help.navigationOptions = {
+Help.navigationOptions = ({ navigation }) => ({
   headerShown: true,
   headerTitle: 'Help',
-};
+  headerStyle: headerStyles.header,
+  headerTitleStyle: headerStyles.headerTitle,
+  headerLeft: () => <LeftHeaderIcon onIconPress={() => navigation.goBack()} />,
+});
 
 export default Help;
