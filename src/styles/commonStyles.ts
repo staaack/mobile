@@ -1,7 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
-import Colors from './theme/colors';
+import { Colors } from './theme';
 
-export default StyleSheet.create({
+export const commonStyles: any = StyleSheet.create({
   flexSpaceBetweenRow: {
     justifyContent: 'space-between',
     alignItems: 'center',

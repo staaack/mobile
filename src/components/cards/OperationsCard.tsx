@@ -2,13 +2,24 @@ import React from 'react';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
+import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
+import { withNavigation } from 'react-navigation';
 
-interface Props {}
+interface Props extends TNavigationProps {}
 
-const OperationsCard: React.FC<Props> = () => {
+const Operations: React.FC<Props> = ({ navigation }): JSX.Element => {
+  const onOperationCardPress: () => void = () =>
+    navigation.navigate({
+      routeName: 'OperationInvestments',
+    });
   return (
-    <Card topic="Operations" amount="$1,000.00" leftIconSource={icons.task} />
+    <Card
+      onCardPress={onOperationCardPress}
+      topic="Operations"
+      amount="$1,000.00"
+      leftIconSource={icons.task}
+    />
   );
 };
 
-export default OperationsCard;
+export const OperationsCard = withNavigation(Operations);

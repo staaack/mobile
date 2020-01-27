@@ -1,1 +1,1 @@
-export { default as HomeRevenuesScreen } from './HomeRevenues';
+export * from './HomeRevenues';

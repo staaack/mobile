@@ -1,21 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { Metrics } from '../../../styles';
-import commonStyles from '../../../styles/commonStyles';
-import Colors from '../../../styles/theme/colors';
+import { Metrics, commonStyles, Colors } from '../../../styles';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.WHITE,
     ...commonStyles.shadow,
-  },
-  companyDetails: {
-    ...commonStyles.flexSpaceBetweenRow,
-    position: 'absolute',
-    top: -10,
-    zIndex: 9999,
-    height: Metrics.screenHeight / 4.5,
-    padding: Metrics.averagePadding,
   },
   companyName: {
     fontSize: Metrics.bigTextSize + 3,

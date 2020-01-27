@@ -3,12 +3,15 @@ import { View, Text, ImageURISource } from 'react-native';
 
 import styles from './styles';
 import { ProfileImage } from '../profileImage';
-import UserName from './UserName';
-import UserRole from './UserRole';
-import Salary from './Salary';
-import TimeIntervalPopup from '../../../../components/timeIntervalPopup/TimeIntervalPopup';
+import { UserName } from './UserName';
+import { UserRole } from './UserRole';
+import { Salary } from './Salary';
+import { TimeIntervalPopup } from '../../../../components/timeIntervalPopup';
 
 interface TProps {
+  /**
+   * @description The person object which contain the user imageURL, name and role.
+   */
   person: {
     imageURL: string;
     name: string;
@@ -16,7 +19,7 @@ interface TProps {
   };
 }
 
-const UserDescription: React.FC<TProps> = ({
+export const UserDescription: React.FC<TProps> = ({
   person: { imageURL, role, name },
 }): JSX.Element => {
   const [visible, setDialogVisibility] = useState<boolean>(false);
@@ -47,5 +50,3 @@ const UserDescription: React.FC<TProps> = ({
     </View>
   );
 };
-
-export default UserDescription;

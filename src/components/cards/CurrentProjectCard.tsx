@@ -3,10 +3,12 @@ import { Image } from 'react-native';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
+import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
+import { withNavigation } from 'react-navigation';
 
-interface Props {}
+interface Props extends TNavigationProps {}
 
-const CurrentProjectCard: React.FC<Props> = (): JSX.Element => {
+const CurrentProject: React.FC<Props> = ({ navigation }): JSX.Element => {
   return (
     <Card
       topic="Current Project"
@@ -17,4 +19,4 @@ const CurrentProjectCard: React.FC<Props> = (): JSX.Element => {
   );
 };
 
-export default CurrentProjectCard;
+export const CurrentProjectCard = withNavigation(CurrentProject);

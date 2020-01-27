@@ -1,13 +1,8 @@
 import React from 'react';
-import TabsView from '../../../../components/tabView/TabView';
+import { TabsView } from '../../../../components/tabView';
 import Overview from './sceneRoutes/Overview';
 import InvestementsContributions from './sceneRoutes/InvestementsContributions';
 import RevenuesContributions from './sceneRoutes/RevenuesContributions';
-import { View } from 'react-native';
-import Colors from '../../../../styles/theme/colors';
-import RouteWrapper from '../../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes/RouteWrapper';
-
-interface Props {}
 
 const routes = [
   { key: 'overview', title: 'Overview' },
@@ -21,8 +16,6 @@ const sceneMap = {
   investmentsContrb: InvestementsContributions,
 };
 
-const ProfileTabView: React.FC<Props> = (): JSX.Element => (
+export const ProfileTabView: React.SFC<{}> = (): JSX.Element => (
   <TabsView routes={routes} sceneMap={sceneMap} />
 );
-
-export default ProfileTabView;

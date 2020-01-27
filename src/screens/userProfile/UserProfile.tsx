@@ -5,12 +5,10 @@ import {
   NavigationStackOptions,
 } from 'react-navigation-stack';
 
-import { UserDescription } from './components/userProfileDescription';
-import styles from './styles';
-import RightHeaderIcon from '../../components/header/RightHeaderIcon';
-import LeftHeaderIcon from '../../components/header/LeftHeaderIcon';
-import ProfileTabView from './components/profileTabView/ProfileTabView';
+import { ProfileTabView, UserDescription } from './components';
+import { RightHeaderIcon, LeftHeaderIcon } from '../../components/header';
 import db from '../../database/db';
+import styles from './styles';
 
 const company = db[0];
 
@@ -18,7 +16,10 @@ interface TProfileParams {}
 
 interface TProfileProps {}
 
-// navigation stateless functional component type
+/**
+ * @description navigation stateless functional component type
+ * @param React.StatelessComponent<NavigationStackScreenProps>
+ */
 export interface NavigationSFC
   extends React.StatelessComponent<
     NavigationStackScreenProps<TProfileParams, TProfileProps>
@@ -27,7 +28,7 @@ export interface NavigationSFC
     props: NavigationStackScreenProps,
   ) => NavigationStackOptions;
 }
-const UserProfile: NavigationSFC = (): JSX.Element => {
+export const UserProfile: NavigationSFC = (): JSX.Element => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar
@@ -54,5 +55,3 @@ UserProfile.navigationOptions = ({ navigation }) => {
     headerTitle: '',
   };
 };
-
-export default UserProfile;

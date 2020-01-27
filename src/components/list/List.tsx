@@ -16,60 +16,55 @@ export interface ListItemProps {
   surTitle: string;
 }
 
-interface Props {
+export interface IListProps {
   data: Array<ListItemProps>;
   rightText: string;
   rightTextStyles?: StyleProp<TextStyle>;
   onRightTextPress?: (name: string) => void;
 }
 
-const List: React.FC<Props> = ({
-  data,
-  rightTextStyles,
-  rightText,
-  onRightTextPress,
-}): JSX.Element => {
-  const renderListItem: ListRenderItem<ListItemProps> = useCallback(
-    ({ item }) => (
-      <View style={styles.container}>
-        <View style={styles.leftSide}>
-          <Image
-            source={{ uri: item.imageURL }}
-            style={styles.profileImage}
-            resizeMode="cover"
-          />
-          <View>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.subTitle}>{item.surTitle}</Text>
+export const List: React.FC<IListProps> = React.memo(
+  ({ data, rightTextStyles, rightText, onRightTextPress }): JSX.Element => {
+    const renderListItem: ListRenderItem<ListItemProps> = useCallback(
+      ({ item }) => (
+        <View style={styles.container}>
+          <View style={styles.leftSide}>
+            <Image
+              source={{ uri: item.imageURL }}
+              style={styles.profileImage}
+              resizeMode="cover"
+            />
+            <View>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.subTitle}>{item.surTitle}</Text>
+            </View>
+          </View>
+          <View style={styles.rightSide}>
+            {onRightTextPress ? (
+              <TouchableOpacity onPress={() => onRightTextPress(item.title)}>
+                <Text style={[styles.rightText, rightTextStyles]}>
+                  {rightText}
+                </Text>
+              </TouchableOpacity>
+            ) : (
+              <Text>
+                <Text style={[styles.rightText, rightTextStyles]}>
+                  {rightText}
+                </Text>
+              </Text>
+            )}
           </View>
         </View>
-        <View style={styles.rightSide}>
-          {onRightTextPress ? (
-            <TouchableOpacity onPress={() => onRightTextPress(item.title)}>
-              <Text style={[styles.rightText, rightTextStyles]}>
-                {rightText}
-              </Text>
-            </TouchableOpacity>
-          ) : (
-            <Text>
-              <Text style={[styles.rightText, rightTextStyles]}>
-                {rightText}
-              </Text>
-            </Text>
-          )}
-        </View>
-      </View>
-    ),
-    [data],
-  );
+      ),
+      [data],
+    );
 
-  return (
-    <FlatList
-      data={data}
-      renderItem={renderListItem}
-      keyExtractor={item => item.title}
-    />
-  );
-};
-
-export default List;
+    return (
+      <FlatList
+        data={data}
+        renderItem={renderListItem}
+        keyExtractor={item => item.title}
+      />
+    );
+  },
+);

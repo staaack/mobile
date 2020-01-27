@@ -1,1 +1,1 @@
-export { default as ConsultingRevenues } from './ConsultingInvest';
+export * from './ConsultingRev';

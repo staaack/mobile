@@ -1,1 +1,1 @@
-export { default as TabView } from './TabView';
+export * from './TabView';

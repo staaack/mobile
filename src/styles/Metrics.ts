@@ -3,7 +3,11 @@ import { Dimensions } from 'react-native';
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
 
-export default {
+type TMetrics = {
+  [key: string]: any;
+};
+
+export const Metrics: TMetrics = {
   screenWidth,
   screenHeight,
   radiusBasis: 20,
@@ -14,6 +18,7 @@ export default {
   averagePadding: 10,
   smallPadding: 8,
   tinyPadding: 5,
+  paddingForStatusBar: 40,
   bigPadding: 25,
   averageMargin: 10,
   smallMargin: 5,

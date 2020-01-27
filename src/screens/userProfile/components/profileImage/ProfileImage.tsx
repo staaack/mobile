@@ -6,7 +6,7 @@ interface Props {
   imageURL: string;
 }
 
-const ProfileImage: React.FC<Props> = ({ imageURL }): ReactElement => {
+export const ProfileImage: React.FC<Props> = ({ imageURL }): ReactElement => {
   return (
     <View style={styles.imageContainer}>
       <Image
@@ -32,5 +32,3 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 });
-
-export default ProfileImage;

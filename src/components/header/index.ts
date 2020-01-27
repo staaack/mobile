@@ -1,1 +1,5 @@
-export { default as Header } from './Header';
+export * from './Header';
+export * from './LeftHeaderIcon';
+export * from './RightHeaderIcon';
+
+export  * from "./styles";

@@ -6,8 +6,6 @@ interface Props {
   role: string;
 }
 
-const UserRole: React.FC<Props> = ({ role }): JSX.Element => {
+export const UserRole: React.FC<Props> = ({ role }): JSX.Element => {
   return <Text style={styles.smallText}>{role}</Text>;
 };
-
-export default UserRole;

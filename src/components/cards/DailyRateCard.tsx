@@ -3,13 +3,25 @@ import { Image } from 'react-native';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
+import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
+import { withNavigation } from 'react-navigation';
 
-interface Props {}
+interface Props extends TNavigationProps {}
 
-const DailyRateCard: React.FC<Props> = () => {
+const DailyRate: React.SFC<Props> = ({ navigation }): JSX.Element => {
+  const onDailyRateCardPress: () => void = () =>
+    navigation.navigate({
+      routeName: '',
+    });
+
   return (
-    <Card topic="Daily rate" amount="$560.00" leftIconSource={icons.group} />
+    <Card
+      onCardPress={onDailyRateCardPress}
+      topic="Daily rate"
+      amount="$560.00"
+      leftIconSource={icons.group}
+    />
   );
 };
 
-export default DailyRateCard;
+export const DailyRateCard = withNavigation(DailyRate);

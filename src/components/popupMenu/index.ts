@@ -1,1 +1,3 @@
-export { default as MenuPopup } from './MenuPopup';
+export * from './MenuPopup';
+export * from './MenuItem';
+export * from './MenuPopup';

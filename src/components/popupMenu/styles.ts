@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   dialogStyles: {
     right: -Metrics.screenWidth / 4,
-    top: -Metrics.screenHeight / 9,
+    top: -Metrics.screenHeight / 10,
   },
   dialogContent: {
     alignItems: 'flex-start',

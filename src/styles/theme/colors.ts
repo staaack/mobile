@@ -2,7 +2,7 @@ interface TColors {
   [key: string]: string;
 }
 
-const Colors: TColors = {
+export const Colors: TColors = {
   MAIN_COLOR: '#1EA276',
   WHITE: '#FFFFFF',
   GREY: '#B1B4B4',
@@ -12,5 +12,3 @@ const Colors: TColors = {
   BACHGROUND: '#062133',
   TEXT_GREY: 'rgba(6, 33, 51, 0.6)',
 };
-
-export default Colors;

@@ -9,7 +9,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './styles';
-import Colors from '../../styles/theme/colors';
+import { Colors } from '../../styles';
 
 interface Props {
   topic: string;
@@ -20,7 +20,7 @@ interface Props {
   isTrendingUp?: boolean;
 }
 
-const Card: React.FC<Props> = ({
+export const Card: React.FC<Props> = ({
   amount,
   topic,
   onCardPress,
@@ -53,5 +53,3 @@ const Card: React.FC<Props> = ({
     </TouchableWithoutFeedback>
   );
 };
-
-export default Card;

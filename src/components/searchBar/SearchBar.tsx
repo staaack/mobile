@@ -1,17 +1,17 @@
 import React, { useState, useCallback } from 'react';
-import { View, KeyboardAvoidingView } from 'react-native';
+import { KeyboardAvoidingView } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './styles';
-import Colors from '../../styles/theme/colors';
+import { Colors } from '../../styles';
 
 interface Props {
   placeholder: string;
   onChangeText: (text: string) => void;
 }
 
-const SearchBar: React.FC<Props> = ({
+export const SearchBar: React.FC<Props> = ({
   placeholder,
   onChangeText,
 }): JSX.Element => {
@@ -37,5 +37,3 @@ const SearchBar: React.FC<Props> = ({
     </KeyboardAvoidingView>
   );
 };
-
-export default SearchBar;

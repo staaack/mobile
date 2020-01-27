@@ -3,23 +3,23 @@ import { View, TouchableOpacity } from 'react-native';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 
-import styles from './styles';
-import Colors from '../../styles/theme/colors';
+import { headerStyles } from './styles';
+import { Colors } from '../../styles';
 
 interface Props {
   onRightIconPress?: () => void;
   onLeftIconPress?: () => void;
 }
 
-const Header: React.FC<Props> = ({
+export const Header: React.FC<Props> = ({
   onRightIconPress,
   onLeftIconPress,
 }): JSX.Element => {
   return (
-    <View style={styles.container}>
+    <View style={headerStyles.container}>
       <TouchableOpacity
         style={{ width: 30, height: 30 }}
-        onPress={() => console.log('dhdhdhdhdh')}
+        onPress={() => console.log('header')}
       >
         <Ionicon
           name="ios-arrow-round-back"
@@ -41,5 +41,3 @@ const Header: React.FC<Props> = ({
     </View>
   );
 };
-
-export default Header;

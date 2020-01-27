@@ -3,16 +3,15 @@ import { View } from 'react-native';
 
 import { NavigationSFC } from '../userProfile/UserProfile';
 
+import { LeftHeaderIcon, headerStyles } from '../../components/header';
 import { LogoutButton } from '../../components/logoutButton';
-import LeftHeaderIcon from '../../components/header/LeftHeaderIcon';
+import { DisplaySalarySwitch as Switch } from './components';
 import styles from './styles';
-import headerStyles from '../../components/header/styles';
-import DisplaySalarySwitch from './components/DisplaySalarySwitch';
 
-const Settings: NavigationSFC = (): JSX.Element => {
+export const Settings: NavigationSFC = (): JSX.Element => {
   return (
     <View style={styles.container}>
-      <DisplaySalarySwitch />
+      <Switch />
       <LogoutButton />
     </View>
   );
@@ -25,5 +24,3 @@ Settings.navigationOptions = ({ navigation }) => ({
   headerTitleStyle: headerStyles.headerTitle,
   headerLeft: () => <LeftHeaderIcon onIconPress={() => navigation.goBack()} />,
 });
-
-export default Settings;

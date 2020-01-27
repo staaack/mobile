@@ -7,7 +7,7 @@ interface Props {
   percentage: number;
 }
 
-const ProgressBar: React.FC<Props> = ({ percentage }) => {
+export const ProgressBar: React.FC<Props> = ({ percentage }) => {
   return (
     <View style={styles.container}>
       <View style={styles.progressBar}>
@@ -22,5 +22,3 @@ const ProgressBar: React.FC<Props> = ({ percentage }) => {
     </View>
   );
 };
-
-export default ProgressBar;

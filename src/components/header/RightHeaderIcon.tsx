@@ -3,18 +3,20 @@ import { TouchableOpacity } from 'react-native';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import { withNavigation } from 'react-navigation';
 
-import Colors from '../../styles/theme/colors';
-import styles from './styles';
-import { MenuPopup } from '../popupMenu';
-import MenuItem from '../popupMenu/MenuItem';
 import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
-import { Metrics } from '../../styles';
+
+import { headerStyles as styles } from './styles';
+import { Colors } from '../../styles';
+import { MenuPopup, MenuItem } from '../popupMenu';
 
 export interface Props extends TNavigationProps {
+  /**
+   * @description function to be executed when pressing on the right header icon
+   */
   onIconPress?: () => void;
 }
 
-const RightHeaderIcon: React.SFC<Props> = ({
+const Icon: React.SFC<Props> = ({
   onIconPress = () => null,
   navigation,
 }): ReactElement => {
@@ -61,4 +63,4 @@ const RightHeaderIcon: React.SFC<Props> = ({
   );
 };
 
-export default withNavigation(RightHeaderIcon);
+export const RightHeaderIcon = withNavigation(Icon);

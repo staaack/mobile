@@ -4,9 +4,9 @@ import { withNavigation } from 'react-navigation';
 import { NavigationStackProp } from 'react-navigation-stack';
 
 import RouteWrapper from './RouteWrapper';
-import SearchBar from '../../../../../components/searchBar/SearchBar';
+import { SearchBar } from '../../../../../components/searchBar';
 import styles from './styles';
-import List, { ListItemProps } from '../../../../../components/list/List';
+import { List, ListItemProps } from '../../../../../components/list';
 
 import db from '../../../../../database/db';
 
@@ -22,7 +22,7 @@ export interface TNavigationProps {
   navigation?: NavigationStackProp;
 }
 
-const TeamRoute: React.FC<TNavigationProps> = ({
+export const Team: React.FC<TNavigationProps> = ({
   navigation: { navigate },
 }): ReactElement => {
   const onChangeText = useCallback((text: string) => {
@@ -46,4 +46,5 @@ const TeamRoute: React.FC<TNavigationProps> = ({
     </RouteWrapper>
   );
 };
-export default withNavigation(TeamRoute);
+
+export const TeamRoute = withNavigation(Team);

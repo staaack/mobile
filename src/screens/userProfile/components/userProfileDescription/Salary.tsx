@@ -4,8 +4,6 @@ import styles from './styles';
 
 interface Props {}
 
-const Salary: React.FC<Props> = (): ReactElement => {
+export const Salary: React.FC<Props> = (): ReactElement => {
   return <Text style={styles.smallText}>Salary</Text>;
 };
-
-export default Salary;

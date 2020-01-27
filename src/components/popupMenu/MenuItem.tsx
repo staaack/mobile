@@ -7,12 +7,13 @@ interface Props {
   itemText: string;
 }
 
-const MenuItem: React.FC<Props> = ({ onItemPress, itemText }): ReactElement => {
+export const MenuItem: React.FC<Props> = ({
+  onItemPress,
+  itemText,
+}): ReactElement => {
   return (
     <TouchableOpacity onPress={onItemPress} style={styles.item}>
       <Text>{itemText}</Text>
     </TouchableOpacity>
   );
 };
-
-export default MenuItem;

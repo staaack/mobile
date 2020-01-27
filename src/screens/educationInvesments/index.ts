@@ -1,1 +1,1 @@
-export { default as EducationInvestments } from './EducationInvest';
+export * from './EducationInvest';

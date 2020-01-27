@@ -6,7 +6,7 @@ import styles from './styles';
 import { ConsultingCard } from '../../../../../components/cards';
 import { TrainingCard } from '../../../../../components/cards';
 
-const RevenuesRoute: React.SFC<{}> = (): ReactElement => (
+export const RevenuesRoute: React.SFC<{}> = (): ReactElement => (
   <RouteWrapper>
     <View style={styles.container}>
       <ConsultingCard />
@@ -14,5 +14,3 @@ const RevenuesRoute: React.SFC<{}> = (): ReactElement => (
     </View>
   </RouteWrapper>
 );
-
-export default RevenuesRoute;

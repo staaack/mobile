@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
-import Colors from '../../styles/theme/colors';
-import { Metrics, commonStyles } from '../../styles';
 
-export default StyleSheet.create({
+import { Colors, Metrics, commonStyles } from '../../styles';
+
+export const headerStyles = StyleSheet.create({
   container: {
     position: 'absolute',
     top: 0,

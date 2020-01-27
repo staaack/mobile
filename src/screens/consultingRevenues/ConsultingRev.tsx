@@ -1,10 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
+import { RevenuesScreen } from '../../components/RevenuesScreen';
 
 interface Props {}
 
-const Consulting: React.FC<Props> = () => {
-  return <View />;
+export const ConsultingRevenues: React.FC<Props> = (): JSX.Element => {
+  return (
+    <RevenuesScreen
+      revenuesAmount="10,254.00"
+      revenuesTopic="Consulting Revenues"
+      scenes={{}}
+    />
+  );
 };
-
-export default Consulting;

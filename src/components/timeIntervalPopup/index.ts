@@ -1,1 +1,1 @@
-export { default as TimeIntervalPopup } from './TimeIntervalPopup';
+export * from './TimeIntervalPopup';

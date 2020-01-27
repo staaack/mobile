@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, Image, View } from 'react-native';
 
 import styles from '../styles';
+import { DescriptionHeader } from '../../../components/descriptionHeader';
 
 interface Props {
   imageURI: string;
@@ -10,10 +11,10 @@ interface Props {
 
 const CompanyDetails: React.FC<Props> = ({ imageURI, companyName }) => {
   return (
-    <View style={styles.companyDetails}>
+    <DescriptionHeader>
       <Text style={styles.companyName}>{companyName}</Text>
       <Image source={{ uri: imageURI }} style={styles.profilePic} />
-    </View>
+    </DescriptionHeader>
   );
 };
 

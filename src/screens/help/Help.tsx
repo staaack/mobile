@@ -1,11 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { NavigationSFC } from '../userProfile/UserProfile';
-import LeftHeaderIcon from '../../components/header/LeftHeaderIcon';
-import headerStyles from '../../components/header/styles';
+import { NavigationSFC } from '../userProfile';
+import { LeftHeaderIcon, headerStyles } from '../../components/header';
 
-const Help: NavigationSFC = (): JSX.Element => {
+export const Help: NavigationSFC = (): JSX.Element => {
   return <View></View>;
 };
 

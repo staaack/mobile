@@ -8,7 +8,7 @@ interface Props {
   amount: string;
 }
 
-const Money: React.FC<Props> = ({ amount, title }) => {
+export const Money: React.FC<Props> = ({ amount, title }) => {
   return (
     <View style={styles.money}>
       <Text style={styles.title}>{title}</Text>
@@ -16,5 +16,3 @@ const Money: React.FC<Props> = ({ amount, title }) => {
     </View>
   );
 };
-
-export default Money;

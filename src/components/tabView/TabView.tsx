@@ -1,22 +1,22 @@
-import React, { useState, ComponentType, ReactElement } from 'react';
+import React, { useState, ReactElement, ElementType } from 'react';
 import { View, TouchableOpacity } from 'react-native';
-import { TabView, SceneMap, SceneRendererProps } from 'react-native-tab-view';
+import { TabView, SceneMap } from 'react-native-tab-view';
 import Animated from 'react-native-reanimated';
 
-import Colors from '../../styles/theme/colors';
 import styles from './styles';
-import { Metrics } from '../../styles';
+import { Metrics, Colors } from '../../styles';
 
-interface TProps {
+export interface TTabsViewProps {
   routes: Array<{ key: string; title: string }>;
   sceneMap: {
-    [key: string]: ComponentType<
-      SceneRendererProps & { route: { key: string; title: string } }
-    >;
+    [key: string]: React.ComponentType<any>;
   };
 }
 
-const TabsView: React.SFC<TProps> = ({ routes, sceneMap }): JSX.Element => {
+export const TabsView: React.SFC<TTabsViewProps> = ({
+  routes,
+  sceneMap,
+}): JSX.Element => {
   const [index, updateIndex] = useState<number>(0);
 
   const _handleIndexChange = (index: number) => updateIndex(index);
@@ -72,5 +72,3 @@ const TabsView: React.SFC<TProps> = ({ routes, sceneMap }): JSX.Element => {
     />
   );
 };
-
-export default TabsView;

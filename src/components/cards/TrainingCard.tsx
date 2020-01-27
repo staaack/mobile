@@ -1,14 +1,21 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
+import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
 
-interface Props {}
+interface Props extends TNavigationProps {}
 
-const TrainingCard: React.FC<Props> = () => {
+const Training: React.SFC<Props> = ({ navigation }): JSX.Element => {
+  const onTrainingCardPress: () => void = () =>
+    navigation.navigate({
+      routeName: 'TrainingRevenues',
+    });
+
   return (
     <Card
+      onCardPress={onTrainingCardPress}
       topic="Trainings"
       amount="$13,000.00"
       leftIconSource={icons.bookBookmark}
@@ -16,4 +23,4 @@ const TrainingCard: React.FC<Props> = () => {
   );
 };
 
-export default TrainingCard;
+export const TrainingCard = withNavigation(Training);

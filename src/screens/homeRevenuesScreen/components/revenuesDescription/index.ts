@@ -1,1 +1,1 @@
-export { default as RevenuesDescription } from './RevenuesDescription';
+export * from './RevenuesDescription';

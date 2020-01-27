@@ -7,12 +7,12 @@ interface Props {
   onLogoutPress?: () => void;
 }
 
-const Logout: React.FC<Props> = ({ onLogoutPress }): JSX.Element => {
+export const LogoutButton: React.FC<Props> = ({
+  onLogoutPress,
+}): JSX.Element => {
   return (
     <TouchableOpacity onPress={onLogoutPress}>
       <Text style={styles.text}>Logout</Text>
     </TouchableOpacity>
   );
 };
-
-export default Logout;

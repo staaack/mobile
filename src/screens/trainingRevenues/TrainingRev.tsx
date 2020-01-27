@@ -3,8 +3,6 @@ import { View } from 'react-native';
 
 interface Props {}
 
-const TrainingRev: React.FC<Props> = () => {
+export const TrainingRevenues: React.SFC<Props> = (): JSX.Element => {
   return <View />;
 };
-
-export default TrainingRev;

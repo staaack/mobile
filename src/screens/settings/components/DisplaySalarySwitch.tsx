@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import { View, Text, Switch } from 'react-native';
 import styles from '../styles';
-import Colors from '../../../styles/theme/colors';
+import { Colors } from '../../../styles';
 
 interface Props {}
 
-const DisplaySalarySwitch: React.FC<Props> = (): JSX.Element => {
+export const DisplaySalarySwitch: React.FC<Props> = (): JSX.Element => {
   const [value, onValueChanged] = useState<boolean>(false);
 
   const onSwitchPress: () => void = useCallback(() => onValueChanged(!value), [
@@ -28,5 +28,3 @@ const DisplaySalarySwitch: React.FC<Props> = (): JSX.Element => {
     </View>
   );
 };
-
-export default DisplaySalarySwitch;

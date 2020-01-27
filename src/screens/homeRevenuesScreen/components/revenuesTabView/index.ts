@@ -1,1 +1,1 @@
-export { default as RevenuesTabView  } from "./RevenuesTabView"
+export * from './RevenuesTabView';

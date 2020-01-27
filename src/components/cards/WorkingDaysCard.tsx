@@ -3,13 +3,25 @@ import { Image } from 'react-native';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
+import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
+import { withNavigation } from 'react-navigation';
 
-interface Props {}
+interface Props extends TNavigationProps {}
 
-const WorkingDaysCard: React.FC<Props> = () => {
+const WorkingDays: React.FC<Props> = ({ navigation }): JSX.Element => {
+  const onWorkingDaysCardPress: () => void = () =>
+    navigation.navigate({
+      routeName: '',
+    });
+
   return (
-    <Card topic="Working days" amount="256" leftIconSource={icons.calendar} />
+    <Card
+      onCardPress={onWorkingDaysCardPress}
+      topic="Working days"
+      amount="256"
+      leftIconSource={icons.calendar}
+    />
   );
 };
 
-export default WorkingDaysCard;
+export const WorkingDaysCard = withNavigation(WorkingDays);

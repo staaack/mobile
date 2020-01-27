@@ -1,11 +1,11 @@
 import React from 'react';
 
-import TabsView from '../../../../components/tabView/TabView';
-import RevenuesRoute from '../revenuesTabView/sceneRoutes/RevenuesRoute';
+import { TabsView } from '../../../../components/tabView';
+import {RevenuesRoute} from '../revenuesTabView/sceneRoutes';
 import InvestmentsRoute from '../revenuesTabView/sceneRoutes/InvestmentsRoute';
-import TeamRoute from '../revenuesTabView/sceneRoutes/TeamRoute';
+import { TeamRoute } from '../revenuesTabView/sceneRoutes';
 
-const RevenuesTabView: React.FC<{}> = (): JSX.Element => {
+export const RevenuesTabView: React.FC<{}> = (): JSX.Element => {
   const routes = [
     { key: 'revenues', title: 'Revenues' },
     { key: 'investments', title: 'Investments' },
@@ -20,5 +20,3 @@ const RevenuesTabView: React.FC<{}> = (): JSX.Element => {
 
   return <TabsView routes={routes} sceneMap={sceneMap} />;
 };
-
-export default RevenuesTabView;
