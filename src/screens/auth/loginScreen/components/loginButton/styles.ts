@@ -12,7 +12,9 @@ export default StyleSheet.create({
   },
   buttonText: {
     color: Colors.WHITE,
-    fontSize: 16,
+    fontSize: 12,
     lineHeight: 18,
+    fontFamily: 'Poppins',
+    fontWeight: 'bold',
   },
 });

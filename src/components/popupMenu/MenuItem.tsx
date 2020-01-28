@@ -13,7 +13,7 @@ export const MenuItem: React.FC<Props> = ({
 }): ReactElement => {
   return (
     <TouchableOpacity onPress={onItemPress} style={styles.item}>
-      <Text>{itemText}</Text>
+      <Text style={styles.item_text}>{itemText}</Text>
     </TouchableOpacity>
   );
 };

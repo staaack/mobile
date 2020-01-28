@@ -6,4 +6,14 @@ export default StyleSheet.create({
     padding: Metrics.averagePadding,
     justifyContent: 'space-around',
   },
+  title: {
+  	fontFamily: "Poppins",
+  	fontWeight: "normal",
+  	fontSize: 12
+  },
+  amount: {
+  	fontFamily: "Poppins",
+  	fontWeight: "bold",
+  	fontSize: 18
+  }
 });

@@ -35,7 +35,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.MAIN_COLOR,
     fontSize: Metrics.mediumTextSize,
-    fontFamily: 'sans-serif',
+    fontFamily: 'Poppins',
   },
   icon: { width: 20, height: 20 },
 });

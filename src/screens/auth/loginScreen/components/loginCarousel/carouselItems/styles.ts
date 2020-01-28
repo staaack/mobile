@@ -11,7 +11,7 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
   },
   text: {
-    fontFamily: 'Arial',
+    fontFamily: 'Poppins',
     color: Colors.BLACK,
     fontWeight: 'bold',
     fontSize: Metrics.bigTextSize,

@@ -24,8 +24,8 @@ export const RevenuesHeader: React.FC<TProps> = React.memo(
   return (
     <DescriptionHeader onBackIconPress={goBack}>
       <View style={styles.leftView}>
-        <Text>{title}</Text>
-        <Text>{amount}</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.amount}>{amount}</Text>
       </View>
       <TimeIntervalPopup
         onThisMonthPress={onThisMonthPress}

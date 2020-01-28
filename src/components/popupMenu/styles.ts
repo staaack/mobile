@@ -23,4 +23,8 @@ export default StyleSheet.create({
     marginVertical: Metrics.smallMargin,
     width: '100%',
   },
+  item_text: {
+    fontFamily: "Poppins",
+    fontWeight: "normal"
+  }
 });
