@@ -31,6 +31,11 @@ export default StyleSheet.create({
     backgroundColor: Colors.LIGHT_GREY,
     borderRadius: 20,
   },
+  title: {
+    fontWeight: 'normal',
+    fontSize: 12,
+    fontFamily: 'Poppins',
+  },
   amount: {
     fontWeight: 'bold',
     color: Colors.MAIN_COLOR,
