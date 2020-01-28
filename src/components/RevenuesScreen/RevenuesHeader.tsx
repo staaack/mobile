@@ -12,7 +12,8 @@ interface TProps extends TIntervalTimeProps {
   goBack?: () => void;
 }
 
-export const RevenuesHeader: React.FC<TProps> = ({
+export const RevenuesHeader: React.FC<TProps> = React.memo(
+  ({
   title,
   amount,
   onThisMonthPress,
@@ -33,4 +34,4 @@ export const RevenuesHeader: React.FC<TProps> = ({
       />
     </DescriptionHeader>
   );
-};
+});

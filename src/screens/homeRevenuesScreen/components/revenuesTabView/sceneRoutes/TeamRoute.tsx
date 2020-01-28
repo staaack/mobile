@@ -9,6 +9,7 @@ import styles from './styles';
 import { List, ListItemProps } from '../../../../../components/list';
 
 import db from '../../../../../database/db';
+import { SearchListTab } from '../../../../../components/searchListTab';
 
 const teamMembers: Array<ListItemProps> = db[0].team.map(item => {
   return {
@@ -34,16 +35,13 @@ export const Team: React.FC<TNavigationProps> = ({
   };
 
   return (
-    <RouteWrapper>
-      <View style={styles.tabViewContent}>
-        <SearchBar placeholder="Search Team" onChangeText={onChangeText} />
-        <List
-          data={teamMembers}
-          rightText="View profile"
-          onRightTextPress={onViewProfilePress}
-        />
-      </View>
-    </RouteWrapper>
+    <SearchListTab
+      data={teamMembers}
+      onRightTextPress={onViewProfilePress}
+      placeholder="Search Team"
+      onSearchBarTextChange={onChangeText}
+      rightText="View Profile"
+    />
   );
 };
 

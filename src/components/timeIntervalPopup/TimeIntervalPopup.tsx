@@ -13,7 +13,7 @@ export interface TIntervalTimeProps {
   dialogStyles?: StyleProp<ViewStyle>;
 }
 
-export const TimeIntervalPopup: React.FC<TIntervalTimeProps> = React.memo(
+export const TimeIntervalPopup: React.SFC<TIntervalTimeProps> = React.memo(
   ({
     onThisMonthPress,
     onThisYearPress,

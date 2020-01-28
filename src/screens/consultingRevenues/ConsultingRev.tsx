@@ -8,7 +8,9 @@ export const ConsultingRevenues: React.FC<Props> = (): JSX.Element => {
     <RevenuesScreen
       revenuesAmount="10,254.00"
       revenuesTopic="Consulting Revenues"
-      scenes={{}}
+      scenes={{
+        
+      }}
     />
   );
 };

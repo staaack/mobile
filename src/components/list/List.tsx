@@ -18,7 +18,13 @@ export interface ListItemProps {
 
 export interface IListProps {
   data: Array<ListItemProps>;
+  /**
+   * @description List Item right text
+   */
   rightText: string;
+  /**
+   * @description styles object override the default styles
+   */
   rightTextStyles?: StyleProp<TextStyle>;
   onRightTextPress?: (name: string) => void;
 }
