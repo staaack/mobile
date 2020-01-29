@@ -6,13 +6,8 @@ interface Props {
   children: React.ReactNode;
 }
 
-const SlideComponent: React.FC<Props> = ({ children }): JSX.Element => {
-  return (
-    <View
-      style={styles.sliderItem}>
-      {children}
-    </View>
-  );
-};
-
-export default SlideComponent;
+export const SlideComponent: React.FC<Props> = React.memo(
+  ({ children }): JSX.Element => {
+    return <View style={styles.sliderItem}>{children}</View>;
+  },
+);

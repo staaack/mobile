@@ -36,4 +36,7 @@ export default StyleSheet.create({
     fontFamily: 'Arial',
     fontWeight: 'bold',
   },
+  dialog: {
+    top: -Metrics.screenHeight / 15,
+  },
 });

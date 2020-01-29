@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { View } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import SlideComponent from './SlideComponent';
 
+import { SlideComponent } from './SlideComponent';
 import styles from './styles';
 import ShareData from './carouselItems/ShareData';
 import TrackConribution from './carouselItems/TrackConribution';

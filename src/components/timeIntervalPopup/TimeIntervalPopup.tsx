@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import { Text, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './styles';
 import { Colors } from '../../styles';
 import { MenuPopup, MenuItem } from '../popupMenu';
+import {
+  TContextValue,
+  LocalizationContext,
+} from '../../localization/LocalizationContext';
 
 export interface TIntervalTimeProps {
   onTodayPress: () => void;
@@ -20,8 +24,16 @@ export const TimeIntervalPopup: React.SFC<TIntervalTimeProps> = React.memo(
     onTodayPress,
     dialogStyles,
   }): JSX.Element => {
+    const { translations } = useContext<TContextValue>(LocalizationContext);
+
     const [isDialogVisible, updateDialogVisibility] = useState<boolean>(false);
-    const [selectedTime, updateSelectedTime] = useState<string>('Today');
+    const [selectedTime, updateSelectedTime] = useState<string>(
+      translations['popup.today'],
+    );
+
+    const today = translations['popup.today'];
+    const thisMonth = translations['popup.today'];
+    const thisYear = translations['popup.today'];
 
     const onArrowDownPress: () => void = () =>
       updateDialogVisibility(!isDialogVisible);
@@ -33,19 +45,19 @@ export const TimeIntervalPopup: React.SFC<TIntervalTimeProps> = React.memo(
     };
 
     const onTodayItemPress: () => void = () => {
-      updateSelectedTime('Today');
+      updateSelectedTime(today);
       onThisMonthPress();
       onDialogClose();
     };
 
     const onMonthItemPress: () => void = () => {
-      updateSelectedTime('This month');
+      updateSelectedTime(thisMonth);
       onThisYearPress();
       onDialogClose();
     };
 
     const onYearItemPress: () => void = () => {
-      updateSelectedTime('This year');
+      updateSelectedTime(thisYear);
       onTodayPress();
       onDialogClose();
     };
@@ -61,9 +73,9 @@ export const TimeIntervalPopup: React.SFC<TIntervalTimeProps> = React.memo(
           onClose={onDialogClose}
           customDialogStyles={dialogStyles}
         >
-          <MenuItem itemText="Today" onItemPress={onTodayItemPress} />
-          <MenuItem itemText="This month" onItemPress={onMonthItemPress} />
-          <MenuItem itemText="This year" onItemPress={onYearItemPress} />
+          <MenuItem itemText={today} onItemPress={onTodayItemPress} />
+          <MenuItem itemText={thisMonth} onItemPress={onMonthItemPress} />
+          <MenuItem itemText={thisYear} onItemPress={onYearItemPress} />
         </MenuPopup>
       </>
     );
