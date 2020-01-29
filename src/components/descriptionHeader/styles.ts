@@ -11,9 +11,9 @@ export default StyleSheet.create({
     top: -10,
     zIndex: 9999,
     minHeight: Metrics.screenHeight / 4,
+    justifyContent: 'flex-end',
   },
   content: {
     ...commonStyles.flexSpaceBetweenRow,
-    padding: Metrics.averagePadding,
   },
 });

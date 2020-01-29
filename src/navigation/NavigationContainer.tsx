@@ -13,7 +13,7 @@ import {
   ConsultingRevenues,
   RDInvestments,
   EducationInvestments,
-  OperationInvestments,
+  OperationsInvestments,
   TrainingRevenues,
   HRInvestments,
   MarketingInvestments,
@@ -53,7 +53,7 @@ export const AppStackNavigator = createAppContainer(
         screen: MarketingInvestments,
       },
       OperationInvestments: {
-        screen: OperationInvestments,
+        screen: OperationsInvestments,
       },
       TrainingRevenues: {
         screen: TrainingRevenues,

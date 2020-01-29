@@ -1,7 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
 import { Colors } from './theme';
 
-export const commonStyles: any = StyleSheet.create({
+export const commonStyles = StyleSheet.create({
   flexSpaceBetweenRow: {
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -19,6 +19,10 @@ export const commonStyles: any = StyleSheet.create({
   flexStart: {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
+  },
+  flexStartCenterContent: {
+    alignItems: 'flex-start',
+    justifyContent: 'center',
   },
   smallRoundedImage: {
     width: 60,

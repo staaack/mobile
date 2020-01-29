@@ -7,7 +7,11 @@ import { List, ListItemProps } from '../list';
 import { styles } from './styles';
 
 interface Props {
+  /**
+   * @description Array of objects that will be displayed as a list
+   */
   data: Array<ListItemProps>;
+
   /**
    * @description Method triggered the right text is pressed
    * @param name

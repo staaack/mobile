@@ -14,6 +14,7 @@ export interface ListItemProps {
   imageURL: string;
   title: string;
   surTitle: string;
+  cost?: string;
 }
 
 export interface IListProps {
@@ -21,7 +22,7 @@ export interface IListProps {
   /**
    * @description List Item right text
    */
-  rightText: string;
+  rightText?: string;
   /**
    * @description styles object override the default styles
    */
@@ -45,7 +46,7 @@ export const List: React.FC<IListProps> = React.memo(
               <Text style={styles.subTitle}>{item.surTitle}</Text>
             </View>
           </View>
-          <View style={styles.rightSide}>
+          <View>
             {onRightTextPress ? (
               <TouchableOpacity onPress={() => onRightTextPress(item.title)}>
                 <Text style={[styles.rightText, rightTextStyles]}>
@@ -54,8 +55,10 @@ export const List: React.FC<IListProps> = React.memo(
               </TouchableOpacity>
             ) : (
               <Text>
-                <Text style={[styles.rightText, rightTextStyles]}>
-                  {rightText}
+                <Text style={[styles.cost, rightTextStyles]}>
+                  {rightText && typeof item.cost === 'undefined'
+                    ? rightText
+                    : item.cost}
                 </Text>
               </Text>
             )}

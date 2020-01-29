@@ -1,1 +1,1 @@
-export * from './EducationInvest';
+export * from './EducationInvestments';

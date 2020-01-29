@@ -1,1 +1,1 @@
-export { default as RDInvestments } from './RDInvest';
+export * from './RDInvestments';

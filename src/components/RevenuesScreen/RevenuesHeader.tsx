@@ -14,24 +14,28 @@ interface TProps extends TIntervalTimeProps {
 
 export const RevenuesHeader: React.FC<TProps> = React.memo(
   ({
-  title,
-  amount,
-  onThisMonthPress,
-  onThisYearPress,
-  onTodayPress,
-  goBack,
-}): JSX.Element => {
-  return (
-    <DescriptionHeader onBackIconPress={goBack}>
-      <View style={styles.leftView}>
-        <Text>{title}</Text>
-        <Text>{amount}</Text>
-      </View>
-      <TimeIntervalPopup
-        onThisMonthPress={onThisMonthPress}
-        onThisYearPress={onThisYearPress}
-        onTodayPress={onTodayPress}
-      />
-    </DescriptionHeader>
-  );
-});
+    title,
+    amount,
+    onThisMonthPress,
+    onThisYearPress,
+    onTodayPress,
+    goBack,
+  }): JSX.Element => {
+    return (
+      <DescriptionHeader onBackIconPress={goBack}>
+        <View style={styles.container}>
+          <View style={styles.leftView}>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.amount}>{amount}</Text>
+          </View>
+          <TimeIntervalPopup
+            onThisMonthPress={onThisMonthPress}
+            onThisYearPress={onThisYearPress}
+            onTodayPress={onTodayPress}
+            dialogStyles={styles.dialog}
+          />
+        </View>
+      </DescriptionHeader>
+    );
+  },
+);

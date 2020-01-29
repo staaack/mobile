@@ -1,8 +1,4 @@
-interface TColors {
-  [key: string]: string;
-}
-
-export const Colors: TColors = {
+export const Colors = {
   MAIN_COLOR: '#1EA276',
   WHITE: '#FFFFFF',
   GREY: '#B1B4B4',

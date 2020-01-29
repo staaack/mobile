@@ -1,1 +1,1 @@
-export { default as HRInvestments } from './HRInvest';
+export * from './HRInvestments';

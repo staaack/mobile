@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, StatusBar, ScrollView } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import {
   NavigationStackOptions,
   NavigationStackScreenProps,
@@ -11,6 +11,7 @@ import database from '../../database/db';
 import CompanyDetails from './components/CompanyDetails';
 import { Revenues } from './components/revenues';
 import { RevenuesTabView } from './components/revenuesTabView';
+import { ScrollViewWrapper } from '../../components/scrollViewWrapper';
 
 const company = database[0];
 
@@ -36,14 +37,10 @@ export const HomeRevenues: NavStatelessComponent = (): JSX.Element => {
           companyName={company.name}
           imageURI={company.profilePic}
         />
-        <ScrollView
-          nestedScrollEnabled
-          style={styles.scrollView}
-          keyboardShouldPersistTaps="always"
-        >
+        <ScrollViewWrapper>
           <Revenues />
           <RevenuesTabView />
-        </ScrollView>
+        </ScrollViewWrapper>
       </View>
     </SafeAreaView>
   );

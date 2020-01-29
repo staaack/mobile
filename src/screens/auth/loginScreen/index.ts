@@ -1,1 +1,1 @@
-export { default as LoginScreen } from './Login';
+export  * from './Login';

@@ -4,13 +4,14 @@ import { NavigationStackScreenProps } from 'react-navigation-stack';
 
 import { LoginCarousel } from './components/loginCarousel';
 import { LoginButton } from './components/loginButton';
+
 import styles from './styles';
 
 interface TLoginParams {}
 
 interface TLoginProps {}
 
-const Login: React.SFC<NavigationStackScreenProps<
+export const LoginScreen: React.SFC<NavigationStackScreenProps<
   TLoginParams,
   TLoginProps
 >> = ({ navigation }): JSX.Element => {
@@ -33,5 +34,3 @@ const Login: React.SFC<NavigationStackScreenProps<
     </SafeAreaView>
   );
 };
-
-export default Login;

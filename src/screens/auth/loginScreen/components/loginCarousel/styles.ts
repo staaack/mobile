@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { Metrics, Colors } from '../../../../../styles';
+import { Metrics, Colors, commonStyles } from '../../../../../styles';
 
 export default StyleSheet.create({
   container: {
@@ -20,8 +20,8 @@ export default StyleSheet.create({
   },
   sliderItem: {
     width: Metrics.screenWidth,
-    marginLeft: Metrics.averageMargin,
-    height: 120,
-    padding: Metrics.averagePadding,
+    height: Metrics.screenHeight / 5,
+    paddingHorizontal: Metrics.smallPadding,
+    ...commonStyles.flexStartCenterContent,
   },
 });

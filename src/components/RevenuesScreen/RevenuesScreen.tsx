@@ -6,6 +6,8 @@ import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/re
 
 import { TabsView } from '../tabView';
 import { RevenuesHeader } from './RevenuesHeader';
+import { ScrollViewWrapper } from '../scrollViewWrapper';
+import styles from './styles';
 
 export interface RevenuesProps extends TNavigationProps {
   revenuesTopic: string;
@@ -21,12 +23,12 @@ const routes: Array<{ key: string; title: string }> = [
     title: 'Team',
   },
   {
-    key: 'client',
-    title: 'Client',
+    key: 'clients',
+    title: 'Clients',
   },
   {
-    key: 'project',
-    title: 'Project',
+    key: 'projects',
+    title: 'Projects',
   },
 ];
 
@@ -38,7 +40,7 @@ const Revenues: React.SFC<RevenuesProps> = React.memo(
     scenes,
   }): JSX.Element => {
     return (
-      <View>
+      <View style={styles.container}>
         <RevenuesHeader
           goBack={() => goBack()}
           title={revenuesTopic}
@@ -47,7 +49,9 @@ const Revenues: React.SFC<RevenuesProps> = React.memo(
           onThisYearPress={() => {}}
           onTodayPress={() => {}}
         />
-        <TabsView routes={routes} sceneMap={scenes} />
+        <ScrollViewWrapper>
+          <TabsView routes={routes} sceneMap={scenes} />
+        </ScrollViewWrapper>
       </View>
     );
   },

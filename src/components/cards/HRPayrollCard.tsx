@@ -11,7 +11,7 @@ interface Props extends TNavigationProps {}
 const HRPayroll: React.FC<Props> = ({ navigation }): JSX.Element => {
   const onHRCardPress: () => void = () =>
     navigation.navigate({
-      routeName: 'RDInvestments',
+      routeName: 'HRInvestments',
     });
 
   return (

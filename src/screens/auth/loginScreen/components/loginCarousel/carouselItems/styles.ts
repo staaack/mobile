@@ -14,7 +14,7 @@ export default StyleSheet.create({
     fontFamily: 'Arial',
     color: Colors.BLACK,
     fontWeight: 'bold',
-    fontSize: Metrics.bigTextSize,
+    fontSize: Metrics.sliderTextSize,
   },
   greenText: {
     color: Colors.MAIN_COLOR,

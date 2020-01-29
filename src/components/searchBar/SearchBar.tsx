@@ -7,7 +7,14 @@ import styles from './styles';
 import { Colors } from '../../styles';
 
 interface Props {
+  /**
+   * @description Placeholder for the textInput
+   */
   placeholder: string;
+
+  /**
+   * @description Methods called when the textInput value changed
+   */
   onChangeText: (text: string) => void;
 }
 

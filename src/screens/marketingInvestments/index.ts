@@ -1,1 +1,1 @@
-export { default as MarketingInvestments } from './MarketingInvest';
+export * from './MarketingInvestments';

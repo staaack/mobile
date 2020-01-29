@@ -13,5 +13,6 @@ export default StyleSheet.create({
     textAlign: 'center',
     borderBottomWidth: 1,
     borderBottomColor: Colors.GREY,
+    padding: 4,
   },
 });

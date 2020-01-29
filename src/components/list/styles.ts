@@ -26,11 +26,10 @@ export default StyleSheet.create({
     borderColor: Colors.LIGHT_GREY,
     marginRight: Metrics.averageMargin,
   },
-  rightSide: {
-    // alignSelf: 'center',
-    // justifyContent: 'flex-end',
-    // minWidth: '15%',
-    // marginRight: '10%',
+  cost: {
+    fontSize: Metrics.tinyTextSize,
+    fontWeight: 'bold',
+    color: Colors.MAIN_COLOR,
   },
   rightText: {
     fontSize: Metrics.tinyTextSize,

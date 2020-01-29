@@ -11,3 +11,4 @@ export * from './operationsInvestments';
 export * from './settings';
 export * from './trainingRevenues';
 export * from './auth/loginScreen';
+export * from './operationsInvestments';

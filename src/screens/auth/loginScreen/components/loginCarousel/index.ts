@@ -1,1 +1,1 @@
-export { default as LoginCarousel } from './Carousel';
+export * from './Carousel';

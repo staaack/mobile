@@ -1,1 +1,1 @@
-export * from './TrainingRev';
+export * from './TrainingRevenues';

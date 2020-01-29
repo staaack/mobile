@@ -7,7 +7,7 @@ export default StyleSheet.create({
     width: '100%',
     ...commonStyles.flexWrapList,
     padding: Metrics.averageMargin,
-    minHeight: Metrics.screenHeight / 2,
+    minHeight: Metrics.screenHeight,
     backgroundColor: Colors.LIGHT_GREY,
   },
   tabViewContent: {
