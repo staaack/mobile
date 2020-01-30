@@ -133,6 +133,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        // This will later be used to control the test apk build type
+        testBuildType System.getProperty('testBuildType', 'debug')  
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     splits {
         abi {
@@ -155,6 +158,14 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
+            // 'release' is typically the default proguard-enabled build-type
+            minifyEnabled true
+
+            // Typical pro-guard definitions
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // Detox-specific additions to pro-guard
+            proguardFile "${rootProject.projectDir}/../node_modules/detox/android/detox/proguard-rules-app.pro"
+
             // Caution! In production, you need to generate your own keystore file.
             // see https://facebook.github.io/react-native/docs/signed-apk-android.
             signingConfig signingConfigs.debug
@@ -190,6 +201,9 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    androidTestImplementation(project(path: ":detox"))
+    androidTestImplementation('com.wix:detox:+') { transitive = true } 
+    androidTestImplementation 'junit:junit:4.12'
 }
 
 // Run this once to be able to run the application with BUCK
@@ -197,6 +211,10 @@ dependencies {
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
+}
+
+packagingOptions {
+    exclude 'META-INF/LICENSE'
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
