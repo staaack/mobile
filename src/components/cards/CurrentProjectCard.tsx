@@ -5,10 +5,7 @@ import { Card } from '../customCard';
 import icons from '../../assets/icons';
 import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import { withNavigation } from 'react-navigation';
-import {
-  TContextValue,
-  LocalizationContext,
-} from '../../localization/LocalizationContext';
+import { TContextValue, LocalizationContext } from '../../localization';
 
 interface Props extends TNavigationProps {}
 
@@ -17,7 +14,7 @@ const CurrentProject: React.FC<Props> = ({ navigation }): JSX.Element => {
 
   return (
     <Card
-      topic="Current Project"
+      topic={translations['cards.currentProject']}
       amount="Staack"
       leftIconSource={icons.task}
       displayTrend={false}
@@ -25,4 +22,5 @@ const CurrentProject: React.FC<Props> = ({ navigation }): JSX.Element => {
   );
 };
 
+// @ts-ignore
 export const CurrentProjectCard = withNavigation(CurrentProject);

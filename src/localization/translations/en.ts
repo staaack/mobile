@@ -19,7 +19,7 @@ export const EN: { [key: string]: string } = {
   'tab.projects': 'Projects',
 
   // *************** SearchBar Component **************** //
-  'searchbar.team': 'Search Team',
+  'searchbar.team': 'Search team',
   'searchbar.projects': 'Search projects',
   'searchbar.clients': 'Search clients',
 
@@ -31,6 +31,20 @@ export const EN: { [key: string]: string } = {
   'cards.marketing': 'Marketing',
   'cards.hrPayroll': 'HR & Payroll',
   'cards.operations': 'Operations',
+  'cards.currentProject': 'Current project',
+  'cards.dailyRate': 'Daily rate',
+  'cards.trainingBudget': 'Training budget',
+  'cards.workingDays': 'Working days',
+
+  // *************** Revenue & Investment Components **************** //
+
+  'revenue.consulting': 'Consulting Revenue',
+  'revenue.training': 'Training Revenue',
+  'investment.rd': 'R&D investment',
+  'investment.marketing': 'Marketing investment',
+  'investment.education': 'Education investment',
+  'investment.hrPayroll': 'HR & payroll investment',
+  'investment.operations': 'Operations investment',
 
   // *************** TimeIntervalPopup Component **************** //
   'popup.today': 'Today',

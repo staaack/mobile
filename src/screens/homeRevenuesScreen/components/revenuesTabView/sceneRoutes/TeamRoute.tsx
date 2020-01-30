@@ -1,17 +1,18 @@
 import React, { ReactElement, useCallback } from 'react';
-import { View, Alert } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { NavigationStackProp } from 'react-navigation-stack';
 
+import { ListItemProps } from '../../../../../components/list';
+
 import RouteWrapper from './RouteWrapper';
-import { SearchBar } from '../../../../../components/searchBar';
-import styles from './styles';
-import { List, ListItemProps } from '../../../../../components/list';
-
-import db from '../../../../../database/db';
 import { SearchListTab } from '../../../../../components/searchListTab';
+import {
+  TContextValue,
+  LocalizationContext,
+} from '../../../../../localization';
+import db from '../../../../../database/db';
 
-const teamMembers: Array<ListItemProps> = db[0].team.map(item => {
+const teamMembers: Array<ListItemProps> = db[0].team.map((item: any) => {
   return {
     imageURL: item.imageURL,
     title: item.name,
@@ -24,25 +25,29 @@ export interface TNavigationProps {
 }
 
 export const Team: React.FC<TNavigationProps> = ({
-  navigation: { navigate },
+  navigation,
 }): ReactElement => {
+  const { translations } = React.useContext<TContextValue>(LocalizationContext);
   const onChangeText = useCallback((text: string) => {
     console.log(text);
   }, []);
 
   const onViewProfilePress: (name: string) => void = name => {
-    navigate('UserProfile');
+    navigation!.navigate('UserProfile');
   };
 
   return (
-    <SearchListTab
-      data={teamMembers}
-      onRightTextPress={onViewProfilePress}
-      placeholder="Search Team"
-      onSearchBarTextChange={onChangeText}
-      rightText="View Profile"
-    />
+    <RouteWrapper>
+      <SearchListTab
+        data={teamMembers}
+        onRightTextPress={onViewProfilePress}
+        placeholder={translations['searchbar.team']}
+        onSearchBarTextChange={onChangeText}
+        rightText={translations['home.viewProfile']}
+      />
+    </RouteWrapper>
   );
 };
 
+// @ts-ignore
 export const TeamRoute = withNavigation(Team);

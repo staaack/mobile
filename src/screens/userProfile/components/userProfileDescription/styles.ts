@@ -8,7 +8,7 @@ export default StyleSheet.create({
     ...commonStyles.flexCentered,
   },
   userName: {
-    color: Colors.BACKGROUND,
+    color: Colors.BACHGROUND,
     fontSize: Metrics.mediumTextSize,
     fontWeight: '700',
   },
@@ -20,6 +20,6 @@ export default StyleSheet.create({
     marginTop: Metrics.averageMargin,
   },
   dialog: {
-    top: -Metrics.screenHeight / 3.8,
+    top: -Metrics.screenHeight / 4,
   },
 });

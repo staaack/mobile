@@ -12,8 +12,10 @@ interface Props {
 const CompanyDetails: React.FC<Props> = ({ imageURI, companyName }) => {
   return (
     <DescriptionHeader>
-      <Text style={styles.companyName}>{companyName}</Text>
-      <Image source={{ uri: imageURI }} style={styles.profilePic} />
+      <View style={styles.companyDescContainer}>
+        <Text style={styles.companyName}>{companyName}</Text>
+        <Image source={{ uri: imageURI }} style={styles.profilePic} />
+      </View>
     </DescriptionHeader>
   );
 };

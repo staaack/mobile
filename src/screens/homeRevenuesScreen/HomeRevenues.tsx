@@ -25,23 +25,25 @@ interface NavStatelessComponent extends React.StatelessComponent<IProps> {
 
 export const HomeRevenues: NavStatelessComponent = (): JSX.Element => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      {/* <StatusBar
+    <>
+      <StatusBar
         barStyle="dark-content"
         hidden={false}
         backgroundColor="#FFF"
         translucent={true}
-      /> */}
-      <View style={styles.container}>
-        <CompanyDetails
-          companyName={company.name}
-          imageURI={company.profilePic}
-        />
-        <ScrollViewWrapper>
-          <Revenues />
-          <RevenuesTabView />
-        </ScrollViewWrapper>
-      </View>
-    </SafeAreaView>
+      />
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <CompanyDetails
+            companyName={company.name}
+            imageURI={company.profilePic}
+          />
+          <ScrollViewWrapper>
+            <Revenues />
+            <RevenuesTabView />
+          </ScrollViewWrapper>
+        </View>
+      </SafeAreaView>
+    </>
   );
 };

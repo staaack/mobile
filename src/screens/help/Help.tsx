@@ -3,12 +3,12 @@ import { View } from 'react-native';
 
 import { NavigationSFC } from '../userProfile';
 import { LeftHeaderIcon, headerStyles } from '../../components/header';
-import { LocalizationContext } from '../../localization';
+import { TContextValue, LocalizationContext } from '../../localization';
 
 let headerTitle: string = '';
 
 export const Help: NavigationSFC = (): JSX.Element => {
-  const { translations } = useContext(LocalizationContext);
+  const { translations } = useContext<TContextValue>(LocalizationContext);
 
   headerTitle = translations['help.headerTitle'];
 

@@ -5,10 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import { Colors } from '../../styles';
 import { MenuPopup, MenuItem } from '../popupMenu';
-import {
-  TContextValue,
-  LocalizationContext,
-} from '../../localization/LocalizationContext';
+import { TContextValue, LocalizationContext } from '../../localization';
 
 export interface TIntervalTimeProps {
   onTodayPress: () => void;

@@ -2,10 +2,7 @@ import React, { useContext } from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Text } from 'react-native';
 import styles from './styles';
-import {
-  LocalizationContext,
-  TContextValue,
-} from '../../localization/LocalizationContext';
+import { LocalizationContext, TContextValue } from '../../localization';
 
 interface Props {
   onLogoutPress?: () => void;

@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
+
 import { TabsView } from '../../../../components/tabView';
-import Overview from './sceneRoutes/Overview';
-import InvestementsContributions from './sceneRoutes/InvestementsContributions';
-import RevenuesContributions from './sceneRoutes/RevenuesContributions';
+import {
+  Overview,
+  RevenuesContributions,
+  InvestementsContributions,
+} from './sceneRoutes';
 import { TContextValue, LocalizationContext } from '../../../../localization';
 
-const sceneMap = {
+const sceneMap: { [key: string]: React.SFC<any> } = {
   overview: Overview,
   revenuesContrb: RevenuesContributions,
   investmentsContrb: InvestementsContributions,

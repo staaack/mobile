@@ -2,10 +2,7 @@ import React, { useContext } from 'react';
 import { View, Text } from 'react-native';
 import styles from '../styles';
 import { TimeIntervalPopup } from '../../../components/timeIntervalPopup';
-import {
-  TContextValue,
-  LocalizationContext,
-} from '../../../localization/LocalizationContext';
+import { TContextValue, LocalizationContext } from '../../../localization';
 
 const RevenuesTitle: React.FC<{}> = (): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);

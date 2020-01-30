@@ -3,10 +3,7 @@ import { View } from 'react-native';
 
 import { Money } from './Money';
 import styles from './styles';
-import {
-  TContextValue,
-  LocalizationContext,
-} from '../../../../localization/LocalizationContext';
+import { TContextValue, LocalizationContext } from '../../../../localization';
 
 export const RevenuesDescription: React.FC<{}> = (): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);

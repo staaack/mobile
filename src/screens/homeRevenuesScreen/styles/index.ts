@@ -7,11 +7,14 @@ export default StyleSheet.create({
     backgroundColor: Colors.WHITE,
     ...commonStyles.shadow,
   },
+  companyDescContainer: {
+    ...commonStyles.flexSpaceBetweenRow,
+  },
   companyName: {
     fontSize: Metrics.bigTextSize + 3,
     fontFamily: 'Arial',
     fontWeight: 'bold',
-    color: Colors.BLACK,
+    color: Colors.BACHGROUND,
     width: '82%',
   },
   profilePic: {

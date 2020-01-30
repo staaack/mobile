@@ -4,16 +4,13 @@ import { commonStyles, Colors, Metrics } from '../../styles';
 export default StyleSheet.create({
   container: {
     paddingTop: Metrics.paddingForStatusBar,
-    padding: Metrics.averagePadding,
+    paddingHorizontal: Metrics.averagePadding,
     backgroundColor: Colors.WHITE,
     width: '100%',
     position: 'absolute',
     top: -10,
     zIndex: 9999,
     minHeight: Metrics.screenHeight / 4,
-    justifyContent: 'flex-end',
-  },
-  content: {
-    ...commonStyles.flexSpaceBetweenRow,
+    justifyContent: 'center',
   },
 });

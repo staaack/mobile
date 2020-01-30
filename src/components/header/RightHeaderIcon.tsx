@@ -8,6 +8,7 @@ import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/re
 import { headerStyles as styles } from './styles';
 import { Colors } from '../../styles';
 import { MenuPopup, MenuItem } from '../popupMenu';
+import { TContextValue, LocalizationContext } from '../../localization';
 
 export interface Props extends TNavigationProps {
   /**
@@ -21,6 +22,7 @@ const Icon: React.SFC<Props> = ({
   navigation,
 }): ReactElement => {
   const [isPopupVisible, updatePopupVisibility] = useState<boolean>(false);
+  const { translations } = React.useContext<TContextValue>(LocalizationContext);
 
   const onThreeDotsPress: () => void = () => {
     updatePopupVisibility(!isPopupVisible);
@@ -34,13 +36,13 @@ const Icon: React.SFC<Props> = ({
 
   const onHelpPress: () => boolean = () => {
     updatePopupVisibility(false);
-    navigation.navigate('Help');
+    navigation!.navigate('Help');
     return true;
   };
 
   const onSettingsPress: () => boolean = () => {
     updatePopupVisibility(false);
-    navigation.navigate('Settings');
+    navigation!.navigate('Settings');
     return true;
   };
 
@@ -56,11 +58,18 @@ const Icon: React.SFC<Props> = ({
         onClose={onPopupClose}
         customDialogStyles={styles.menuPopup}
       >
-        <MenuItem itemText="Settings" onItemPress={onSettingsPress} />
-        <MenuItem itemText="Help" onItemPress={onHelpPress} />
+        <MenuItem
+          itemText={translations['settings.headerTitle']}
+          onItemPress={onSettingsPress}
+        />
+        <MenuItem
+          itemText={translations['help.headerTitle']}
+          onItemPress={onHelpPress}
+        />
       </MenuPopup>
     </TouchableOpacity>
   );
 };
 
+// @ts-ignore
 export const RightHeaderIcon = withNavigation(Icon);

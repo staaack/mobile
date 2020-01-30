@@ -1,26 +1,27 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { withNavigation } from 'react-navigation';
 
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
 
-interface Props extends TNavigationProps {}
+interface IProps {
+  cardTitle: string;
+  amount: string;
+  onCardPress: () => void;
+}
 
-const Training: React.SFC<Props> = ({ navigation }): JSX.Element => {
-  const onTrainingCardPress: () => void = () =>
-    navigation.navigate({
-      routeName: 'TrainingRevenues',
-    });
+const Training: React.SFC<IProps> = React.memo(
+  ({ cardTitle, amount, onCardPress }): JSX.Element => {
+    return (
+      <Card
+        onCardPress={onCardPress}
+        topic={cardTitle}
+        amount={amount}
+        leftIconSource={icons.bookBookmark}
+      />
+    );
+  },
+);
 
-  return (
-    <Card
-      onCardPress={onTrainingCardPress}
-      topic="Trainings"
-      amount="$13,000.00"
-      leftIconSource={icons.bookBookmark}
-    />
-  );
-};
-
+//@ts-ignore
 export const TrainingCard = withNavigation(Training);

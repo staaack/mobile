@@ -4,10 +4,7 @@ import { Card } from '../customCard';
 import icons from '../../assets/icons';
 import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import { withNavigation } from 'react-navigation';
-import {
-  TContextValue,
-  LocalizationContext,
-} from '../../localization/LocalizationContext';
+import { TContextValue, LocalizationContext } from '../../localization';
 
 interface TProps extends TNavigationProps {}
 
@@ -29,4 +26,5 @@ const Consulting: React.FC<TProps> = ({ navigation }): JSX.Element => {
   );
 };
 
+// @ts-ignore
 export const ConsultingCard = withNavigation(Consulting);
