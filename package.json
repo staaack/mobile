@@ -39,6 +39,7 @@
     "@types/react-native-snap-carousel": "^3.7.4",
     "@types/react-native-vector-icons": "^6.4.5",
     "babel-jest": "^24.9.0",
+    "detox": "^15.1.4",
     "eslint": "^6.8.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.4",
@@ -46,5 +47,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "detox": {
+    "test-runner": "jest"
   }
 }
