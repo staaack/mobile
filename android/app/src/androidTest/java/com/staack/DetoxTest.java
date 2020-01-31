@@ -1,5 +1,6 @@
 package com.staack;
 
+
 import com.wix.detox.Detox;
 
 import org.junit.Rule;
