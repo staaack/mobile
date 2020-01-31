@@ -29,8 +29,8 @@ export const TimeIntervalPopup: React.SFC<TIntervalTimeProps> = React.memo(
     );
 
     const today = translations['popup.today'];
-    const thisMonth = translations['popup.today'];
-    const thisYear = translations['popup.today'];
+    const thisMonth = translations['popup.thisMonth'];
+    const thisYear = translations['popup.thisYear'];
 
     const onArrowDownPress: () => void = () =>
       updateDialogVisibility(!isDialogVisible);
