@@ -5,10 +5,15 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { LocalizationProvider } from './localization';
 import { AppStackNavigator } from './navigation';
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
+console.disableYellowBox = true;
 
 const App: React.SFC<{}> = (): JSX.Element => {
   useEffect(() => {
     SplashScreen.hide();
+    Icon.loadFont();
+    
   }, []);
 
   return (
