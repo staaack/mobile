@@ -14,6 +14,6 @@ export const CustomText: React.FC<Props> = ({
 
 const styles = StyleSheet.create({
   main: {
-    fontFamily: 'Poppins',
+    fontFamily: 'Poppins-SemiBold',
   },
 });
