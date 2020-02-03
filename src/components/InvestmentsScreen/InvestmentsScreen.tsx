@@ -16,15 +16,11 @@ export interface InvestmentProps extends TNavigationProps {
 }
 
 const Investments: React.SFC<InvestmentProps> = React.memo(
-  ({
-    navigation: { goBack },
-    investmentAmount,
-    investmentTopic,
-  }): JSX.Element => {
+  ({ navigation, investmentAmount, investmentTopic }): JSX.Element => {
     return (
       <View style={styles.container}>
         <RevenuesHeader
-          goBack={() => goBack()}
+          goBack={() => navigation!.goBack()}
           title={investmentTopic}
           amount={investmentAmount}
           onThisMonthPress={() => {}}
@@ -39,4 +35,5 @@ const Investments: React.SFC<InvestmentProps> = React.memo(
   },
 );
 
+// @ts-ignore
 export const InvestmentsScreen = withNavigation(Investments);

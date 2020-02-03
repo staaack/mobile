@@ -25,15 +25,17 @@ export const RevenuesHeader: React.FC<TProps> = React.memo(
   }): JSX.Element => {
     return (
       <DescriptionHeader onBackIconPress={goBack}>
-        <View style={styles.leftView}>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.amount}>{amount}</Text>
+        <View style={styles.container}>
+          <View style={styles.leftView}>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.amount}>{amount}</Text>
+          </View>
+          <TimeIntervalPopup
+            onThisMonthPress={onThisMonthPress}
+            onThisYearPress={onThisYearPress}
+            onTodayPress={onTodayPress}
+          />
         </View>
-        <TimeIntervalPopup
-          onThisMonthPress={onThisMonthPress}
-          onThisYearPress={onThisYearPress}
-          onTodayPress={onTodayPress}
-        />
       </DescriptionHeader>
     );
   },
