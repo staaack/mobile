@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { SafeAreaView, Image, View } from 'react-native';
-import { NavigationStackScreenProps } from 'react-navigation-stack';
+import {
+  NavigationStackScreenProps,
+  NavigationStackScreenComponent,
+} from 'react-navigation-stack';
 
 import { LoginCarousel } from './components/loginCarousel';
 import { LoginButton } from './components/loginButton';
@@ -13,10 +16,10 @@ interface TLoginParams {}
 
 interface TLoginProps {}
 
-export const LoginScreen: React.SFC<NavigationStackScreenProps<
-  TLoginParams,
-  TLoginProps
->> = ({ navigation }): JSX.Element => {
+export const LoginScreen: NavigationStackScreenComponent<
+  TLoginProps,
+  TLoginParams
+> = ({ navigation }): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onButtonPress: () => void = () => {
