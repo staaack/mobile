@@ -22,7 +22,7 @@ export const headerStyles = StyleSheet.create({
     marginLeft: Metrics.bigMargin,
   },
   menuPopup: {
-    top: -Metrics.screenHeight / 2.8,
+    top: -Metrics.screenHeight / 3,
   },
   header: {
     ...commonStyles.commonBorderStyle,

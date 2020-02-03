@@ -1,12 +1,15 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useContext } from 'react';
 import { View, Text, Switch } from 'react-native';
+
 import styles from '../styles';
 import { Colors } from '../../../styles';
+import { TContextValue, LocalizationContext } from '../../../localization';
 
-interface Props {}
+interface IProps {}
 
-export const DisplaySalarySwitch: React.FC<Props> = (): JSX.Element => {
+export const DisplaySalarySwitch: React.FC<IProps> = (): JSX.Element => {
   const [value, onValueChanged] = useState<boolean>(false);
+  const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onSwitchPress: () => void = useCallback(() => onValueChanged(!value), [
     value,
@@ -14,7 +17,7 @@ export const DisplaySalarySwitch: React.FC<Props> = (): JSX.Element => {
 
   return (
     <View style={styles.displaySalary}>
-      <Text>Display salary information</Text>
+      <Text>{translations['settings.displaySalary']}</Text>
       <Switch
         value={value}
         onValueChange={onSwitchPress}

@@ -11,7 +11,7 @@ import {
 
 interface Props {}
 
-const InvestementsContributions: React.FC<Props> = () => {
+export const InvestementsContributions: React.FC<Props> = () => {
   return (
     <RouteWrapper>
       <EducationCard />
@@ -22,5 +22,3 @@ const InvestementsContributions: React.FC<Props> = () => {
     </RouteWrapper>
   );
 };
-
-export default InvestementsContributions;

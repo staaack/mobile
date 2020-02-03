@@ -19,7 +19,7 @@ export const DescriptionHeader: React.SFC<TProps> = ({
           customStyles={{ marginLeft: 0 }}
         />
       )}
-      <View style={styles.content}>{children}</View>
+      {children}
     </View>
   );
 };

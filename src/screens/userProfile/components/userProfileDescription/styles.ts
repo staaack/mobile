@@ -22,6 +22,6 @@ export default StyleSheet.create({
     marginTop: Metrics.averageMargin,
   },
   dialog: {
-    top: -Metrics.screenHeight / 3.8,
+    top: -Metrics.screenHeight / 4,
   },
 });

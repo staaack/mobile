@@ -7,10 +7,13 @@ export default StyleSheet.create({
     backgroundColor: Colors.WHITE,
     ...commonStyles.shadow,
   },
+  companyDescContainer: {
+    ...commonStyles.flexSpaceBetweenRow,
+  },
   companyName: {
     fontSize: Metrics.titleTextSize,
     fontWeight: 'bold',
-    color: Colors.BLACK,
+    color: Colors.BACHGROUND,
     width: '82%',
   },
   profilePic: {
@@ -33,5 +36,8 @@ export default StyleSheet.create({
   },
   revenuesTitle: {
     fontWeight: 'bold',
+  },
+  dialog: {
+    top: -Metrics.screenHeight / 15,
   },
 });

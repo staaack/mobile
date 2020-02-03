@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ScrollView } from 'react-native';
 
 import { styles } from './styles';
@@ -12,6 +12,7 @@ export const ScrollViewWrapper: React.SFC<AppProps> = React.memo(
         nestedScrollEnabled
         style={styles.scrollView}
         keyboardShouldPersistTaps="always"
+        alwaysBounceVertical={true}
       >
         {children}
       </ScrollView>
