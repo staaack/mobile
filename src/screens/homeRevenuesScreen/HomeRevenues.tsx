@@ -32,7 +32,7 @@ export const HomeRevenues: NavStatelessComponent = (): JSX.Element => {
         backgroundColor="#FFF"
         translucent={true}
       />
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1 }} testID="home_revenues">
         <View style={styles.container}>
           <CompanyDetails
             companyName={company.name}

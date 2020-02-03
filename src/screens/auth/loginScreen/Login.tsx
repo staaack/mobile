@@ -25,10 +25,11 @@ export const LoginScreen: React.SFC<NavigationStackScreenProps<
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
+      <View style={styles.container} testID="loginView">
         <Image
           source={require('../../../assets/logo_splash.png')}
           style={styles.logo}
+          testID="hackages_logo"
         />
         <View style={styles.bottomLoginSide}>
           <LoginCarousel />

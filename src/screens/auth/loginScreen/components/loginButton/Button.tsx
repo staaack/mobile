@@ -16,7 +16,11 @@ interface Props {
 
 export const LoginButton: React.FC<Props> = ({ onButtonPress, loginText }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onButtonPress}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={onButtonPress}
+      testID="login_button"
+    >
       <Text style={styles.buttonText}>{loginText} Hackages</Text>
     </TouchableOpacity>
   );

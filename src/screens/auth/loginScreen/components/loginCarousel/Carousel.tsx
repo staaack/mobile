@@ -36,7 +36,7 @@ export const LoginCarousel: React.SFC<{}> = React.memo(
     );
 
     return (
-      <View>
+      <View testID="carousel">
         <Carousel
           autoplay={true}
           loop={true}
