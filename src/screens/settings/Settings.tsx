@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { View } from 'react-native';
+import { GoogleSignin } from '@react-native-community/google-signin';
 
 import { NavigationSFC } from '../userProfile/UserProfile';
 
@@ -13,13 +14,27 @@ let headerTitle: string = '';
 
 export const Settings: NavigationSFC = (): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
-
   headerTitle = translations['settings.headerTitle'];
+
+  const [loading, setLoading] = useState<boolean>();
+
+  const _onLogoutPress: () => void = async () => {
+    setLoading(true);
+
+    try {
+      await GoogleSignin.revokeAccess();
+      await GoogleSignin.signOut();
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.error('SignOut Error: ', error);
+    }
+  };
 
   return (
     <View style={styles.container}>
       <Switch />
-      <LogoutButton />
+      <LogoutButton isLoading={loading} onLogoutPress={_onLogoutPress} />
     </View>
   );
 };

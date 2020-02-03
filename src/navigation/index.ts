@@ -1,1 +1,1 @@
-export * from './NavigationContainer';
+export { default as AppStackContainer } from './NavigationContainer';
