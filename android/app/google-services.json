@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "637105873790",
+    "firebase_url": "https://staack-8be60.firebaseio.com",
+    "project_id": "staack-8be60",
+    "storage_bucket": "staack-8be60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637105873790:android:98bf2ed05da3b875be492f",
+        "android_client_info": {
+          "package_name": "com.staack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637105873790-2ea09ere5k6ife3tqs2na1sdmvdbpvhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuCmco4WAobzFOqdQvqTQcL0uEMi5tMts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637105873790-2ea09ere5k6ife3tqs2na1sdmvdbpvhe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "637105873790-4m4bgbk907gvq0ine0ib1tt0d2mlo7nr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.staack"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
