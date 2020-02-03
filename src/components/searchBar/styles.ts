@@ -4,13 +4,13 @@ import { Colors, Metrics, commonStyles } from '../../styles';
 export default StyleSheet.create({
   container: {
     backgroundColor: Colors.WHITE,
-    borderRadius: 50,
+    borderRadius: Metrics.bigRadius,
     width: '90%',
     height: 50,
     ...commonStyles.flexStartRow,
     ...commonStyles.commonBorderStyle,
-    paddingHorizontal: 15,
-    marginBottom: 20,
+    paddingHorizontal: Metrics.mediumPadding,
+    marginBottom: Metrics.basisMarginTop,
     alignSelf: 'center',
   },
   textInput: {

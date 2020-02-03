@@ -21,10 +21,9 @@ export default StyleSheet.create({
   },
   item: {
     marginVertical: Metrics.smallMargin,
-    width: '100%',
+    width: Metrics.fullWidth,
   },
   item_text: {
-    fontFamily: "Poppins",
-    fontWeight: "normal"
-  }
+    fontWeight: 'normal',
+  },
 });

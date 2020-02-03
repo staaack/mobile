@@ -12,21 +12,17 @@ export default StyleSheet.create({
     width: '70%',
   },
   title: {
-    fontFamily: "Poppins",
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: Metrics.smallTextSize,
   },
   subTitle: {
-    fontFamily: "Poppins",
     fontWeight: 'normal',
     color: Colors.GREY,
-    fontSize: 12,
+    fontSize: Metrics.tinyTextSize,
   },
   profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    borderWidth: 0.5,
+    ...Metrics.profileImage,
+    borderWidth: Metrics.smallBorderWidth,
     borderColor: Colors.LIGHT_GREY,
     marginRight: Metrics.averageMargin,
   },
@@ -36,8 +32,7 @@ export default StyleSheet.create({
     color: Colors.MAIN_COLOR,
   },
   rightText: {
-    fontFamily: "Poppins",
-    fontWeight: "normal",
-    fontSize: 12,
+    fontWeight: 'normal',
+    fontSize: Metrics.tinyTextSize,
   },
 });

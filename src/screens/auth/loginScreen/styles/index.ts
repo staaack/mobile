@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import { Metrics } from '../../../../styles/Metrics';
+import { commonStyles } from '../../../../styles';
 
 export default StyleSheet.create({
   safeArea: {
@@ -6,21 +8,17 @@ export default StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingBottom: 20,
+    paddingBottom: Metrics.basisPaddingBottom,
   },
   logo: {
     position: 'absolute',
-    top: 50,
-    left: 10,
-    width: 80,
-    height: 80,
+    ...Metrics.logoMetrics,
   },
   bottomLoginSide: {
     position: 'absolute',
-    width: '100%',
     bottom: 40,
+    width: Metrics.fullWidth,
     maxHeight: '82%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    ...commonStyles.flexCentered,
   },
 });

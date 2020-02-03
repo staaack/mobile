@@ -8,12 +8,12 @@ export default StyleSheet.create({
   },
   header: {
     ...commonStyles.commonBorderStyle,
-    borderWidth: 0.2,
+    borderWidth: Metrics.smallBorderWidth,
     ...commonStyles.removeShadow,
   },
   headerTitle: {
     fontWeight: 'bold',
-    fontSize: Metrics.smallTextSize + 1,
+    fontSize: Metrics.smallTextSize,
   },
   displaySalary: {
     ...commonStyles.flexSpaceBetweenRow,

@@ -34,7 +34,7 @@ export const TabsView: React.SFC<TTabsViewProps> = ({
                 styles.tabItem,
                 index === i && {
                   borderBottomColor: Colors.MAIN_COLOR,
-                  borderBottomWidth: 4,
+                  borderBottomWidth: Metrics.tabItemBorderWidth,
                 },
               ]}
               onPress={() => updateIndex(i)}
@@ -42,14 +42,14 @@ export const TabsView: React.SFC<TTabsViewProps> = ({
               <Animated.Text
                 style={[
                   {
-                    fontFamily: "Poppins",
-                    fontWeight: "normal",
+                    fontFamily: 'Poppins',
+                    fontWeight: 'normal',
                     color: tabTitlecolor,
                     flexWrap: 'nowrap',
                     marginBottom: Metrics.smallMargin,
                     fontSize: Metrics.tinyTextSize,
                     textAlign: 'center',
-                  }
+                  },
                 ]}
               >
                 {route.title}

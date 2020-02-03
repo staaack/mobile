@@ -1,5 +1,8 @@
 import React, { ReactElement } from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+
+import { CustomText as Text } from '../TextPoppinsFont';
+
 import styles from './styles';
 
 interface Props {

@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
 import { Colors } from '../../styles';
 import { commonStyles } from '../../styles/commonStyles';
+import { Metrics } from '../../styles/Metrics';
 
 export default StyleSheet.create({
   container: {
-    width: '100%',
+    width: Metrics.fullWidth,
     backgroundColor: Colors.WHITE,
     ...commonStyles.flexSpaceBetweenRow,
-    paddingTop: 15,
+    paddingTop: Metrics.mediumPadding,
   },
 });

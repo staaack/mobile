@@ -10,8 +10,7 @@ export default StyleSheet.create({
   text: {
     color: Colors.MAIN_COLOR,
     fontWeight: '700',
-    fontSize: 13,
+    fontSize: Metrics.tinyTextSize,
     marginRight: Metrics.averageMargin,
-    fontFamily: "Poppins"
   },
 });

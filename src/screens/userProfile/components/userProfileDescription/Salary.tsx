@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
-import { View, Text } from 'react-native';
+
+import { CustomText as Text } from '../../../../components/TextPoppinsFont';
+
 import styles from './styles';
 
 interface Props {}

@@ -4,8 +4,7 @@ import { commonStyles, Metrics, Colors } from '../../styles';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
+    ...commonStyles.flexSpaceBetweenAlignStart,
     maxWidth: '48%',
     minWidth: '35%',
     flexGrow: 1,
@@ -15,10 +14,10 @@ export default StyleSheet.create({
     backgroundColor: Colors.WHITE,
     margin: Metrics.smallMargin,
     marginBottom: Metrics.averageMargin,
-    borderRadius: 5,
+    borderRadius: Metrics.smallRadius,
   },
   iconsContainer: {
-    width: '100%',
+    width: Metrics.fullWidth,
     ...commonStyles.flexSpaceBetweenRow,
     marginBottom: Metrics.averageMargin,
   },
@@ -29,18 +28,16 @@ export default StyleSheet.create({
   iconWrapper: {
     padding: Metrics.smallPadding,
     backgroundColor: Colors.LIGHT_GREY,
-    borderRadius: 20,
+    borderRadius: Metrics.radiusBasis,
   },
   title: {
     fontWeight: 'normal',
-    fontSize: 12,
-    fontFamily: 'Poppins',
+    fontSize: Metrics.smallTextSize,
   },
   amount: {
     fontWeight: 'bold',
     color: Colors.MAIN_COLOR,
     fontSize: Metrics.mediumTextSize,
-    fontFamily: 'Poppins',
   },
-  icon: { width: 20, height: 20 },
+  icon: Metrics.smallIcon,
 });

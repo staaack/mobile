@@ -1,17 +1,18 @@
 import { StyleSheet } from 'react-native';
 import { Metrics, Colors } from '../../styles';
 import { commonStyles } from '../../styles/commonStyles';
+
 export default StyleSheet.create({
   container: {
-    width: '100%',
+    width: Metrics.fullWidth,
     backgroundColor: Colors.WHITE,
     ...commonStyles.flexSpaceBetweenRow,
-    paddingTop: 15,
+    paddingTop: Metrics.mediumPadding,
   },
   leftView: {
-    padding: Metrics.averagePadding,
     justifyContent: 'space-evenly',
     alignItems: 'flex-start',
+    padding: Metrics.averagePadding,
     paddingVertical: Metrics.averagePadding,
   },
   title: {
@@ -26,14 +27,4 @@ export default StyleSheet.create({
   dialog: {
     top: -Metrics.screenHeight / 5,
   },
-  title: {
-  	fontFamily: "Poppins",
-  	fontWeight: "normal",
-  	fontSize: 12
-  },
-  amount: {
-  	fontFamily: "Poppins",
-  	fontWeight: "bold",
-  	fontSize: 18
-  }
 });

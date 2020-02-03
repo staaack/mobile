@@ -8,8 +8,7 @@ export default StyleSheet.create({
     ...commonStyles.shadow,
   },
   companyName: {
-    fontSize: Metrics.bigTextSize + 3,
-    fontFamily: 'Poppins',
+    fontSize: Metrics.titleTextSize,
     fontWeight: 'bold',
     color: Colors.BLACK,
     width: '82%',
@@ -18,22 +17,21 @@ export default StyleSheet.create({
     width: '10%',
     ...commonStyles.smallRoundedImage,
     borderColor: Colors.LIGHT_GREY,
-    borderWidth: 1,
+    borderWidth: Metrics.borderWidth,
   },
   scrollView: {
     flex: 1,
-    marginTop: Metrics.screenHeight / 4.5,
-    zIndex: 99,
     flexGrow: 1,
     minHeight: Metrics.screenHeight,
+    marginTop: Metrics.screenHeight / 4.5,
+    zIndex: 99,
   },
   revenuesTitleContainer: {
     ...commonStyles.flexSpaceBetweenRow,
     padding: Metrics.smallPadding,
-    width: '100%',
+    width: Metrics.fullWidth,
   },
   revenuesTitle: {
-    fontFamily: 'Poppins',
     fontWeight: 'bold',
   },
 });

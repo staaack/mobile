@@ -1,17 +1,15 @@
 import { StyleSheet } from 'react-native';
 
-import { Metrics, Colors } from '../../../../../../styles';
+import { Metrics, Colors, commonStyles } from '../../../../../../styles';
 
 export default StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+    ...commonStyles.flexStartRow,
     alignItems: 'flex-start',
     flexWrap: 'wrap',
-    paddingHorizontal: 10,
+    paddingHorizontal: Metrics.averagePadding,
   },
   text: {
-    fontFamily: 'Poppins',
     color: Colors.BLACK,
     fontWeight: 'bold',
     fontSize: Metrics.sliderTextSize,

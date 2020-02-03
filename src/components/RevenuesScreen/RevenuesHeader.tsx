@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+
+import { CustomText as Text } from '../TextPoppinsFont';
 
 import { DescriptionHeader } from '../descriptionHeader';
 import { TIntervalTimeProps, TimeIntervalPopup } from '../timeIntervalPopup';
@@ -14,7 +16,6 @@ interface TProps extends TIntervalTimeProps {
 
 export const RevenuesHeader: React.FC<TProps> = React.memo(
   ({
-<<<<<<< HEAD
     title,
     amount,
     onThisMonthPress,
@@ -24,42 +25,16 @@ export const RevenuesHeader: React.FC<TProps> = React.memo(
   }): JSX.Element => {
     return (
       <DescriptionHeader onBackIconPress={goBack}>
-        <View style={styles.container}>
-          <View style={styles.leftView}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.amount}>{amount}</Text>
-          </View>
-          <TimeIntervalPopup
-            onThisMonthPress={onThisMonthPress}
-            onThisYearPress={onThisYearPress}
-            onTodayPress={onTodayPress}
-            dialogStyles={styles.dialog}
-          />
+        <View style={styles.leftView}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.amount}>{amount}</Text>
         </View>
+        <TimeIntervalPopup
+          onThisMonthPress={onThisMonthPress}
+          onThisYearPress={onThisYearPress}
+          onTodayPress={onTodayPress}
+        />
       </DescriptionHeader>
     );
   },
 );
-=======
-  title,
-  amount,
-  onThisMonthPress,
-  onThisYearPress,
-  onTodayPress,
-  goBack,
-}): JSX.Element => {
-  return (
-    <DescriptionHeader onBackIconPress={goBack}>
-      <View style={styles.leftView}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.amount}>{amount}</Text>
-      </View>
-      <TimeIntervalPopup
-        onThisMonthPress={onThisMonthPress}
-        onThisYearPress={onThisYearPress}
-        onTodayPress={onTodayPress}
-      />
-    </DescriptionHeader>
-  );
-});
->>>>>>> origin/font-migration

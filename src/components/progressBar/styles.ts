@@ -1,25 +1,25 @@
 import { StyleSheet } from 'react-native';
 
 import { Colors, Metrics } from '../../styles';
+import { commonStyles } from '../../styles/commonStyles';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...commonStyles.flexCentered,
     paddingTop: Metrics.averagePadding,
     padding: Metrics.smallPadding,
-    borderRadius: 50,
+    borderRadius: Metrics.bigRadius,
   },
   progressBar: {
-    height: 20,
-    width: '100%',
-    backgroundColor: Colors.LIGHT_GREY,
-    borderRadius: 50,
     flexDirection: 'row',
+    height: 20,
+    width: Metrics.fullWidth,
+    backgroundColor: Colors.LIGHT_GREY,
+    borderRadius: Metrics.bigRadius,
   },
   progress: {
     backgroundColor: Colors.MAIN_COLOR,
-    borderRadius: 50,
+    borderRadius: Metrics.bigRadius,
   },
 });

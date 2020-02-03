@@ -10,7 +10,7 @@ export const ProfileImage: React.FC<Props> = ({ imageURL }): ReactElement => {
   return (
     <View style={styles.imageContainer}>
       <Image
-        resizeMode="center"
+        resizeMode="contain"
         source={{ uri: imageURL }}
         style={styles.image}
       />
@@ -22,13 +22,12 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: 80,
     height: 80,
-    borderRadius: 10,
-    ...commonStyles.commonBorderStyle,
-    borderWidth: 0.5,
+    borderRadius: Metrics.averageRadius,
     marginBottom: Metrics.bigMargin,
+    ...commonStyles.shadow,
   },
   image: {
-    width: '100%',
-    height: '100%',
+    width: Metrics.fullWidth,
+    height: Metrics.fullHeight,
   },
 });

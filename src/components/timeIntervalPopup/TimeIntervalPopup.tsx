@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Text, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
+import { TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import { CustomText as Text } from '../TextPoppinsFont';
 
 import styles from './styles';
 import { Colors } from '../../styles';
@@ -61,7 +63,7 @@ export const TimeIntervalPopup: React.SFC<TIntervalTimeProps> = React.memo(
           onClose={onDialogClose}
           customDialogStyles={dialogStyles}
         >
-          <MenuItem style={styles.menuItem} itemText="Today" onItemPress={onTodayItemPress} />
+          <MenuItem itemText="Today" onItemPress={onTodayItemPress} />
           <MenuItem itemText="This month" onItemPress={onMonthItemPress} />
           <MenuItem itemText="This year" onItemPress={onYearItemPress} />
         </MenuPopup>

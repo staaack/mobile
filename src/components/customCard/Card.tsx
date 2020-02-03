@@ -1,12 +1,13 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import {
   View,
-  Text,
   Image,
   TouchableWithoutFeedback,
   ImageURISource,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import { CustomText as Text } from '../TextPoppinsFont';
 
 import styles from './styles';
 import { Colors } from '../../styles';

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { commonStyles, Metrics, Colors } from '../../../../styles';
 
 export default StyleSheet.create({
@@ -6,9 +7,10 @@ export default StyleSheet.create({
     flex: 1,
     height: Metrics.screenHeight / 3,
     ...commonStyles.flexCentered,
+    paddingTop: Metrics.basisPaddingTop,
   },
   userName: {
-    color: Colors.BACKGROUND,
+    color: Colors.BACHGROUND,
     fontSize: Metrics.mediumTextSize,
     fontWeight: '700',
   },

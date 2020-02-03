@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, Image, View } from 'react-native';
+import { Image } from 'react-native';
+
+import { CustomText as Text } from '../../../components/TextPoppinsFont';
 
 import styles from '../styles';
 import { DescriptionHeader } from '../../../components/descriptionHeader';

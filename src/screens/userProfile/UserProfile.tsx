@@ -9,6 +9,7 @@ import { ProfileTabView, UserDescription } from './components';
 import { RightHeaderIcon, LeftHeaderIcon } from '../../components/header';
 import db from '../../database/db';
 import styles from './styles';
+import { headerStyles } from '../../components/header/styles';
 
 const company = db[0];
 
@@ -53,5 +54,6 @@ UserProfile.navigationOptions = ({ navigation }) => {
     ),
     headerRight: () => <RightHeaderIcon />,
     headerTitle: '',
+    headerStyle: headerStyles.header,
   };
 };

@@ -10,14 +10,11 @@ export default StyleSheet.create({
     ...commonStyles.flexCentered,
   },
   title: {
-    fontFamily: "Poppins",
-    fontWeight: 'normal',
     color: Colors.GREY,
-    fontSize: 12
+    fontSize: Metrics.tinyTextSize,
   },
   amount: {
-    fontFamily: "Poppins",
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: Metrics.smallTextSize,
   },
 });

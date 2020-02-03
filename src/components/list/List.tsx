@@ -1,13 +1,16 @@
 import React, { useCallback } from 'react';
-import { FlatList, TouchableOpacity } from 'react-native';
 import {
+  FlatList,
+  TouchableOpacity,
   View,
-  Text,
   Image,
   ListRenderItem,
   StyleProp,
   TextStyle,
 } from 'react-native';
+
+import { CustomText as Text } from '../TextPoppinsFont/CustomText';
+
 import styles from './styles';
 
 export interface ListItemProps {

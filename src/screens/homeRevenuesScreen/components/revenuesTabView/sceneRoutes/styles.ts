@@ -4,7 +4,7 @@ import { Colors, commonStyles, Metrics } from '../../../../../styles';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
+    width: Metrics.fullWidth,
     ...commonStyles.flexWrapList,
     padding: Metrics.averageMargin,
     minHeight: Metrics.screenHeight,

@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+
+import { CustomText as Text } from '../../../../../../components/TextPoppinsFont';
+
 import ItemContainer from './ItemContainer';
 import styles from './styles';
 

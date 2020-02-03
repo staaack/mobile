@@ -1,11 +1,23 @@
 import { StyleSheet, Platform } from 'react-native';
 import { Colors } from './theme';
+import { Metrics } from './Metrics';
 
 export const commonStyles = StyleSheet.create({
+  absoluteView: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
   flexSpaceBetweenRow: {
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  flexSpaceBetweenAlignStart: {
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
   },
   flexCentered: {
     justifyContent: 'center',
@@ -40,7 +52,7 @@ export const commonStyles = StyleSheet.create({
           shadowOpacity: 0.23,
           shadowRadius: 2.62,
         }
-      : { elevation: 2 },
+      : { elevation: 5 },
   flexWrapList: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -48,7 +60,7 @@ export const commonStyles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   commonBorderStyle: {
-    borderWidth: 1,
+    borderWidth: Metrics.borderWidth,
     borderColor: Colors.GREY,
   },
   removeShadow:

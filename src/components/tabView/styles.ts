@@ -4,15 +4,15 @@ import { commonStyles, Colors, Metrics } from '../../styles';
 export default StyleSheet.create({
   tabBar: {
     flexDirection: 'row',
-    marginTop: Metrics.averageMargin * 2,
+    marginTop: Metrics.basisMarginTop,
     backgroundColor: Colors.WHITE,
   },
   tabItem: {
     flex: 1,
     ...commonStyles.flexCentered,
     textAlign: 'center',
-    borderBottomWidth: 1,
+    borderBottomWidth: Metrics.borderWidth,
     borderBottomColor: Colors.GREY,
-    padding: 4,
+    padding: Metrics.tinyPadding,
   },
 });

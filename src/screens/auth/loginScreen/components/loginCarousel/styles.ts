@@ -5,12 +5,12 @@ import { Metrics, Colors, commonStyles } from '../../../../../styles';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: Metrics.averagePadding,
   },
   commonDotStyle: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
+    width: Metrics.smallWidth,
+    height: Metrics.smallHeight,
+    borderRadius: Metrics.smallRadius,
   },
   dotStyle: {
     backgroundColor: Colors.MAIN_COLOR,

@@ -4,19 +4,15 @@ import { Colors, Metrics, commonStyles } from '../../styles';
 
 export const headerStyles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
+    ...commonStyles.absoluteView,
     height: 70,
-    width: '100%',
-    marginTop: 20,
+    width: Metrics.fullWidth,
+    marginTop: Metrics.basisMarginTop,
     paddingHorizontal: Metrics.bigPadding,
     paddingTop: Metrics.smallPadding,
     backgroundColor: Colors.WHITE,
-    justifyContent: 'center',
     borderBottomColor: Colors.GREY,
-    borderBottomWidth: 1,
+    borderBottomWidth: Metrics.borderWidth,
     ...commonStyles.flexSpaceBetweenRow,
   },
   iconRight: {
@@ -30,11 +26,11 @@ export const headerStyles = StyleSheet.create({
   },
   header: {
     ...commonStyles.commonBorderStyle,
-    borderWidth: 0.2,
+    borderWidth: Metrics.smallBorderWidth,
     ...commonStyles.removeShadow,
   },
   headerTitle: {
     fontWeight: 'bold',
-    fontSize: Metrics.smallTextSize + 1,
+    fontSize: Metrics.smallTextSize,
   },
 });
