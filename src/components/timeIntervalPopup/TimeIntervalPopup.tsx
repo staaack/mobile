@@ -61,7 +61,7 @@ export const TimeIntervalPopup: React.SFC<TIntervalTimeProps> = React.memo(
           onClose={onDialogClose}
           customDialogStyles={dialogStyles}
         >
-          <MenuItem itemText="Today" onItemPress={onTodayItemPress} />
+          <MenuItem style={styles.menuItem} itemText="Today" onItemPress={onTodayItemPress} />
           <MenuItem itemText="This month" onItemPress={onMonthItemPress} />
           <MenuItem itemText="This year" onItemPress={onYearItemPress} />
         </MenuPopup>

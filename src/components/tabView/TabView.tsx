@@ -42,15 +42,14 @@ export const TabsView: React.SFC<TTabsViewProps> = ({
               <Animated.Text
                 style={[
                   {
+                    fontFamily: "Poppins",
+                    fontWeight: "normal",
                     color: tabTitlecolor,
                     flexWrap: 'nowrap',
                     marginBottom: Metrics.smallMargin,
                     fontSize: Metrics.tinyTextSize,
                     textAlign: 'center',
-                  },
-                  index === i && {
-                    fontWeight: '700',
-                  },
+                  }
                 ]}
               >
                 {route.title}

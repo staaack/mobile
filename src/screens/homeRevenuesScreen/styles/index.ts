@@ -9,7 +9,7 @@ export default StyleSheet.create({
   },
   companyName: {
     fontSize: Metrics.bigTextSize + 3,
-    fontFamily: 'Arial',
+    fontFamily: 'Poppins',
     fontWeight: 'bold',
     color: Colors.BLACK,
     width: '82%',
@@ -33,7 +33,7 @@ export default StyleSheet.create({
     width: '100%',
   },
   revenuesTitle: {
-    fontFamily: 'Arial',
+    fontFamily: 'Poppins',
     fontWeight: 'bold',
   },
 });

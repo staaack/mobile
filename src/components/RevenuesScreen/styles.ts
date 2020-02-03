@@ -26,4 +26,14 @@ export default StyleSheet.create({
   dialog: {
     top: -Metrics.screenHeight / 5,
   },
+  title: {
+  	fontFamily: "Poppins",
+  	fontWeight: "normal",
+  	fontSize: 12
+  },
+  amount: {
+  	fontFamily: "Poppins",
+  	fontWeight: "bold",
+  	fontSize: 18
+  }
 });

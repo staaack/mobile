@@ -12,5 +12,6 @@ export default StyleSheet.create({
     fontWeight: '700',
     fontSize: 13,
     marginRight: Metrics.averageMargin,
+    fontFamily: "Poppins"
   },
 });

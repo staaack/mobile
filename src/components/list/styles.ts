@@ -12,11 +12,15 @@ export default StyleSheet.create({
     width: '70%',
   },
   title: {
+    fontFamily: "Poppins",
     fontWeight: 'bold',
-    fontSize: Metrics.smallTextSize,
+    fontSize: 16,
   },
   subTitle: {
+    fontFamily: "Poppins",
+    fontWeight: 'normal',
     color: Colors.GREY,
+    fontSize: 12,
   },
   profileImage: {
     width: 50,
@@ -32,6 +36,8 @@ export default StyleSheet.create({
     color: Colors.MAIN_COLOR,
   },
   rightText: {
-    fontSize: Metrics.tinyTextSize,
+    fontFamily: "Poppins",
+    fontWeight: "normal",
+    fontSize: 12,
   },
 });

@@ -31,11 +31,16 @@ export default StyleSheet.create({
     backgroundColor: Colors.LIGHT_GREY,
     borderRadius: 20,
   },
+  title: {
+    fontWeight: 'normal',
+    fontSize: 12,
+    fontFamily: 'Poppins',
+  },
   amount: {
     fontWeight: 'bold',
     color: Colors.MAIN_COLOR,
     fontSize: Metrics.mediumTextSize,
-    fontFamily: 'sans-serif',
+    fontFamily: 'Poppins',
   },
   icon: { width: 20, height: 20 },
 });
