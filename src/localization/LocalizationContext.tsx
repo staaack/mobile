@@ -18,7 +18,7 @@ export const LocalizationContext: Context<TContextValue> = createContext<
   translations,
   setAppLanguage: () => {},
   appLanguage: CST.DEFAULT_LANGUAGE,
-  initializeAppLanguage: () => {},
+  initializeAppLanguage: () => {},  
 });
 
 export const LocalizationProvider: React.SFC<{}> = ({ children }) => {
