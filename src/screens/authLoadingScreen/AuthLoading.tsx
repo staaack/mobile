@@ -6,8 +6,8 @@ import {
   ActivityIndicator,
   StatusBar,
 } from 'react-native';
-import { NavigationStackScreenComponent } from 'react-navigation-stack';
 import { GoogleSignin } from '@react-native-community/google-signin';
+import { NavigationStackScreenComponent } from 'react-navigation-stack';
 
 import { Colors } from '../../styles/theme/colors';
 import styles from './styles';
