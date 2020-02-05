@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { View, Image, ImageURISource, StyleSheet } from 'react-native';
-import { commonStyles, Metrics } from '../../../../styles';
+import { Metrics, elevationShadowStyle } from '../../../../styles';
 
 interface Props {
   imageURL: string;
@@ -20,11 +20,11 @@ export const ProfileImage: React.FC<Props> = ({ imageURL }): ReactElement => {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     borderRadius: Metrics.averageRadius,
-    marginBottom: Metrics.bigMargin,
-    ...commonStyles.shadow,
+    marginBottom: Metrics.mediumMargin,
+    ...elevationShadowStyle(7),
   },
   image: {
     width: Metrics.fullWidth,

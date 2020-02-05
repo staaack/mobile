@@ -5,7 +5,7 @@ const screenHeight = Math.round(Dimensions.get('window').height);
 
 export const Metrics = {
   // ******* For text Sizes ****** //
-  sliderTextSize: 28,
+  sliderTextSize: 24,
   titleTextSize: 24,
   bigTextSize: 20,
   mediumTextSize: 18,

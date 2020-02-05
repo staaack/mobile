@@ -1,5 +1,7 @@
 import React, { useState, useCallback, useContext } from 'react';
-import { View, Text, Switch } from 'react-native';
+import { View, Switch } from 'react-native';
+
+import { CustomText as Text } from '../../../components/TextPoppinsFont';
 
 import styles from '../styles';
 import { Colors } from '../../../styles';

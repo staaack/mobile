@@ -1,1 +1,5 @@
-export const initialState = {};
+import { TReducerState } from '../types';
+
+export const initialState: TReducerState = {
+  data: null,
+};

@@ -32,7 +32,7 @@ export default StyleSheet.create({
   },
   title: {
     fontWeight: 'normal',
-    fontSize: Metrics.smallTextSize,
+    fontSize: Metrics.tinyTextSize,
   },
   amount: {
     fontWeight: 'bold',

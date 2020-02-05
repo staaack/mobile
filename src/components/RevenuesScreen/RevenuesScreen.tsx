@@ -33,16 +33,11 @@ const routes: Array<{ key: string; title: string }> = [
 ];
 
 const Revenues: React.SFC<RevenuesProps> = React.memo(
-  ({
-    navigation: { goBack },
-    revenuesAmount,
-    revenuesTopic,
-    scenes,
-  }): JSX.Element => {
+  ({ navigation, revenuesAmount, revenuesTopic, scenes }): JSX.Element => {
     return (
       <View style={styles.container}>
         <RevenuesHeader
-          goBack={() => goBack()}
+          goBack={() => navigation!.goBack()}
           title={revenuesTopic}
           amount={revenuesAmount}
           onThisMonthPress={() => {}}
@@ -57,4 +52,5 @@ const Revenues: React.SFC<RevenuesProps> = React.memo(
   },
 );
 
+// @ts-ignore
 export const RevenuesScreen = withNavigation(Revenues);

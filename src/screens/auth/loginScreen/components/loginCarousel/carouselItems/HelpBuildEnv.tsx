@@ -12,8 +12,10 @@ interface TProps {
 const HelpBuildEnv: React.FC<TProps> = () => {
   return (
     <ItemContainer>
-      <Text style={[styles.text]}>Help build an environment of</Text>
-      <Text style={[styles.text, styles.greenText]}>trust.</Text>
+      <Text style={[styles.text]}>
+        Help build an environment of 
+        <Text style={[styles.text, styles.greenText]}> trust.</Text>
+      </Text>
     </ItemContainer>
   );
 };

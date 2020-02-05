@@ -1,6 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
 import { Colors } from './theme';
 import { Metrics } from './Metrics';
+import { elevationShadowStyle } from './styleHelpers';
 
 export const commonStyles = StyleSheet.create({
   absoluteView: {
@@ -41,18 +42,7 @@ export const commonStyles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
   },
-  shadow:
-    Platform.OS === 'ios'
-      ? {
-          shadowColor: Colors.BLACK,
-          shadowOffset: {
-            width: 0,
-            height: 2,
-          },
-          shadowOpacity: 0.23,
-          shadowRadius: 2.62,
-        }
-      : { elevation: 5 },
+  shadow: elevationShadowStyle(1),
   flexWrapList: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -63,16 +53,5 @@ export const commonStyles = StyleSheet.create({
     borderWidth: Metrics.borderWidth,
     borderColor: Colors.GREY,
   },
-  removeShadow:
-    Platform.OS === 'ios'
-      ? {
-          shadowColor: 'transparent',
-          shadowOffset: {
-            width: 0,
-            height: 0,
-          },
-          shadowOpacity: 0,
-          shadowRadius: 0,
-        }
-      : { elevation: 0 },
+  removeShadow: elevationShadowStyle(0),
 });

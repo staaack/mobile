@@ -1,28 +1,28 @@
-export type EmployeeRoles = 'Admin' | 'Super Admin' | 'Member';
-export type Teams =
+export type TEmployeeRoles = 'Admin' | 'Super Admin' | 'Member';
+export type TTeams =
   | 'Consulting'
   | 'Marketing'
   | 'Innovation Hub'
   | 'Sales'
   | 'HR';
-export type UserRoles =
+export type TUserRoles =
   | 'Open Source Engineer'
   | 'Marketing manager'
   | 'Lead Open Source'
   | 'Sales Manager'
   | 'Recruitment Lead';
 
-export interface Employee {
+export interface TEmployee {
   email: string;
-  role: EmployeeRoles;
+  role: TEmployeeRoles;
 }
 
-export interface Department {
+export interface TDepartment {
   id: string;
-  team: Teams;
+  team: TTeams;
 }
 
-export interface Client {
+export interface TClient {
   id: string;
   company: string;
   contact: string;
@@ -63,17 +63,17 @@ export interface Engineering {
 }
 
 export interface Company {
-  employeeList: Array<Employee>;
-  departments: Array<Employee>;
-  clientsList: Array<Client>;
+  employeeList: Array<TEmployee>;
+  departments: Array<TEmployee>;
+  clientsList: Array<TClient>;
 }
 
-export interface User {
+export interface TUser {
   id: string;
   firstName: string;
   lastName: string;
-  team: Teams;
-  role: UserRoles;
+  team: TTeams;
+  role: TUserRoles;
 }
 
 export interface Sales {
@@ -94,9 +94,16 @@ export interface Sales {
   };
 }
 
-export interface ReducerActions {
+export interface TReducerActions {
   type: string;
   payload: { [key: string]: any };
 }
 
-export interface ReducerState {}
+export interface TReducerState {
+  data: null;
+}
+
+export type TReducerDispatcher = {
+  type: string;
+  payload: any;
+};

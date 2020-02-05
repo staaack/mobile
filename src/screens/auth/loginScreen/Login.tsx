@@ -8,6 +8,7 @@ import { LoginButton } from './components/loginButton';
 import { LocalizationContext, TContextValue } from '../../../localization';
 
 import styles from './styles';
+import images from '../../../assets/images';
 
 interface TLoginParams {}
 
@@ -26,10 +27,7 @@ export const LoginScreen: React.SFC<NavigationStackScreenProps<
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Image
-          source={require('../../../assets/logo_splash.png')}
-          style={styles.logo}
-        />
+        <Image source={images.LOGO_SPLASH} style={styles.logo} />
         <View style={styles.bottomLoginSide}>
           <LoginCarousel />
           <LoginButton

@@ -18,7 +18,12 @@ const App: React.SFC<{}> = (): JSX.Element => {
 
   return (
     <SafeAreaProvider>
-      {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
+      <StatusBar
+        barStyle="dark-content"
+        hidden={false}
+        backgroundColor="#FFF"
+        translucent={true}
+      />
       <GlobalStateProvider>
         <LocalizationProvider>
           <AppStackNavigator />

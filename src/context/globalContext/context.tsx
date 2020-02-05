@@ -1,8 +1,15 @@
-import React, { Context, Dispatch, ReducerAction } from 'react';
-import { globalReducer, initialState } from '../../hooksGlobalState';
+import React, { Context, Dispatch, Reducer } from 'react';
+import {
+  globalReducer,
+  initialState,
+  TReducerDispatcher,
+  TReducerState,
+} from '../../hooksGlobalState';
 
 export interface TGlobalContext {
-  state: any;
+  state: {
+    data: any;
+  };
   dispatch: Dispatch<{
     type: string;
     payload: any;
@@ -12,17 +19,15 @@ export interface TGlobalContext {
 export const GlobalContext: Context<TGlobalContext> = React.createContext<
   TGlobalContext
 >({
-  state: null,
+  state: { data: null },
   dispatch: () => {},
 });
 
 export const GlobalStateProvider: React.SFC<{}> = React.memo(
   ({ children }): JSX.Element => {
-    const [state, dispatch] = React.useReducer<any, ReducerAction<any>>(
-      globalReducer,
-      initialState,
-      () => {}, // this is the initializer function without action or type
-    );
+    const [state, dispatch] = React.useReducer<
+      Reducer<TReducerState, TReducerDispatcher>
+    >(globalReducer, initialState);
 
     return (
       <GlobalContext.Provider value={{ state, dispatch }}>

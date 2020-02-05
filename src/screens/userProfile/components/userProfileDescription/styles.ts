@@ -18,10 +18,9 @@ export default StyleSheet.create({
   popup: {
     position: 'absolute',
     right: 10,
-    top: 0,
     marginTop: Metrics.averageMargin,
   },
   dialog: {
-    top: -Metrics.screenHeight / 4,
+    top: -Metrics.screenHeight / 4.3,
   },
 });

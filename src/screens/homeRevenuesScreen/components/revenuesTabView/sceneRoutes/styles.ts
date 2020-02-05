@@ -6,7 +6,7 @@ export default StyleSheet.create({
     flex: 1,
     width: Metrics.fullWidth,
     ...commonStyles.flexWrapList,
-    padding: Metrics.averageMargin,
+    padding: Metrics.smallPadding,
     minHeight: Metrics.screenHeight / 2,
     backgroundColor: Colors.LIGHT_GREY,
   },

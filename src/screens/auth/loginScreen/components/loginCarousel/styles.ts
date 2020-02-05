@@ -21,7 +21,6 @@ export default StyleSheet.create({
   sliderItem: {
     width: Metrics.screenWidth,
     height: Metrics.screenHeight / 5,
-    paddingHorizontal: Metrics.smallPadding,
     ...commonStyles.flexStartCenterContent,
   },
 });

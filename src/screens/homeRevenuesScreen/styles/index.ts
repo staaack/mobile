@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { Metrics, commonStyles, Colors } from '../../../styles';
 
 export default StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: Colors.WHITE,
@@ -38,6 +41,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
   dialog: {
-    top: -Metrics.screenHeight / 15,
+    top: -Metrics.screenHeight / 16,
   },
 });

@@ -34,6 +34,7 @@ export const RevenuesHeader: React.FC<TProps> = React.memo(
             onThisMonthPress={onThisMonthPress}
             onThisYearPress={onThisYearPress}
             onTodayPress={onTodayPress}
+            dialogStyles={styles.dialog}
           />
         </View>
       </DescriptionHeader>

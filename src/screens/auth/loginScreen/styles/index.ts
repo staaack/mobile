@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { Metrics } from '../../../../styles/Metrics';
 import { commonStyles } from '../../../../styles';
+import { Colors } from '../../../../styles/theme/colors';
 
 export default StyleSheet.create({
   safeArea: {
@@ -9,6 +10,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     paddingBottom: Metrics.basisPaddingBottom,
+    backgroundColor: Colors.WHITE,
   },
   logo: {
     position: 'absolute',
