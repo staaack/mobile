@@ -34,6 +34,7 @@ export interface Engineering {
     role: string;
     currentProject: string;
   };
+
   dailyDistribution: {
     dailyRate: string;
     educationContribution: string;
@@ -51,13 +52,13 @@ export interface Engineering {
     salary: string;
     hrAndProfileContribution: string;
   };
+
   hrInformation: {
     fixedRateBrutto: string;
     onss: string;
     echoCheque: string;
     gsm: string;
     car: string;
-    
   };
 }
 
@@ -83,6 +84,7 @@ export interface Sales {
     amount: string;
     paid: any;
   };
+
   financialMetrics: {
     goalToReach: string;
     currentStatus: string;
