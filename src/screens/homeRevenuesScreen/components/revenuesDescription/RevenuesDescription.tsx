@@ -4,17 +4,27 @@ import { View } from 'react-native';
 import { Money } from './Money';
 import styles from './styles';
 import { TContextValue, LocalizationContext } from '../../../../localization';
+import { TGlobalContext, GlobalContext } from '../../../../context';
 
-export const RevenuesDescription: React.FC<{}> = (): JSX.Element => {
-  const { translations } = useContext<TContextValue>(LocalizationContext);
+interface IProps {
+  objective: string;
+  current: string;
+}
 
-  return (
-    <View style={styles.container}>
-      <Money title={translations['home.currentEarning']} amount="1,550,000" />
-      <Money
-        title={translations['home.revenuesObjective']}
-        amount="2,256,000"
-      />
-    </View>
-  );
-};
+export const RevenuesDescription: React.SFC<IProps> = React.memo(
+  ({ objective, current }): JSX.Element => {
+    const { translations } = useContext<TContextValue>(LocalizationContext);
+
+    return current && objective ? (
+      <View style={styles.container}>
+        <Money title={translations['home.currentEarning']} amount={current} />
+        <Money
+          title={translations['home.revenuesObjective']}
+          amount={objective}
+        />
+      </View>
+    ) : (
+      <View />
+    );
+  },
+);

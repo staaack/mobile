@@ -67,7 +67,7 @@ const db: Array<{ [key: string]: any }> = [
         name: 'Pietro Alves',
         description: 'client',
         imageURL:
-          'http://pluspng.com/img-png/png-person-walking-man-walking-282.png',
+          'http://pluspng.com/img-png/png-person-walking-man-wal  king-282.png',
         revenues: '$256,000.00',
       },
     ],

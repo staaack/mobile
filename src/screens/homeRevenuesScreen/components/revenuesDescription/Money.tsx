@@ -14,7 +14,7 @@ export const Money: React.FC<Props> = ({ amount, title }) => {
   return (
     <View style={styles.money}>
       <Text style={styles.title}>{title}</Text>
-      <Text style={styles.amount}>€{amount}</Text>
+      <Text style={styles.amount}>{amount}</Text>
     </View>
   );
 };

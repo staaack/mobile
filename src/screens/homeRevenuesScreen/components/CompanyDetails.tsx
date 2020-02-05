@@ -11,15 +11,17 @@ interface Props {
   companyName: string;
 }
 
-const CompanyDetails: React.FC<Props> = ({ imageURI, companyName }) => {
-  return (
-    <DescriptionHeader>
-      <View style={styles.companyDescContainer}>
-        <Text style={styles.companyName}>{companyName}</Text>
-        <Image source={{ uri: imageURI }} style={styles.profilePic} />
-      </View>
-    </DescriptionHeader>
-  );
-};
+const CompanyDetails: React.FC<Props> = React.memo(
+  ({ imageURI, companyName }) => {
+    return (
+      <DescriptionHeader>
+        <View style={styles.companyDescContainer}>
+          <Text style={styles.companyName}>{companyName}</Text>
+          <Image source={{ uri: imageURI }} style={styles.profilePic} />
+        </View>
+      </DescriptionHeader>
+    );
+  },
+);
 
 export default CompanyDetails;

@@ -13,61 +13,60 @@ export interface TTabsViewProps {
   };
 }
 
-export const TabsView: React.SFC<TTabsViewProps> = ({
-  routes,
-  sceneMap,
-}): JSX.Element => {
-  const [index, updateIndex] = useState<number>(0);
+export const TabsView: React.SFC<TTabsViewProps> = React.memo(
+  ({ routes, sceneMap }): JSX.Element => {
+    const [index, updateIndex] = useState<number>(0);
 
-  const _handleIndexChange = (index: number) => updateIndex(index);
+    const _handleIndexChange = (index: number) => updateIndex(index);
 
-  const _renderTabBar = (): ReactElement => {
-    return (
-      <View style={styles.tabBar}>
-        {routes.map((route, i) => {
-          const tabTitlecolor = i === index ? Colors.BLACK : Colors.TEXT_GREY;
+    const _renderTabBar = (): ReactElement => {
+      return (
+        <View style={styles.tabBar}>
+          {routes.map((route, i) => {
+            const tabTitlecolor = i === index ? Colors.BLACK : Colors.TEXT_GREY;
 
-          return (
-            <TouchableOpacity
-              key={i}
-              style={[
-                styles.tabItem,
-                index === i && {
-                  borderBottomColor: Colors.MAIN_COLOR,
-                  borderBottomWidth: Metrics.tabItemBorderWidth,
-                },
-              ]}
-              onPress={() => updateIndex(i)}
-            >
-              <Animated.Text
+            return (
+              <TouchableOpacity
+                key={i}
                 style={[
-                  {
-                    fontFamily: 'Poppins',
-                    fontWeight: 'normal',
-                    color: tabTitlecolor,
-                    flexWrap: 'nowrap',
-                    marginBottom: Metrics.smallMargin,
-                    fontSize: Metrics.tinyTextSize,
-                    textAlign: 'center',
+                  styles.tabItem,
+                  index === i && {
+                    borderBottomColor: Colors.MAIN_COLOR,
+                    borderBottomWidth: Metrics.tabItemBorderWidth,
                   },
                 ]}
+                onPress={() => updateIndex(i)}
               >
-                {route.title}
-              </Animated.Text>
-            </TouchableOpacity>
-          );
-        })}
-      </View>
-    );
-  };
+                <Animated.Text
+                  style={[
+                    {
+                      fontFamily: 'Poppins',
+                      fontWeight: 'normal',
+                      color: tabTitlecolor,
+                      flexWrap: 'nowrap',
+                      marginBottom: Metrics.smallMargin,
+                      fontSize: Metrics.tinyTextSize,
+                      textAlign: 'center',
+                    },
+                  ]}
+                >
+                  {route.title}
+                </Animated.Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      );
+    };
 
-  return (
-    <TabView
-      navigationState={{ index, routes }}
-      renderScene={SceneMap(sceneMap)}
-      renderTabBar={_renderTabBar}
-      onIndexChange={_handleIndexChange}
-      swipeEnabled={true}
-    />
-  );
-};
+    return (
+      <TabView
+        navigationState={{ index, routes }}
+        renderScene={SceneMap(sceneMap)}
+        renderTabBar={_renderTabBar}
+        onIndexChange={_handleIndexChange}
+        swipeEnabled={true}
+      />
+    );
+  },
+);

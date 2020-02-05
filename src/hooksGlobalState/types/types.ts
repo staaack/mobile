@@ -100,7 +100,7 @@ export interface TReducerActions {
 }
 
 export interface TReducerState {
-  data: null;
+  data: any;
 }
 
 export type TReducerDispatcher = {

@@ -6,7 +6,7 @@ import InvestmentsRoute from '../revenuesTabView/sceneRoutes/InvestmentsRoute';
 import { TeamRoute } from '../revenuesTabView/sceneRoutes';
 import { TContextValue, LocalizationContext } from '../../../../localization';
 
-export const RevenuesTabView: React.FC<{}> = (): JSX.Element => {
+export const RevenuesTabView: React.SFC<{}> = (): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
   const routes = [
     { key: 'revenues', title: translations['tab.revenues'] },

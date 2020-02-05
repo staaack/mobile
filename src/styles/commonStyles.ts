@@ -53,5 +53,5 @@ export const commonStyles = StyleSheet.create({
     borderWidth: Metrics.borderWidth,
     borderColor: Colors.GREY,
   },
-  removeShadow: elevationShadowStyle(0),
+  removeShadow: { ...elevationShadowStyle(0) },
 });

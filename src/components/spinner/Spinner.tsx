@@ -20,16 +20,18 @@ interface AppProps {
  * @param size
  */
 
-export const Spinner: React.SFC<AppProps> = ({ size }): JSX.Element => {
-  return (
-    <ActivityIndicator
-      color={Colors.MAIN_COLOR}
-      size={size}
-      style={styles.spinner}
-      shouldRasterizeIOS
-    />
-  );
-};
+export const Spinner: React.SFC<AppProps> = React.memo(
+  ({ size }): JSX.Element => {
+    return (
+      <ActivityIndicator
+        color={Colors.MAIN_COLOR}
+        size={size}
+        style={styles.spinner}
+        shouldRasterizeIOS
+      />
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   spinner: {

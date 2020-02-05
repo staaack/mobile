@@ -10,6 +10,10 @@ export default StyleSheet.create({
     backgroundColor: Colors.WHITE,
     ...commonStyles.shadow,
   },
+  loadingContainer: {
+    flex: 1,
+    ...commonStyles.flexCentered,
+  },
   companyDescContainer: {
     ...commonStyles.flexSpaceBetweenRow,
   },
@@ -22,8 +26,8 @@ export default StyleSheet.create({
   profilePic: {
     width: '10%',
     ...commonStyles.smallRoundedImage,
-    borderColor: Colors.LIGHT_GREY,
-    borderWidth: Metrics.borderWidth,
+    borderColor: Colors.GREY,
+    borderWidth: Metrics.smallBorderWidth,
   },
   scrollView: {
     flex: 1,
