@@ -1,11 +1,18 @@
 import React, { useEffect } from 'react';
-import { View, Image, ActivityIndicator, StatusBar } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
-
-import styles from './styles';
-import { Colors } from '../../styles/theme/colors';
+import {
+  SafeAreaView,
+  View,
+  Image,
+  ActivityIndicator,
+  StatusBar,
+} from 'react-native';
+import { GoogleSignin } from '@react-native-community/google-signin';
 import { NavigationStackScreenComponent } from 'react-navigation-stack';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { Colors } from '../../styles/theme/colors';
+import styles from './styles';
+
+GoogleSignin.configure();
 
 export const AuthLoading: NavigationStackScreenComponent<{}, {}> = ({
   navigation,
@@ -15,9 +22,10 @@ export const AuthLoading: NavigationStackScreenComponent<{}, {}> = ({
   }, []);
 
   const _bootstrapAsync = async () => {
-    const userToken: string | null = await AsyncStorage.getItem('userToken');
+    const isUserSignedIn: boolean = await GoogleSignin.isSignedIn();
 
-    navigation.navigate(userToken ? 'AppStack' : 'AuthStack');
+    if (isUserSignedIn) navigation.navigate('AppStack');
+    else navigation.navigate('AuthStack');
   };
 
   return (
