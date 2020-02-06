@@ -28,38 +28,30 @@ export interface TClient {
   contact: string;
 }
 
-export interface Engineering {
-  profileInfo: {
-    id: string;
-    role: string;
-    currentProject: string;
-  };
-
-  dailyDistribution: {
-    dailyRate: string;
-    educationContribution: string;
-    bonusPlan: string;
-    telephone: string;
-    internet: string;
-    computer: string;
-    officeContribution: string;
-    car: string;
-    gasCard: string;
-    launchVoucher: string;
-    ecoVoucher: string;
-    rAndDContribution: string;
-    marketingContribution: string;
-    salary: string;
-    hrAndProfileContribution: string;
-  };
-
-  hrInformation: {
-    fixedRateBrutto: string;
-    onss: string;
-    echoCheque: string;
-    gsm: string;
-    car: string;
-  };
+export interface TEngineering {
+  id: string;
+  role?: string;
+  currentProject: string;
+  dailyRate: string;
+  educationContribution?: string;
+  bonusPlan?: string;
+  telephone?: string;
+  internet?: string;
+  computer?: string;
+  officeContribution?: string;
+  car?: string;
+  gasCard?: string;
+  launchVoucher?: string;
+  ecoVoucher?: string;
+  rAndDContribution: string;
+  marketingContribution: string;
+  salary?: string;
+  hrAndProfileContribution: string;
+  fixedRateBrutto?: string;
+  onss?: string;
+  echoCheque?: string;
+  gsm?: string;
+  onssCar?: string;
 }
 
 export interface Company {
@@ -96,11 +88,12 @@ export interface Sales {
 
 export interface TReducerActions {
   type: string;
-  payload: { [key: string]: any };
+  payload: any;
 }
 
 export interface TReducerState {
   data: any;
+  selectedEngineer?: TEngineering;
 }
 
 export type TReducerDispatcher = {

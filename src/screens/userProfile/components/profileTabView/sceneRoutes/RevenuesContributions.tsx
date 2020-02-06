@@ -1,36 +1,34 @@
 import React, { useContext } from 'react';
-import { withNavigation } from 'react-navigation';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
-import RouteWrapper from '../../../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes/RouteWrapper';
-import { ConsultingCard, TrainingCard } from '../../../../../components/cards';
-import { TNavigationProps } from '../../../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import {
   TContextValue,
   LocalizationContext,
 } from '../../../../../localization';
+import { RouteWrapper } from '../../../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes';
+import { ConsultingCard, TrainingCard } from '../../../../../components/cards';
 
-interface Props extends TNavigationProps {}
-
-const RevenuesContrib: React.FC<Props> = ({ navigation }): JSX.Element => {
+const RevenuesContrib: React.SFC<NavigationInjectedProps<{}>> = ({
+  navigation,
+}): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onTrainingCardPress: () => void = () =>
-    navigation!.navigate({
+    navigation.navigate({
       // This screen isn't ready yet
       routeName: '',
     });
 
   return (
     <RouteWrapper>
-      <ConsultingCard />
+      <ConsultingCard amount="$255,26" />
       <TrainingCard
-        cardTitle={translations['cards.training']}
+        cardTitle={translations['cards.trainings']}
         onCardPress={onTrainingCardPress}
-        amount="$23,700.00"
+        amount="$230.00"
       />
     </RouteWrapper>
   );
 };
 
-//@ts-ignore
 export const RevenuesContributions = withNavigation(RevenuesContrib);

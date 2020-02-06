@@ -17,8 +17,8 @@ export default StyleSheet.create({
   smallText: { color: Colors.TEXT_GREY, fontSize: Metrics.tinyTextSize },
   popup: {
     position: 'absolute',
-    right: 10,
-    marginTop: Metrics.averageMargin,
+    top: 15,
+    right: Metrics.averageMargin,
   },
   dialog: {
     top: -Metrics.screenHeight / 4.3,

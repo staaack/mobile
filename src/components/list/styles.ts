@@ -12,19 +12,24 @@ export default StyleSheet.create({
     width: '70%',
   },
   title: {
+    maxWidth: '100%',
     fontWeight: 'bold',
     fontSize: Metrics.smallTextSize,
   },
   subTitle: {
+    width: '100%',
     fontWeight: 'normal',
     color: Colors.GREY,
     fontSize: Metrics.tinyTextSize,
   },
-  profileImage: {
+  profileImageContainer: {
     ...Metrics.profileImage,
     borderWidth: Metrics.smallBorderWidth,
     borderColor: Colors.LIGHT_GREY,
     marginRight: Metrics.averageMargin,
+  },
+  profileImage: {
+    ...Metrics.profileImage,
   },
   cost: {
     fontSize: Metrics.tinyTextSize,

@@ -7,6 +7,7 @@ export default StyleSheet.create({
     ...commonStyles.flexSpaceBetweenAlignStart,
     maxWidth: '48%',
     minWidth: '35%',
+    maxHeight: 200,
     flexGrow: 1,
     ...commonStyles.shadow,
     paddingVertical: 18,
@@ -38,6 +39,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.MAIN_COLOR,
     fontSize: Metrics.mediumTextSize,
+    flexWrap: 'nowrap',
   },
   icon: Metrics.smallIcon,
 });

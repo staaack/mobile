@@ -8,13 +8,16 @@ import {
 } from './sceneRoutes';
 import { TContextValue, LocalizationContext } from '../../../../localization';
 
-const sceneMap: { [key: string]: React.SFC<any> } = {
+interface IProps {}
+export type TSceneMap = { [key: string]: React.ComponentType<any> };
+
+const sceneMap: TSceneMap = {
   overview: Overview,
   revenuesContrb: RevenuesContributions,
   investmentsContrb: InvestementsContributions,
 };
 
-export const ProfileTabView: React.SFC<{}> = (): JSX.Element => {
+export const ProfileTabView: React.SFC<IProps> = (): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const routes = [

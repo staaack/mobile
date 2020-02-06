@@ -7,9 +7,7 @@ import {
 } from '../../hooksGlobalState';
 
 export interface TGlobalContext {
-  state: {
-    data: any;
-  };
+  state: TReducerState;
   dispatch: Dispatch<{
     type: string;
     payload: any;

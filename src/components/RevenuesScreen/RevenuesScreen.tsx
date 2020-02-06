@@ -1,15 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
-import { withNavigation } from 'react-navigation';
-
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
 import { TabsView } from '../tabView';
 import { RevenuesHeader } from './RevenuesHeader';
 import { ScrollViewWrapper } from '../scrollViewWrapper';
 import styles from './styles';
 
-export interface RevenuesProps extends TNavigationProps {
+export interface RevenuesProps extends NavigationInjectedProps {
   revenuesTopic: string;
   revenuesAmount: string;
   scenes: {
@@ -32,7 +30,7 @@ const routes: Array<{ key: string; title: string }> = [
   },
 ];
 
-const Revenues: React.SFC<RevenuesProps> = React.memo(
+const RevenuesComp: React.SFC<RevenuesProps> = React.memo(
   ({ navigation, revenuesAmount, revenuesTopic, scenes }): JSX.Element => {
     return (
       <View style={styles.container}>
@@ -52,5 +50,4 @@ const Revenues: React.SFC<RevenuesProps> = React.memo(
   },
 );
 
-// @ts-ignore
-export const RevenuesScreen = withNavigation(Revenues);
+export const RevenuesScreen = withNavigation(RevenuesComp);

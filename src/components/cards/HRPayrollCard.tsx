@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-import { Image } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
-import { withNavigation } from 'react-navigation';
 import { TContextValue, LocalizationContext } from '../../localization';
+import { TCardsProps } from './cards.d';
 
-interface Props extends TNavigationProps {}
-
-const HRPayroll: React.FC<Props> = ({ navigation }): JSX.Element => {
+const HRPayroll: React.FC<TCardsProps> = ({
+  navigation,
+  amount,
+}): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onHRCardPress: () => void = () =>
@@ -21,11 +21,10 @@ const HRPayroll: React.FC<Props> = ({ navigation }): JSX.Element => {
     <Card
       onCardPress={onHRCardPress}
       topic={translations['cards.hrPayroll']}
-      amount="$500.00"
+      amount={amount}
       leftIconSource={icons.group}
     />
   );
 };
 
-//@ts-ignore
 export const HRPayrollCard = withNavigation(HRPayroll);

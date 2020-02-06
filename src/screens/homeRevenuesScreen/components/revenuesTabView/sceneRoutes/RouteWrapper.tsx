@@ -7,8 +7,6 @@ interface TProps {
   children: ReactNode;
 }
 
-const RouteWrapper: React.SFC<TProps> = ({ children }): ReactElement => {
+export const RouteWrapper: React.SFC<TProps> = ({ children }): ReactElement => {
   return <View style={styles.container}>{children}</View>;
 };
-
-export default RouteWrapper;

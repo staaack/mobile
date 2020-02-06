@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ImageURISource } from 'react-native';
+import { View } from 'react-native';
 
 import styles from './styles';
 import { ProfileImage } from '../profileImage';
@@ -7,21 +7,23 @@ import { UserName } from './UserName';
 import { UserRole } from './UserRole';
 import { Salary } from './Salary';
 import { TimeIntervalPopup } from '../../../../components/timeIntervalPopup';
+import { ListItemProps } from 'components/list';
+
+export type IPerson = {
+  id: string;
+  imageURL: string;
+  name: string;
+  role: string;
+};
 
 interface TProps {
   /**
    * @description The person object which contain the user imageURL, name and role.
    */
-  person: {
-    imageURL: string;
-    name: string;
-    role: string;
-  };
+  person: IPerson;
 }
 
-export const UserDescription: React.FC<TProps> = ({
-  person: { imageURL, role, name },
-}): JSX.Element => {
+export const UserDescription: React.FC<TProps> = ({ person }): JSX.Element => {
   const [visible, setDialogVisibility] = useState<boolean>(false);
 
   const onPopupClose: () => boolean = () => {
@@ -43,9 +45,9 @@ export const UserDescription: React.FC<TProps> = ({
           dialogStyles={styles.dialog}
         />
       </View>
-      <ProfileImage imageURL={imageURL} />
-      <UserName userName={name} />
-      <UserRole role={role} />
+      <ProfileImage imageURL={person.imageURL} />
+      <UserName userName={person.name} />
+      <UserRole role={person.role} />
       <Salary />
     </View>
   );

@@ -14,6 +14,7 @@ import { CustomText as Text } from '../TextPoppinsFont/CustomText';
 import styles from './styles';
 
 export interface ListItemProps {
+  id: string;
   imageURL: string;
   title: string;
   surTitle: string;
@@ -39,11 +40,13 @@ export const List: React.FC<IListProps> = React.memo(
       ({ item }) => (
         <View style={styles.container}>
           <View style={styles.leftSide}>
-            <Image
-              source={{ uri: item.imageURL }}
-              style={styles.profileImage}
-              resizeMode="cover"
-            />
+            <View style={styles.profileImageContainer}>
+              <Image
+                source={{ uri: item.imageURL }}
+                style={styles.profileImage}
+                resizeMode="cover"
+              />
+            </View>
             <View>
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.subTitle}>{item.surTitle}</Text>
@@ -51,7 +54,7 @@ export const List: React.FC<IListProps> = React.memo(
           </View>
           <View>
             {onRightTextPress ? (
-              <TouchableOpacity onPress={() => onRightTextPress(item.title)}>
+              <TouchableOpacity onPress={() => onRightTextPress(item.id)}>
                 <Text style={[styles.rightText, rightTextStyles]}>
                   {rightText}
                 </Text>

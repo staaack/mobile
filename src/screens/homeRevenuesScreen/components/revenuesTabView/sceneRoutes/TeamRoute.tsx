@@ -1,45 +1,39 @@
-import React, { ReactElement, useCallback } from 'react';
-import { withNavigation } from 'react-navigation';
-import { NavigationStackProp } from 'react-navigation-stack';
+import React, { useCallback } from 'react';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
-import { ListItemProps } from '../../../../../components/list';
-
-import RouteWrapper from './RouteWrapper';
+import { RouteWrapper } from './RouteWrapper';
 import { SearchListTab } from '../../../../../components/searchListTab';
 import {
   TContextValue,
   LocalizationContext,
 } from '../../../../../localization';
-import db from '../../../../../database/db';
+import { TGlobalContext, GlobalContext } from '../../../../../context';
+import { membersExtractor } from '../../../../../helpers';
 
-const teamMembers: Array<ListItemProps> = db[0].team.map((item: any) => {
-  return {
-    imageURL: item.imageURL,
-    title: item.name,
-    surTitle: item.role,
-  };
-});
+export interface ITeamRouteProps {}
 
-export interface TNavigationProps {
-  navigation?: NavigationStackProp;
-}
-
-export const Team: React.FC<TNavigationProps> = ({
+export const Team: React.SFC<NavigationInjectedProps<ITeamRouteProps>> = ({
   navigation,
-}): ReactElement => {
+}): JSX.Element => {
   const { translations } = React.useContext<TContextValue>(LocalizationContext);
-  const onChangeText = useCallback((text: string) => {
-    console.log(text);
-  }, []);
 
-  const onViewProfilePress: (name: string) => void = name => {
-    navigation!.navigate('UserProfile');
+  const { state } = React.useContext<TGlobalContext>(GlobalContext);
+
+  const membersList = React.useMemo(
+    () => membersExtractor(state!.data['User information']),
+    [state.data],
+  );
+
+  const onChangeText = (text: string) => console.log(text);
+
+  const onViewProfilePress: (id: string) => void = id => {
+    navigation.navigate({ routeName: 'UserProfile', params: { id } });
   };
 
   return (
     <RouteWrapper>
       <SearchListTab
-        data={teamMembers}
+        data={membersList}
         onRightTextPress={onViewProfilePress}
         placeholder={translations['searchbar.team']}
         onSearchBarTextChange={onChangeText}
@@ -49,5 +43,4 @@ export const Team: React.FC<TNavigationProps> = ({
   );
 };
 
-// @ts-ignore
 export const TeamRoute = withNavigation(Team);

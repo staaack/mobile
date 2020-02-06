@@ -72,9 +72,7 @@ export const HomeRevenues: NavigationStackScreenComponent<IProps> = React.memo(
             </ScrollViewWrapper>
           </View>
         ) : (
-          <View style={styles.loadingContainer}>
-            <Spinner size={Platform.OS === 'ios' ? 'large' : 40} />
-          </View>
+          <Spinner size={Platform.OS === 'ios' ? 'large' : 40} />
         )}
       </SafeAreaView>
     );

@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
+import { withNavigation } from 'react-navigation';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
-import { withNavigation } from 'react-navigation';
 import { TContextValue, LocalizationContext } from '../../localization';
+import { TCardsProps } from './cards.d';
 
-interface Props extends TNavigationProps {}
-
-const Operations: React.FC<Props> = ({ navigation }): JSX.Element => {
+const Operations: React.FC<TCardsProps> = ({
+  navigation,
+  amount,
+}): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onOperationCardPress: () => void = () =>
@@ -18,12 +19,11 @@ const Operations: React.FC<Props> = ({ navigation }): JSX.Element => {
   return (
     <Card
       onCardPress={onOperationCardPress}
-      topic="Operations"
-      amount="$1,000.00"
+      topic={translations['cards.operations']}
+      amount={amount}
       leftIconSource={icons.task}
     />
   );
 };
 
-// @ts-ignore
 export const OperationsCard = withNavigation(Operations);

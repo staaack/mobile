@@ -1,8 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { withNavigation } from 'react-navigation';
-
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
 import { RevenuesHeader } from '../RevenuesScreen';
 import { ScrollViewWrapper } from '../scrollViewWrapper';
@@ -10,7 +8,7 @@ import { ScrollViewWrapper } from '../scrollViewWrapper';
 import styles from './styles';
 import { TeamRoute } from '../../screens/consultingRevenues/sceneRoutes/TeamRoute';
 
-export interface InvestmentProps extends TNavigationProps {
+export interface InvestmentProps extends NavigationInjectedProps {
   investmentTopic: string;
   investmentAmount: string;
 }

@@ -1,34 +1,38 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { useContext } from 'react';
 import { View } from 'react-native';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
-import RouteWrapper from './RouteWrapper';
-import styles from './styles';
-import { ConsultingCard } from '../../../../../components/cards';
 import { TrainingCard } from '../../../../../components/cards';
-import { TNavigationProps } from './TeamRoute';
+import { TGlobalContext, GlobalContext } from '../../../../../context';
 import {
   TContextValue,
   LocalizationContext,
 } from '../../../../../localization';
-import { withNavigation } from 'react-navigation';
+import { RouteWrapper } from './RouteWrapper';
+import styles from './styles';
+import { ConsultingCard } from '../../../../../components/cards';
 
-interface IProps extends TNavigationProps {}
+interface IProps {}
 
-const Revenues: React.SFC<IProps> = ({ navigation }): JSX.Element => {
+const Revenues: React.SFC<NavigationInjectedProps<IProps>> = ({
+  navigation,
+}): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
+  const { state } = useContext<TGlobalContext>(GlobalContext);
+
   const onTrainingCardPress: () => void = () =>
-    navigation!.navigate({
+    navigation.navigate({
       routeName: 'TrainingRevenues',
     });
 
   return (
     <RouteWrapper>
       <View style={styles.container}>
-        <ConsultingCard />
+        <ConsultingCard amount="$2,256.00" />
         <TrainingCard
-          cardTitle={translations['cards.training']}
-          amount="$35,215.00"
+          cardTitle={translations['cards.trainings']}
+          amount={state!.data['Sales']['Financial Metrics'][3][2]}
           onCardPress={onTrainingCardPress}
         />
       </View>
@@ -36,5 +40,4 @@ const Revenues: React.SFC<IProps> = ({ navigation }): JSX.Element => {
   );
 };
 
-// @ts-ignore
 export const RevenuesRoute = withNavigation(Revenues);

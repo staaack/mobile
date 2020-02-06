@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import RouteWrapper from './RouteWrapper';
+import { RouteWrapper } from './RouteWrapper';
 import {
   EducationCard,
   RDCard,

@@ -54,7 +54,7 @@ export const Metrics = {
     height: 20,
   },
   logoMetrics: {
-    top: 50,
+    top: 70,
     left: 10,
     width: 80,
     height: 80,

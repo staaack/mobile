@@ -1,5 +1,5 @@
 import React from 'react';
-import RouteWrapper from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/RouteWrapper';
+import { RouteWrapper } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes';
 import { View, TextStyle, StyleProp } from 'react-native';
 
 import { SearchBar } from '../searchBar';
@@ -25,7 +25,7 @@ interface Props {
    * @description Method triggered when the search bar value changed
    * @param text
    */
-  onSearchBarTextChange?: (text: string) => void;
+  onSearchBarTextChange: (text: string) => void;
   /**
    * @description List Item right text
    */

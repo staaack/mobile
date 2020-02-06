@@ -66,6 +66,7 @@ export const TabsView: React.SFC<TTabsViewProps> = React.memo(
         renderTabBar={_renderTabBar}
         onIndexChange={_handleIndexChange}
         swipeEnabled={true}
+        sceneContainerStyle={{ backgroundColor: Colors.LIGHT_GREY }}
       />
     );
   },

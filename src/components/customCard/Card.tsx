@@ -48,7 +48,9 @@ export const Card: React.FC<Props> = ({
         </View>
         <View style={styles.topicContainer}>
           <Text style={styles.title}>{topic}</Text>
-          <Text style={styles.amount}>{amount}</Text>
+          <Text numberOfLines={1} ellipsizeMode="tail" style={styles.amount}>
+            {amount}
+          </Text>
         </View>
       </View>
     </TouchableWithoutFeedback>

@@ -25,7 +25,7 @@ export const NL: { [key: string]: string } = {
 
   // *************** Cards Components **************** //
   'cards.consulting': '',
-  'cards.training': '',
+  'cards.trainings': '',
   'cards.education': '',
   'cards.rd': '',
   'cards.marketing': '',

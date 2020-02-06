@@ -3,11 +3,11 @@ import { SearchListTab } from '../../../components/searchListTab';
 
 import db from '../../../database/db';
 import { ListItemProps } from '../../../components/list';
-import RouteWrapper from '../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes/RouteWrapper';
+import { RouteWrapper } from '../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes';
 
 interface Props {}
 
-const teamMembers: Array<ListItemProps> = db[0].team.map(item => {
+const teamMembers: Array<ListItemProps> = db[0].team.map((item: any) => {
   return {
     imageURL: item.imageURL,
     title: item.name,

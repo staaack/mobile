@@ -1,13 +1,19 @@
 import React from 'react';
-import { Text, StyleSheet, StyleProp, TextStyle } from 'react-native';
+import { Text, StyleSheet, TextProps } from 'react-native';
 
-interface Props {
-  style?: StyleProp<TextStyle>;
-}
+import { Colors } from '../../styles';
 
-export const CustomText: React.SFC<Props> = React.memo(
+export const CustomText: React.SFC<TextProps> = React.memo(
   ({ children, style }): JSX.Element => {
-    return <Text style={[styles.main, style]}>{children}</Text>;
+    return (
+      <Text
+        selectionColor={Colors.TEXT_SELECT}
+        selectable={true}
+        style={[styles.main, style]}
+      >
+        {children}
+      </Text>
+    );
   },
 );
 

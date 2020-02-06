@@ -3,12 +3,13 @@ import { withNavigation } from 'react-navigation';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import { TContextValue, LocalizationContext } from '../../localization';
+import { TCardsProps } from './cards.d';
 
-interface TProps extends TNavigationProps {}
-
-const Marketing: React.FC<TProps> = ({ navigation }): JSX.Element => {
+const Marketing: React.FC<TCardsProps> = ({
+  navigation,
+  amount,
+}): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onMarketingCardPress: () => void = () =>
@@ -20,12 +21,11 @@ const Marketing: React.FC<TProps> = ({ navigation }): JSX.Element => {
     <Card
       onCardPress={onMarketingCardPress}
       topic={translations['cards.marketing']}
-      amount="$2,000.00"
+      amount={amount}
       leftIconSource={icons.tv}
       isTrendingUp={false}
     />
   );
 };
 
-//@ts-ignore
 export const MarketingCard = withNavigation(Marketing);

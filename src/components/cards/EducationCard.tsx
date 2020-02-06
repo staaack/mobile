@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
-import { withNavigation } from 'react-navigation';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import { LocalizationContext, TContextValue } from '../../localization';
+import { TCardsProps } from './cards';
 
-interface Props extends TNavigationProps {}
-
-const Education: React.FC<Props> = ({ navigation }) => {
+const Education: React.FC<TCardsProps> = ({ navigation, amount }) => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onEducationCardPress: () => void = () =>
@@ -20,7 +18,7 @@ const Education: React.FC<Props> = ({ navigation }) => {
     <Card
       onCardPress={onEducationCardPress}
       topic={translations['cards.education']}
-      amount="$3,000.00"
+      amount={amount}
       leftIconSource={icons.graduation}
       isTrendingUp={false}
     />

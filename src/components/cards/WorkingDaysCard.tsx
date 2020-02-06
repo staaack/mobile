@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
-import { withNavigation } from 'react-navigation';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import { TContextValue, LocalizationContext } from '../../localization';
 
-interface Props extends TNavigationProps {}
+interface Props extends NavigationInjectedProps {
+  amount: string;
+}
 
-const WorkingDays: React.SFC<Props> = ({ navigation }): JSX.Element => {
+const WorkingDays: React.SFC<Props> = ({ navigation, amount }): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onWorkingDaysCardPress: () => void = () =>
@@ -20,7 +21,7 @@ const WorkingDays: React.SFC<Props> = ({ navigation }): JSX.Element => {
     <Card
       onCardPress={onWorkingDaysCardPress}
       topic={translations['cards.workingDays']}
-      amount="256"
+      amount={amount}
       leftIconSource={icons.calendar}
     />
   );

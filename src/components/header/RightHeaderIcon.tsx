@@ -1,16 +1,14 @@
 import React, { ReactElement, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
-import { withNavigation } from 'react-navigation';
-
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
 import { headerStyles as styles } from './styles';
 import { Colors } from '../../styles';
 import { MenuPopup, MenuItem } from '../popupMenu';
 import { TContextValue, LocalizationContext } from '../../localization';
 
-export interface Props extends TNavigationProps {
+export interface Props extends NavigationInjectedProps {
   /**
    * @description function to be executed when pressing on the right header icon
    */

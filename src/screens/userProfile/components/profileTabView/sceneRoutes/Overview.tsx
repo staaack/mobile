@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from 'react';
-import { withNavigation } from 'react-navigation';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
 import {
   WorkingDaysCard,
@@ -7,39 +7,49 @@ import {
   DailyRateCard,
   CurrentProjectCard,
 } from '../../../../../components/cards';
-import RouteWrapper from '../../../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes/RouteWrapper';
+import { RouteWrapper } from '../../../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes';
 import {
   TContextValue,
   LocalizationContext,
 } from '../../../../../localization';
-import { TNavigationProps } from '../../../../homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 
-interface Props extends TNavigationProps {}
+import { TGlobalContext, GlobalContext } from '../../../../../context';
+import { View } from 'react-native';
 
-const OverviewTab: React.FC<Props> = ({ navigation }): JSX.Element => {
-  const { translations } = useContext<TContextValue>(LocalizationContext);
+interface Props extends NavigationInjectedProps {}
 
-  const onTrainingCardPress: () => void = useCallback(
-    () =>
-      navigation!.navigate({
-        routeName: '',
-      }),
-    [],
-  );
+const OverviewTab: React.SFC<Props> = React.memo(
+  ({ navigation }): JSX.Element => {
+    const { translations } = useContext<TContextValue>(LocalizationContext);
 
-  return (
-    <RouteWrapper>
-      <WorkingDaysCard />
-      <TrainingCard
-        cardTitle={translations['cards.trainingBudget']}
-        onCardPress={onTrainingCardPress}
-        amount="$256.000"
-      />
-      <DailyRateCard />
-      <CurrentProjectCard />
-    </RouteWrapper>
-  );
-};
+    const { state } = React.useContext<TGlobalContext>(GlobalContext);
 
-// @ts-ignore
+    const engineer = state.selectedEngineer;
+
+    const onTrainingCardPress: () => void = useCallback(
+      () =>
+        navigation!.navigate({
+          routeName: '',
+        }),
+      [],
+    );
+
+    return engineer ? (
+      // these hard-coded values not yet provided in this Mock API
+      <RouteWrapper>
+        <WorkingDaysCard amount="240" />
+        <TrainingCard
+          cardTitle={translations['cards.trainingBudget']}
+          onCardPress={onTrainingCardPress}
+          amount="$256.000"
+        />
+        <DailyRateCard amount={engineer!.dailyRate} />
+        <CurrentProjectCard currentProject={engineer.currentProject} />
+      </RouteWrapper>
+    ) : (
+      <View />
+    );
+  },
+);
+
 export const Overview = withNavigation(OverviewTab);

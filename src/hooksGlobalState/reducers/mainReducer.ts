@@ -1,8 +1,9 @@
-import { ReducerState, ReducerActions } from '../types';
-import { GET_DATA } from '../constants/types';
 import { Reducer } from 'react';
 
-export const globalReducer: Reducer<ReducerState, ReducerActions> = (
+import { GET_DATA, SET_SELECTED_MEMBER } from '../constants/types';
+import { TReducerState, TReducerActions } from '../types';
+
+export const globalReducer: Reducer<TReducerState, TReducerActions> = (
   state,
   action,
 ) => {
@@ -11,6 +12,11 @@ export const globalReducer: Reducer<ReducerState, ReducerActions> = (
       return {
         ...state,
         data: action.payload,
+      };
+    case SET_SELECTED_MEMBER:
+      return {
+        ...state,
+        selectedEngineer: action.payload,
       };
     default:
       return state;

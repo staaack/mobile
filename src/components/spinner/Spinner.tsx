@@ -1,7 +1,6 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet } from 'react-native';
-import { Colors } from '../../styles/theme/colors';
-import { Metrics } from '../../styles/Metrics';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { Colors, Metrics, commonStyles } from '../../styles';
 
 interface AppProps {
   /**
@@ -23,17 +22,24 @@ interface AppProps {
 export const Spinner: React.SFC<AppProps> = React.memo(
   ({ size }): JSX.Element => {
     return (
-      <ActivityIndicator
-        color={Colors.MAIN_COLOR}
-        size={size}
-        style={styles.spinner}
-        shouldRasterizeIOS
-      />
+      <View style={styles.container}>
+        <ActivityIndicator
+          color={Colors.MAIN_COLOR}
+          size={size}
+          style={styles.spinner}
+          shouldRasterizeIOS
+        />
+      </View>
     );
   },
 );
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    ...commonStyles.flexCentered,
+    backgroundColor: Colors.WHITE,
+  },
   spinner: {
     margin: Metrics.averageMargin,
     alignSelf: 'center',

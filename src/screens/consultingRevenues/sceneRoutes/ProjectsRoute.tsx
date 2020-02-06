@@ -1,4 +1,5 @@
 import React from 'react';
+import images from '../../../assets/images';
 
 import { SearchListTab } from '../../../components/searchListTab';
 import { ListItemProps } from '../../../components/list';
@@ -7,10 +8,10 @@ import db from '../../../database/db';
 interface Props {}
 
 const projects: Array<ListItemProps> = db[0].projects.map(
-  ({ name, description, imageURL, revenues }) => ({
+  ({ name, description, revenues }: any) => ({
     title: name,
     surTitle: description,
-    imageURL,
+    imageURL: images.COMPANY_IMG_URI,
     cost: revenues,
   }),
 );

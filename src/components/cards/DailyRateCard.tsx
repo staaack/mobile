@@ -3,12 +3,13 @@ import { withNavigation } from 'react-navigation';
 
 import { Card } from '../customCard';
 import icons from '../../assets/icons';
-import { TNavigationProps } from '../../screens/homeRevenuesScreen/components/revenuesTabView/sceneRoutes/TeamRoute';
 import { TContextValue, LocalizationContext } from '../../localization';
+import { TCardsProps } from './cards.d';
 
-interface Props extends TNavigationProps {}
-
-const DailyRate: React.SFC<Props> = ({ navigation }): JSX.Element => {
+const DailyRate: React.SFC<TCardsProps> = ({
+  navigation,
+  amount,
+}): JSX.Element => {
   const { translations } = useContext<TContextValue>(LocalizationContext);
 
   const onDailyRateCardPress: () => void = () =>
@@ -19,12 +20,11 @@ const DailyRate: React.SFC<Props> = ({ navigation }): JSX.Element => {
   return (
     <Card
       onCardPress={onDailyRateCardPress}
-      topic="Daily rate"
-      amount="$560.00"
+      topic={translations['cards.dailyRate']}
+      amount={amount}
       leftIconSource={icons.group}
     />
   );
 };
 
-// @ts-ignore
 export const DailyRateCard = withNavigation(DailyRate);
