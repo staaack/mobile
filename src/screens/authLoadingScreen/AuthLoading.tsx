@@ -11,8 +11,9 @@ import { NavigationStackScreenComponent } from 'react-navigation-stack';
 
 import { Colors } from '../../styles/theme/colors';
 import styles from './styles';
+import { googleAuthConfig } from '../auth/config/index';
 
-GoogleSignin.configure();
+GoogleSignin.configure(googleAuthConfig);
 
 export const AuthLoading: NavigationStackScreenComponent<{}, {}> = ({
   navigation,
@@ -21,11 +22,11 @@ export const AuthLoading: NavigationStackScreenComponent<{}, {}> = ({
     _bootstrapAsync();
   }, []);
 
-  const _bootstrapAsync = async () => {
-    const isUserSignedIn: boolean = await GoogleSignin.isSignedIn();
-
-    if (isUserSignedIn) navigation.navigate('AppStack');
-    else navigation.navigate('AuthStack');
+  const _bootstrapAsync = () => {
+    GoogleSignin.isSignedIn().then((isUserSignedIn: boolean) => {
+      if (isUserSignedIn) navigation.navigate('AppStack');
+      else navigation.navigate('AuthStack');
+    });
   };
 
   return (

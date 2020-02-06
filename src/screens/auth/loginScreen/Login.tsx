@@ -13,9 +13,12 @@ import { LoginButton } from './components/loginButton';
 import { LocalizationContext, TContextValue } from '../../../localization';
 
 import styles from './styles';
+import { googleAuthConfig } from '../config/index';
 
 interface TLoginParams {}
 interface TLoginProps {}
+
+GoogleSignin.configure(googleAuthConfig);
 
 export const LoginScreen: NavigationStackScreenComponent<
   TLoginProps,
@@ -29,13 +32,16 @@ export const LoginScreen: NavigationStackScreenComponent<
 
     // First we need check if the device has Google Play Services installed.
     return GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true })
-      .then(() => GoogleSignin.signInSilently())
+      .then(() => {
+        return GoogleSignin.signIn();
+      })
       .then((userInfo: User) => {
         console.log(userInfo);
         setLoading(false);
         navigation.navigate('HomeRevenues');
       })
       .catch(error => {
+        console.log(error);
         setLoading(false);
         switch (error.code) {
           case statusCodes.SIGN_IN_CANCELLED:
@@ -45,7 +51,7 @@ export const LoginScreen: NavigationStackScreenComponent<
           case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
             return;
           default:
-            return console.log(error);
+            return;
         }
       });
   };
