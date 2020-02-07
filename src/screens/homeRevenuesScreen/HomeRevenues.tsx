@@ -51,7 +51,7 @@ export const HomeRevenues: NavigationStackScreenComponent<IProps> = React.memo(
             setData((state: IState) => ({
               ...state,
               isSubmitting: false,
-              errorMessage: error,
+              errorMessage: error.message,
             }));
           });
 

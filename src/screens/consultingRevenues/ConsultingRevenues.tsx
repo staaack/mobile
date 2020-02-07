@@ -7,6 +7,9 @@ interface Props {}
 
 export const ConsultingRevenues: React.FC<Props> = (): JSX.Element => {
   const { translations } = React.useContext<TContextValue>(LocalizationContext);
+
+  
+
   return (
     <RevenuesScreen
       revenuesAmount="$10,254.00"

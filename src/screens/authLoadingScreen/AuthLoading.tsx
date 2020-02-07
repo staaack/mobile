@@ -11,6 +11,7 @@ import { GoogleSignin } from '@react-native-community/google-signin';
 import { NavigationStackScreenComponent } from 'react-navigation-stack';
 import { CustomText as Text } from '../../components/TextPoppinsFont/CustomText';
 
+import images from '../../assets/images';
 import { Colors } from '../../styles/theme/colors';
 import styles from './styles';
 import { googleAuthConfig } from '../auth/config/index';
@@ -42,10 +43,7 @@ export const AuthLoading: NavigationStackScreenComponent<{}, {}> = ({
         translucent={true}
       />
       <View style={styles.container}>
-        <Image
-          source={require('../../assets/logo_splash.png')}
-          style={styles.logo}
-        />
+        <Image source={images.LOGO_SPLASH} style={styles.logo} />
         <View style={styles.spinner}>
           <ActivityIndicator
             color={Colors.MAIN_COLOR}
