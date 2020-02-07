@@ -2,6 +2,7 @@ export const EN: { [key: string]: string } = {
   // *************** Login Component **************** //
   'login.button': 'Login with',
   'login.carousel': '',
+  'login.authLoading': 'Logging to your account',
 
   // *************** Home Component **************** //
   'home.revenuesObjective': 'Revenues objective',

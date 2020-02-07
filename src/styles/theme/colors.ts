@@ -7,5 +7,9 @@ export const Colors = {
   RED: '#FF0000',
   BACHGROUND: '#062133',
   TEXT_GREY: 'rgba(6, 33, 51, 0.6)',
+<<<<<<< HEAD
   TEXT_SELECT: '#A9F76C',
+=======
+  BG_MUTED: 'rgba(6, 33, 51, 0.6)',
+>>>>>>> google-auth-flow
 };

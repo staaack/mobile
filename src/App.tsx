@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { LocalizationProvider } from './localization';
 import { AppStackNavigator } from './navigation';
 import { GlobalStateProvider } from './context';
+import { AppStackContainer } from './navigation';
 
 console.disableYellowBox = true;
 
@@ -29,6 +30,10 @@ const App: React.SFC<{}> = (): JSX.Element => {
           <AppStackNavigator />
         </LocalizationProvider>
       </GlobalStateProvider>
+      <LocalizationProvider>
+        {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
+        <AppStackContainer />
+      </LocalizationProvider>
     </SafeAreaProvider>
   );
 };
