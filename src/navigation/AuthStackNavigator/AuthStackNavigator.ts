@@ -7,6 +7,7 @@ import { LoginScreen } from '../../screens';
 
 export const AuthStackNavigator = createStackNavigator(
   {
+    //@ts-ignore
     Login: {
       screen: LoginScreen,
     },

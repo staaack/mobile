@@ -7,4 +7,5 @@ export const Colors = {
   RED: '#FF0000',
   BACHGROUND: '#062133',
   TEXT_GREY: 'rgba(6, 33, 51, 0.6)',
+  BG_MUTED: 'rgba(6, 33, 51, 0.6)',
 };

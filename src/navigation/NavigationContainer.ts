@@ -1,4 +1,5 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { TransitionPresets } from 'react-navigation-stack';
 
 import { AuthStackNavigator } from './AuthStackNavigator';
 import { AppStackNavigator } from './AppStackNavigator';
@@ -13,6 +14,9 @@ export default createAppContainer(
     },
     {
       initialRouteName: 'AuthLoading',
+      defaultNavigationOptions: {
+        ...TransitionPresets.ScaleFromCenterAndroid,
+      },
     },
   ),
 );

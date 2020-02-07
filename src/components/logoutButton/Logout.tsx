@@ -5,7 +5,7 @@ import { CustomText as Text } from '../TextPoppinsFont';
 
 import styles from './styles';
 import { LocalizationContext, TContextValue } from '../../localization';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import { Colors } from '../../styles/theme/colors';
 
 interface Props {
@@ -20,18 +20,19 @@ interface Props {
   isLoading?: boolean;
 }
 
-export const LogoutButton: React.FC<Props> = ({
-  onLogoutPress,
-  isLoading,
-}): JSX.Element => {
-  const { translations } = useContext<TContextValue>(LocalizationContext);
-  return (
-    <TouchableOpacity onPress={onLogoutPress}>
-      {isLoading ? (
-        <ActivityIndicator color={Colors.RED} size="large" />
-      ) : (
-        <Text style={styles.text}>{translations['settings.logout']}</Text>
-      )}
-    </TouchableOpacity>
-  );
-};
+export const LogoutButton: React.FC<Props> = React.memo(
+  ({ onLogoutPress, isLoading }): JSX.Element => {
+    const { translations } = useContext<TContextValue>(LocalizationContext);
+    return (
+      <View style={styles.container}>
+        {isLoading ? (
+          <ActivityIndicator color={Colors.RED} size="large" />
+        ) : (
+          <TouchableOpacity onPress={onLogoutPress}>
+            <Text style={styles.text}>{translations['settings.logout']}</Text>
+          </TouchableOpacity>
+        )}
+      </View>
+    );
+  },
+);

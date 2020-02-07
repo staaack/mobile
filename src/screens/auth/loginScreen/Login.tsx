@@ -30,13 +30,11 @@ export const LoginScreen: NavigationStackScreenComponent<
   const onButtonPress: () => Promise<void> = async () => {
     setLoading(true);
 
-    // First we need check if the device has Google Play Services installed.
     return GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true })
       .then(() => {
         return GoogleSignin.signIn();
       })
       .then((userInfo: User) => {
-        console.log(userInfo);
         setLoading(false);
         navigation.navigate('HomeRevenues');
       })
